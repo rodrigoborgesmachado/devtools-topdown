@@ -30,7 +30,10 @@ namespace DataBase
                 else if(bd == BancoDados.SQL_SERVER)
                 {
                     banco = new BancoSQLServer();
-                    banco.OpenConnection();
+                }
+                else if(bd == BancoDados.ORACLE)
+                {
+                    banco = new BancoOracle();
                 }
 
                 banco.OpenConnection(conection);

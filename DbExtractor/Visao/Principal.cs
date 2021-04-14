@@ -104,6 +104,46 @@ namespace Visao
             }
         }
 
+        /// <summary>
+        /// Evento disparado no clique da opção de informações de dataSource
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_info_dataSourceOracle_Click(object sender, EventArgs e)
+        {
+            Message.MensagemInformacao("Data source da conexão");
+        }
+
+        /// <summary>
+        /// Evento disparado no clique da opção de informação do usuário
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_info_usuarioOracle_Click(object sender, EventArgs e)
+        {
+            Message.MensagemInformacao("Usuário da conexão");
+        }
+
+        /// <summary>
+        /// Evento lançdo no clique da opção de informação da senha
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_info_senhaOracle_Click(object sender, EventArgs e)
+        {
+            Message.MensagemInformacao("Senha da conexão");
+        }
+
+        /// <summary>
+        /// Evento lançado no clique do botão de importar oracle
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_importarOracle_Click(object sender, EventArgs e)
+        {
+            this.ImportarOracle();
+        }
+
         #endregion Eventos
 
         #region Construtores
@@ -160,6 +200,36 @@ namespace Visao
                 retorno = false;
                 Message.MensagemAlerta("Campo senha está vazio!");
                 this.tbx_senhaSqlServer.Focus();
+            }
+
+            return retorno;
+        }
+
+        /// <summary>
+        /// Método que valida os campos do formulário
+        /// </summary>
+        /// <returns>True - validado; false - errado</returns>
+        private bool ValidaCamposOracle()
+        {
+            bool retorno = true;
+
+            if (string.IsNullOrEmpty(this.tbx_dataSourceOracle.Text))
+            {
+                retorno = false;
+                Message.MensagemAlerta("Campo Datasource está vazio!");
+                this.tbx_dataSourceOracle.Focus();
+            }
+            else if (string.IsNullOrEmpty(this.tbx_usuarioOracle.Text))
+            {
+                retorno = false;
+                Message.MensagemAlerta("Campo usuário está vazio!");
+                this.tbx_usuarioOracle.Focus();
+            }
+            else if (string.IsNullOrEmpty(this.tbx_senhaOracle.Text))
+            {
+                retorno = false;
+                Message.MensagemAlerta("Campo senha está vazio!");
+                this.tbx_senhaOracle.Focus();
             }
 
             return retorno;
@@ -232,6 +302,44 @@ namespace Visao
         /// <summary>
         /// Método que faz a importação das tabelas do banco de dados
         /// </summary>
+        private void ImportarOracle()
+        {
+            if (this.ValidaCamposOracle())
+            {
+                string datasource = this.tbx_dataSourceOracle.Text;
+                string usuario = this.tbx_usuarioOracle.Text;
+                string senha = this.tbx_senhaOracle.Text;
+
+                string connection = "Data Source=" + datasource + ";User Id=" + usuario + ";Password=" + senha;
+
+                if (DataBase.Connection.OpenConection(connection, Util.Enumerator.BancoDados.SQL_SERVER))
+                {
+                    if (Util.DocumentOracle.VerificaPermissao())
+                    {
+                        if (Util.DocumentOracle.Importar())
+                        {
+                            Message.MensagemSucesso("Importado com sucesso");
+                        }
+                        else
+                        {
+                            Message.MensagemErro("Não foi possível importar!");
+                        }
+                    }
+                    else
+                    {
+                        Message.MensagemErro("Usuário não tem permissão no banco para buscar as tabelas!");
+                    }
+                }
+                else
+                {
+                    Message.MensagemErro("Não foi possível conectar!");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Método que faz a importação das tabelas do banco de dados
+        /// </summary>
         private void ImportarSQLite()
         {
             if (this.ValidaCamposSQLite())
@@ -257,6 +365,6 @@ namespace Visao
         }
 
         #endregion Métodos
-
+        
     }
 }

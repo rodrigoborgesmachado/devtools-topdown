@@ -55,6 +55,19 @@
             this.btn_infoDatabaseSLIte = new System.Windows.Forms.Button();
             this.tbx_dataBaseSQLIte = new System.Windows.Forms.TextBox();
             this.DataBaseSQLIte = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.grb_oracle = new System.Windows.Forms.GroupBox();
+            this.btn_info_senhaOracle = new System.Windows.Forms.Button();
+            this.btn_info_usuarioOracle = new System.Windows.Forms.Button();
+            this.btn_info_dataSourceOracle = new System.Windows.Forms.Button();
+            this.tbx_senhaOracle = new System.Windows.Forms.TextBox();
+            this.tbx_usuarioOracle = new System.Windows.Forms.TextBox();
+            this.tbx_dataSourceOracle = new System.Windows.Forms.TextBox();
+            this.lbl_senhaOracle = new System.Windows.Forms.Label();
+            this.lbl_usuarioOracle = new System.Windows.Forms.Label();
+            this.lbl_dataSource = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_importarOracle = new System.Windows.Forms.Button();
             this.pan_total.SuspendLayout();
             this.tbc_table_control.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -63,6 +76,9 @@
             this.tbp_sqlite.SuspendLayout();
             this.grb_groupSQLIte.SuspendLayout();
             this.pan_bottonSQLIte.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.grb_oracle.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pan_total
@@ -78,6 +94,7 @@
             // 
             this.tbc_table_control.Controls.Add(this.tabPage1);
             this.tbc_table_control.Controls.Add(this.tbp_sqlite);
+            this.tbc_table_control.Controls.Add(this.tabPage2);
             this.tbc_table_control.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbc_table_control.Location = new System.Drawing.Point(0, 0);
             this.tbc_table_control.Name = "tbc_table_control";
@@ -332,6 +349,139 @@
             this.DataBaseSQLIte.TabIndex = 0;
             this.DataBaseSQLIte.Text = "DataBase";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.grb_oracle);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(455, 225);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "Oracle";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // grb_oracle
+            // 
+            this.grb_oracle.Controls.Add(this.panel1);
+            this.grb_oracle.Controls.Add(this.btn_info_senhaOracle);
+            this.grb_oracle.Controls.Add(this.btn_info_usuarioOracle);
+            this.grb_oracle.Controls.Add(this.btn_info_dataSourceOracle);
+            this.grb_oracle.Controls.Add(this.tbx_senhaOracle);
+            this.grb_oracle.Controls.Add(this.tbx_usuarioOracle);
+            this.grb_oracle.Controls.Add(this.tbx_dataSourceOracle);
+            this.grb_oracle.Controls.Add(this.lbl_senhaOracle);
+            this.grb_oracle.Controls.Add(this.lbl_usuarioOracle);
+            this.grb_oracle.Controls.Add(this.lbl_dataSource);
+            this.grb_oracle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grb_oracle.Location = new System.Drawing.Point(0, 0);
+            this.grb_oracle.Name = "grb_oracle";
+            this.grb_oracle.Size = new System.Drawing.Size(455, 225);
+            this.grb_oracle.TabIndex = 1;
+            this.grb_oracle.TabStop = false;
+            this.grb_oracle.Text = "Configuração";
+            // 
+            // btn_info_senhaOracle
+            // 
+            this.btn_info_senhaOracle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_info_senhaOracle.BackgroundImage")));
+            this.btn_info_senhaOracle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_info_senhaOracle.Location = new System.Drawing.Point(415, 81);
+            this.btn_info_senhaOracle.Name = "btn_info_senhaOracle";
+            this.btn_info_senhaOracle.Size = new System.Drawing.Size(20, 20);
+            this.btn_info_senhaOracle.TabIndex = 9;
+            this.btn_info_senhaOracle.UseVisualStyleBackColor = true;
+            this.btn_info_senhaOracle.Click += new System.EventHandler(this.btn_info_senhaOracle_Click);
+            // 
+            // btn_info_usuarioOracle
+            // 
+            this.btn_info_usuarioOracle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_info_usuarioOracle.BackgroundImage")));
+            this.btn_info_usuarioOracle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_info_usuarioOracle.Location = new System.Drawing.Point(415, 53);
+            this.btn_info_usuarioOracle.Name = "btn_info_usuarioOracle";
+            this.btn_info_usuarioOracle.Size = new System.Drawing.Size(20, 20);
+            this.btn_info_usuarioOracle.TabIndex = 9;
+            this.btn_info_usuarioOracle.UseVisualStyleBackColor = true;
+            this.btn_info_usuarioOracle.Click += new System.EventHandler(this.btn_info_usuarioOracle_Click);
+            // 
+            // btn_info_dataSourceOracle
+            // 
+            this.btn_info_dataSourceOracle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_info_dataSourceOracle.BackgroundImage")));
+            this.btn_info_dataSourceOracle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_info_dataSourceOracle.Location = new System.Drawing.Point(415, 24);
+            this.btn_info_dataSourceOracle.Name = "btn_info_dataSourceOracle";
+            this.btn_info_dataSourceOracle.Size = new System.Drawing.Size(20, 20);
+            this.btn_info_dataSourceOracle.TabIndex = 9;
+            this.btn_info_dataSourceOracle.UseVisualStyleBackColor = true;
+            this.btn_info_dataSourceOracle.Click += new System.EventHandler(this.btn_info_dataSourceOracle_Click);
+            // 
+            // tbx_senhaOracle
+            // 
+            this.tbx_senhaOracle.Location = new System.Drawing.Point(100, 80);
+            this.tbx_senhaOracle.Name = "tbx_senhaOracle";
+            this.tbx_senhaOracle.PasswordChar = '*';
+            this.tbx_senhaOracle.Size = new System.Drawing.Size(309, 23);
+            this.tbx_senhaOracle.TabIndex = 4;
+            // 
+            // tbx_usuarioOracle
+            // 
+            this.tbx_usuarioOracle.Location = new System.Drawing.Point(100, 51);
+            this.tbx_usuarioOracle.Name = "tbx_usuarioOracle";
+            this.tbx_usuarioOracle.Size = new System.Drawing.Size(309, 23);
+            this.tbx_usuarioOracle.TabIndex = 3;
+            // 
+            // tbx_datasourceOracle
+            // 
+            this.tbx_dataSourceOracle.Location = new System.Drawing.Point(100, 22);
+            this.tbx_dataSourceOracle.Name = "tbx_datasourceOracle";
+            this.tbx_dataSourceOracle.Size = new System.Drawing.Size(309, 23);
+            this.tbx_dataSourceOracle.TabIndex = 2;
+            // 
+            // lbl_senhaOracle
+            // 
+            this.lbl_senhaOracle.AutoSize = true;
+            this.lbl_senhaOracle.Location = new System.Drawing.Point(10, 83);
+            this.lbl_senhaOracle.Name = "lbl_senhaOracle";
+            this.lbl_senhaOracle.Size = new System.Drawing.Size(42, 16);
+            this.lbl_senhaOracle.TabIndex = 0;
+            this.lbl_senhaOracle.Text = "Senha";
+            // 
+            // lbl_usuarioOracle
+            // 
+            this.lbl_usuarioOracle.AutoSize = true;
+            this.lbl_usuarioOracle.Location = new System.Drawing.Point(10, 54);
+            this.lbl_usuarioOracle.Name = "lbl_usuarioOracle";
+            this.lbl_usuarioOracle.Size = new System.Drawing.Size(51, 16);
+            this.lbl_usuarioOracle.TabIndex = 0;
+            this.lbl_usuarioOracle.Text = "Usuário";
+            // 
+            // lbl_dataSource
+            // 
+            this.lbl_dataSource.AutoSize = true;
+            this.lbl_dataSource.Location = new System.Drawing.Point(10, 25);
+            this.lbl_dataSource.Name = "lbl_dataSource";
+            this.lbl_dataSource.Size = new System.Drawing.Size(78, 16);
+            this.lbl_dataSource.TabIndex = 0;
+            this.lbl_dataSource.Text = "Data Source";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_importarOracle);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(3, 187);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(449, 35);
+            this.panel1.TabIndex = 11;
+            // 
+            // btn_importarOracle
+            // 
+            this.btn_importarOracle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_importarOracle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_importarOracle.Location = new System.Drawing.Point(371, 3);
+            this.btn_importarOracle.Name = "btn_importarOracle";
+            this.btn_importarOracle.Size = new System.Drawing.Size(75, 29);
+            this.btn_importarOracle.TabIndex = 23;
+            this.btn_importarOracle.Text = "Importar";
+            this.btn_importarOracle.UseVisualStyleBackColor = true;
+            this.btn_importarOracle.Click += new System.EventHandler(this.btn_importarOracle_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -356,6 +506,10 @@
             this.grb_groupSQLIte.ResumeLayout(false);
             this.grb_groupSQLIte.PerformLayout();
             this.pan_bottonSQLIte.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.grb_oracle.ResumeLayout(false);
+            this.grb_oracle.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -388,6 +542,19 @@
         private System.Windows.Forms.Panel pan_bottonSQLIte;
         private System.Windows.Forms.Button btn_importarSQLIte;
         private System.Windows.Forms.Button btn_selectFile;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox grb_oracle;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_importarOracle;
+        private System.Windows.Forms.Button btn_info_senhaOracle;
+        private System.Windows.Forms.Button btn_info_usuarioOracle;
+        private System.Windows.Forms.Button btn_info_dataSourceOracle;
+        private System.Windows.Forms.TextBox tbx_senhaOracle;
+        private System.Windows.Forms.TextBox tbx_usuarioOracle;
+        private System.Windows.Forms.TextBox tbx_dataSourceOracle;
+        private System.Windows.Forms.Label lbl_senhaOracle;
+        private System.Windows.Forms.Label lbl_usuarioOracle;
+        private System.Windows.Forms.Label lbl_dataSource;
     }
 }
 

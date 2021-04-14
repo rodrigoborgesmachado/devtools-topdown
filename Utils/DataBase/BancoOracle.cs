@@ -9,7 +9,7 @@ using System.Data.Common;
 using Util;
 using System.Data;
 
-namespace Utils.DataBase
+namespace DataBase
 {
     class BancoOracle : Banco
     {
