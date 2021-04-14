@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bibliotecas\System.Data.SQLite\2015\bib\System.Data.SQLite.dll</HintPath>
@@ -78,6 +79,7 @@
     <Compile Include="DAO\MD_Retornorotarepository.cs" />
     <Compile Include="DAO\MD_Rotasrepository.cs" />
     <Compile Include="DAO\MD_Versao.cs" />
+    <Compile Include="DataBase\BancoOracle.cs" />
     <Compile Include="Model\Campo.cs" />
     <Compile Include="DAO\MDN_Campo.cs" />
     <Compile Include="DAO\MDN_Model.cs" />
