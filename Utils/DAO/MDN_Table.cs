@@ -382,6 +382,9 @@ namespace DAO
         /// <returns>True - Tudo correto; False - não conseguiu criar todas colunas</returns>
         public bool VerificaColunas()
         {
+            if (Util.Global.tabelasVerificadas.Contains(this.table_name))
+                return true;
+
             bool retorno = true;
             foreach(MDN_Campo column in fields_Table)
             {
@@ -394,6 +397,8 @@ namespace DAO
                     }
                 }
             }
+
+            Util.Global.tabelasVerificadas.Add(this.table_name);
             return retorno;
         }
 

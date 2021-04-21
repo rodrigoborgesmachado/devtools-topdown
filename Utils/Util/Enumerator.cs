@@ -34,7 +34,11 @@ namespace Util
             CADASTRO_CAMPOS_ENTRADA = 7,
             CADASTRO_CLASSE_ENTRADA = 8,
             CADASTRO_CLASSE_CLASSE_FILHA = 9,
-            CADASTRO_CAMPO_CLASSE = 10
+            CADASTRO_CAMPO_CLASSE = 10,
+            CADASTRO_TIPO_SAIDA = 11,
+            CADASTRO_CLASSE_SAIDA = 12,
+            CADASTRO_CAMPO_SAIDA = 14,
+            CADASTRO_CAMPO_SAIDA_CLASSE = 15
         }
 
         /// <summary>

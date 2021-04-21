@@ -91,15 +91,19 @@ namespace Model
         {
             string sentenca = new DAO.MD_Tabela().table.CreateCommandSQLTable() + " WHERE PROJETO = " + projeto + " ORDER BY NOME";
 
-            DbDataReader reader = DataBase.Connection.Select(sentenca);
             List<MD_Tabela> tabelas = new List<MD_Tabela>();
+            Visao.BarraDeCarregamento barra = new Visao.BarraDeCarregamento(15000, "Carregando tabela");
+            barra.Show();
 
+            DbDataReader reader = DataBase.Connection.Select(sentenca);
             while (reader.Read())
             {
+                barra.AvancaBarra(1);
                 tabelas.Add(new MD_Tabela(int.Parse(reader["CODIGO"].ToString()), projeto));
             }
             reader.Close();
 
+            barra.Dispose();
             return tabelas;
         }
 

@@ -117,7 +117,8 @@ namespace Util
                                     col.TABLE_NAME
                                 FROM all_tab_columns col
                                 LEFT JOIN all_cons_columns consCol on (col.COLUMN_NAME = consCol.COLUMN_NAME)
-                                LEFT JOIN all_constraints allCons on (consCol.CONSTRAINT_NAME = allCons.CONSTRAINT_NAME)";
+                                LEFT JOIN all_constraints allCons on (consCol.CONSTRAINT_NAME = allCons.CONSTRAINT_NAME)
+                                WHERE(NOT col.TABLE_NAME LIKE '%$%') AND(NOT col.TABLE_NAME LIKE '%LOGMNR%')";
 
             DbDataReader reader = DataBase.Connection.Select(sentenca);
 
@@ -298,7 +299,7 @@ namespace Util
         /// <returns></returns>
         public static bool VerificaPermissao()
         {
-            string sentenca = "SELECT 1 FROM information_schema.tables ";
+            string sentenca = "SELECT 1 FROM DUAL";
             DbDataReader reader = DataBase.Connection.Select(sentenca);
 
             bool retorno = reader.Read();

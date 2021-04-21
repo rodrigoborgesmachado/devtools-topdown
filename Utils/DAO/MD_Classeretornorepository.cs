@@ -12,7 +12,7 @@ namespace DAO
     /// <summary>
     /// [CLASSERETORNOREPOSITORY] Tabela CLASSERETORNOREPOSITORY
     /// </summary>
-    public class MD_Classeretornorepository : MDN_Model
+    public class MD_ClasseRetornoRepository : MDN_Model
     {
         #region Atributos e Propriedades
 
@@ -64,6 +64,38 @@ namespace DAO
             }
         }
 
+        private int classemae;
+        /// <summary>
+        /// [CLASSEMAE] 
+        /// <summary>
+        public int Classemae
+        {
+            get
+            {
+                return this.classemae;
+            }
+            set
+            {
+                this.classemae = value;
+            }
+        }
+
+        private int rotaretorno;
+        /// <summary>
+        /// [ROTARETORNO] 
+        /// <summary>
+        public int RotaRetorno
+        {
+            get
+            {
+                return this.rotaretorno;
+            }
+            set
+            {
+                this.rotaretorno = value;
+            }
+        }
+
 
 		#endregion Atributos e Propriedades
 
@@ -72,13 +104,15 @@ namespace DAO
 		/// <summary>
         /// Construtor Principal da classe
         /// </summary>
-        public MD_Classeretornorepository()
+        public MD_ClasseRetornoRepository()
             : base()
         {
             base.table = new MDN_Table("CLASSERETORNOREPOSITORY");
             this.table.Fields_Table.Add(new MDN_Campo("CODIGO", true, Util.Enumerator.DataType.INT, 0, true, false, 0, 0));
-            this.table.Fields_Table.Add(new MDN_Campo("NOME", true, Util.Enumerator.DataType.STRING, "", true, false, 100, 0));
+            this.table.Fields_Table.Add(new MDN_Campo("NOME", true, Util.Enumerator.DataType.CHAR, "", false, false, 100, 0));
             this.table.Fields_Table.Add(new MDN_Campo("COMENTARIO", true, Util.Enumerator.DataType.STRING, "", false, false, 50, 0));
+            this.table.Fields_Table.Add(new MDN_Campo("CLASSEMAE", true, Util.Enumerator.DataType.INT, -1, false, false, 0, 0));
+            this.table.Fields_Table.Add(new MDN_Campo("ROTARETORNO", false, Util.Enumerator.DataType.INT, -1, false, false, 0, 0));
 
             if (!base.table.ExistsTable())
                 base.table.CreateTable(false);
@@ -90,12 +124,10 @@ namespace DAO
         /// Construtor Secundário da classe
         /// </summary>
         /// <param name="CODIGO">
-        /// <param name="NOME">
-        public MD_Classeretornorepository(int codigo, string nome)
+        public MD_ClasseRetornoRepository(int codigo)
             :this()
         {
             this.codigo = codigo;
-            this.nome = nome;
             this.Load();
         }
 
@@ -111,7 +143,7 @@ namespace DAO
         {
             Util.CL_Files.WriteOnTheLog("MD_Classeretornorepository.Load()", Util.Global.TipoLog.DETALHADO);
 
-            string sentenca = base.table.CreateCommandSQLTable() + " WHERE CODIGO = " + Codigo + " AND NOME = '" + Nome + "'";
+            string sentenca = base.table.CreateCommandSQLTable() + " WHERE CODIGO = " + Codigo + "";
             DbDataReader reader = DataBase.Connection.Select(sentenca);
 
             if (reader == null)
@@ -120,7 +152,10 @@ namespace DAO
             }
             else if (reader.Read())
             {
+                this.Nome = reader["NOME"].ToString();
                 this.Comentario = reader["COMENTARIO"].ToString();
+                this.Classemae = int.Parse(reader["CLASSEMAE"].ToString());
+                this.RotaRetorno = int.Parse(reader["ROTARETORNO"].ToString());
 
                 this.Empty = false;
                 reader.Close();
@@ -138,7 +173,7 @@ namespace DAO
         /// <returns>True - sucesso; False - erro</returns>
         public override bool Delete()
         {
-            string sentenca = "DELETE FROM " + this.table.Table_Name + " WHERE CODIGO = " + Codigo + " AND NOME = '" + Nome + "'";
+            string sentenca = "DELETE FROM " + this.table.Table_Name + " WHERE CODIGO = " + Codigo + "";
             return DataBase.Connection.Delete(sentenca);
         }
 
@@ -151,7 +186,7 @@ namespace DAO
             string sentenca = string.Empty;
 
             sentenca = "INSERT INTO " + table.Table_Name + " (" + table.TodosCampos() + ")" + 
-                              " VALUES (" + this.codigo + ",  '" + this.nome + "',  '" + this.comentario + "')";
+                              " VALUES (" + this.codigo + ",  '" + this.nome + "',  '" + this.comentario + "', " + this.classemae + ", " + this.rotaretorno + ")";
             if (DataBase.Connection.Insert(sentenca))
             {
                 Empty = false;
@@ -169,8 +204,8 @@ namespace DAO
             string sentenca = string.Empty;
 
             sentenca = "UPDATE " + table.Table_Name + " SET " + 
-                        "CODIGO = " + Codigo + ", NOME = '" + Nome + "', COMENTARIO = '" + Comentario + "'" + 
-                        " WHERE CODIGO = " + Codigo + " AND NOME = '" + Nome + "'";
+                        "CODIGO = " + Codigo + ", NOME = '" + Nome + "', COMENTARIO = '" + Comentario + "', CLASSEMAE = " + Classemae + ", ROTARETORNO = " + RotaRetorno + "" + 
+                        " WHERE CODIGO = " + Codigo + "";
 
             return DataBase.Connection.Update(sentenca);
         }

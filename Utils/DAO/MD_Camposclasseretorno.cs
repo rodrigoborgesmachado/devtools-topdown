@@ -12,7 +12,7 @@ namespace DAO
     /// <summary>
     /// [CAMPOSCLASSERETORNO] Tabela CAMPOSCLASSERETORNO
     /// </summary>
-    public class MD_Camposclasseretorno : MDN_Model
+    public class MD_CamposClasseRetorno : MDN_Model
     {
         #region Atributos e Propriedades
 
@@ -52,7 +52,7 @@ namespace DAO
         /// <summary>
         /// [TIPOCAMPO] 
         /// <summary>
-        public string Tipocampo
+        public string TipoCampo
         {
             get
             {
@@ -68,7 +68,7 @@ namespace DAO
         /// <summary>
         /// [NOMECAMPO] 
         /// <summary>
-        public string Nomecampo
+        public string NomeCampo
         {
             get
             {
@@ -100,7 +100,7 @@ namespace DAO
         /// <summary>
         /// [CODIGOCLASSEREFERENTE] 
         /// <summary>
-        public string Codigoclassereferente
+        public string CodigoRotaRetorno
         {
             get
             {
@@ -120,7 +120,7 @@ namespace DAO
 		/// <summary>
         /// Construtor Principal da classe
         /// </summary>
-        public MD_Camposclasseretorno()
+        public MD_CamposClasseRetorno()
             : base()
         {
             base.table = new MDN_Table("CAMPOSCLASSERETORNO");
@@ -141,7 +141,7 @@ namespace DAO
         /// Construtor Secundário da classe
         /// </summary>
         /// <param name="CODIGO">
-        public MD_Camposclasseretorno(int codigo)
+        public MD_CamposClasseRetorno(int codigo)
             :this()
         {
             this.codigo = codigo;
@@ -170,10 +170,10 @@ namespace DAO
             else if (reader.Read())
             {
                 this.Codigoclasse = reader["CODIGOCLASSE"].ToString();
-                this.Tipocampo = reader["TIPOCAMPO"].ToString();
-                this.Nomecampo = reader["NOMECAMPO"].ToString();
+                this.TipoCampo = reader["TIPOCAMPO"].ToString();
+                this.NomeCampo = reader["NOMECAMPO"].ToString();
                 this.Comentariocampo = reader["COMENTARIOCAMPO"].ToString();
-                this.Codigoclassereferente = reader["CODIGOCLASSEREFERENTE"].ToString();
+                this.CodigoRotaRetorno = reader["CODIGOCLASSEREFERENTE"].ToString();
 
                 this.Empty = false;
                 reader.Close();
@@ -222,7 +222,7 @@ namespace DAO
             string sentenca = string.Empty;
 
             sentenca = "UPDATE " + table.Table_Name + " SET " + 
-                        "CODIGO = " + Codigo + ", CODIGOCLASSE = '" + Codigoclasse + "', TIPOCAMPO = '" + Tipocampo + "', NOMECAMPO = '" + Nomecampo + "', COMENTARIOCAMPO = '" + Comentariocampo + "', CODIGOCLASSEREFERENTE = '" + Codigoclassereferente + "'" + 
+                        "CODIGO = " + Codigo + ", CODIGOCLASSE = '" + Codigoclasse + "', TIPOCAMPO = '" + TipoCampo + "', NOMECAMPO = '" + NomeCampo + "', COMENTARIOCAMPO = '" + Comentariocampo + "', CODIGOCLASSEREFERENTE = '" + CodigoRotaRetorno + "'" + 
                         " WHERE CODIGO = " + Codigo + "";
 
             return DataBase.Connection.Update(sentenca);

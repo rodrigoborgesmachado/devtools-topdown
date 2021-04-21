@@ -312,7 +312,7 @@ namespace Visao
 
                 string connection = "Data Source=" + datasource + ";User Id=" + usuario + ";Password=" + senha;
 
-                if (DataBase.Connection.OpenConection(connection, Util.Enumerator.BancoDados.SQL_SERVER))
+                if (DataBase.Connection.OpenConection(connection, Util.Enumerator.BancoDados.ORACLE))
                 {
                     if (Util.DocumentOracle.VerificaPermissao())
                     {

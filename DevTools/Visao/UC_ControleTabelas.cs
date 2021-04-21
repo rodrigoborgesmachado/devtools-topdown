@@ -464,10 +464,19 @@ namespace Visao
             {
                 this.listaTabelas = Model.MD_Tabela.RetornaTabelasProjeto(filtro, projeto.DAO.Codigo);
             }
+            int quantidade = this.listaTabelas.Count;
+            BarraDeCarregamento barra = new BarraDeCarregamento(quantidade, "Quarregando talas");
+            barra.Show();
 
-            this.listaTabelas.ForEach(t => CarregaTabelas(t));
+            this.listaTabelas.ForEach(t => {
+                CarregaTabelas(t);
+                barra.AvancaBarra(1);
+            });
+            barra.Dispose();
 
-            this.dgv_tabelas.Rows[0].Selected = true;
+            if(this.dgv_tabelas.Rows.Count > 0)
+                this.dgv_tabelas.Rows[0].Selected = true;
+
             this.lockChange = false;
 
             if(this.listaTabelas.Count > 0)

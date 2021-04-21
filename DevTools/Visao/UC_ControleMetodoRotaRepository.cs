@@ -54,6 +54,11 @@ namespace Visao
         /// </summary>
         List<Model.MD_ClasseEntrada> listaClasseEntrada = new List<Model.MD_ClasseEntrada>();
 
+        /// <summary>
+        /// Lista dos campos de entrada
+        /// </summary>
+        List<Model.MD_RetornoRotaRepository> listaSaidas = new List<Model.MD_RetornoRotaRepository>();
+
         #endregion Atributos e Propriedades
 
         #region Eventos
@@ -168,7 +173,12 @@ namespace Visao
         /// <param name="e"></param>
         private void btn_adicionarCampoEntrada_Click(object sender, EventArgs e)
         {
-            if(Message.MensagemConfirmaçãoYesNo("O campo de entrada é uma classe?") == DialogResult.Yes)
+            if (this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                Message.MensagemAlerta("Finalize o cadastro para incluir o campo de entrada");
+                return;
+            }
+            else if(Message.MensagemConfirmaçãoYesNo("O campo de entrada é uma classe?") == DialogResult.Yes)
             {
                 this.principal.AbrirCadastroClasseEntrada(new Model.MD_ClasseEntrada(DataBase.Connection.GetIncrement("CLASSEENTRADA")), this.metodoRota, Util.Enumerator.Tarefa.INCLUIR, this);
             }
@@ -185,7 +195,12 @@ namespace Visao
         /// <param name="e"></param>
         private void btn_editarCampoEntrada_Click(object sender, EventArgs e)
         {
-            if(dgv_camposEntrada.SelectedRows.Count == 0)
+            if (this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                Message.MensagemAlerta("Finalize o cadastro para alterar o campo de entrada");
+                return;
+            }
+            else if (dgv_camposEntrada.SelectedRows.Count == 0)
             {
                 Message.MensagemAlerta("Selecione um campo de entrada na tabela!");
             }
@@ -211,7 +226,12 @@ namespace Visao
         /// <param name="e"></param>
         private void btn_removerCampoEntrada_Click(object sender, EventArgs e)
         {
-            if (dgv_camposEntrada.SelectedRows.Count == 0)
+            if (this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                Message.MensagemAlerta("Finalize o cadastro para excluir o campo de entrada");
+                return;
+            }
+            else if (dgv_camposEntrada.SelectedRows.Count == 0)
             {
                 Message.MensagemAlerta("Selecione um campo de entrada na tabela!");
             }
@@ -251,7 +271,12 @@ namespace Visao
         /// <param name="e"></param>
         private void btn_visualizarVariavelEntrada_Click(object sender, EventArgs e)
         {
-            if (dgv_camposEntrada.SelectedRows.Count == 0)
+            if (this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                Message.MensagemAlerta("Finalize o cadastro para visualizar o campo de entrada");
+                return;
+            }
+            else if (dgv_camposEntrada.SelectedRows.Count == 0)
             {
                 Message.MensagemAlerta("Selecione um campo de entrada na tabela!");
             }
@@ -279,6 +304,106 @@ namespace Visao
         {
             FO_Consulta consulta = new FO_Consulta(this.tbx_ConsultaProcedure.Text);
             consulta.Show();
+        }
+
+        /// <summary>
+        /// Evento lançado no clique do botão de cadastrar o campo de saída
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_cadastrarCampoSaida_Click(object sender, EventArgs e)
+        {
+            if(this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                Message.MensagemAlerta("Finalize o cadastro para incluir o campo de saída");
+                return;
+            }
+            else if (this.listaSaidas.Count == 1)
+            {
+                Message.MensagemAlerta("É possível ter apenas 1 campo de saída!");
+                return;
+            }
+            else
+            {
+                this.principal.AbrirCadastroCampoSaida(new Model.MD_RetornoRotaRepository(DataBase.Connection.GetIncrement("RETORNOROTAREPOSITORY")), metodoRota, Util.Enumerator.Tarefa.INCLUIR, this);
+            }
+        }
+
+        /// <summary>
+        /// Evento lançado no clique do botão de editar o campo de saída
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_editarCampoSaida_Click(object sender, EventArgs e)
+        {
+            if (this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                Message.MensagemAlerta("Finalize o cadastro para alterar o campo de saída");
+                return;
+            }
+            else if (this.dgv_camposSaida.SelectedRows.Count == 0)
+            {
+                Message.MensagemAlerta("Selecione o campo de saída!");
+            }
+            else
+            {
+                this.principal.AbrirCadastroCampoSaida(this.listaSaidas[this.dgv_camposSaida.SelectedRows[0].Index], metodoRota, Util.Enumerator.Tarefa.EDITAR, this);
+            }
+        }
+
+        /// <summary>
+        /// Evento lançado no clique do botão de remover o campo de saída
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_removerCampoSaida_Click(object sender, EventArgs e)
+        {
+            if (this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                Message.MensagemAlerta("Finalize o cadastro para excluir o campo de saída");
+                return;
+            }
+            else if (this.dgv_camposSaida.SelectedRows.Count == 0)
+            {
+                Message.MensagemAlerta("Selecione o campo de saída!");
+            }
+            else
+            {
+                if(Message.MensagemConfirmaçãoYesNo("Deseja excluir o campo de saída " + this.listaSaidas[this.dgv_camposSaida.SelectedRows[0].Index].DAO.Tiporetorno + "?") == DialogResult.Yes)
+                {
+                    if (this.listaSaidas[this.dgv_camposSaida.SelectedRows[0].Index].DAO.Delete())
+                    {
+                        Message.MensagemSucesso("Excluído com sucesso!");
+                        this.CarregaTabelaVariaveisSaida();
+                    }
+                    else
+                    {
+                        Message.MensagemErro("Erro ao excluir!");
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Evento disparado no clique do botão de visualizar campo de saída
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_visualizarCampoSaida_Click(object sender, EventArgs e)
+        {
+            if (this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                Message.MensagemAlerta("Finalize o cadastro para visualizar o campo de saída");
+                return;
+            }
+            else if (this.dgv_camposSaida.SelectedRows.Count == 0)
+            {
+                Message.MensagemAlerta("Selecione o campo de saída!");
+            }
+            else
+            {
+                this.principal.AbrirCadastroCampoSaida(this.listaSaidas[this.dgv_camposSaida.SelectedRows[0].Index], metodoRota, Util.Enumerator.Tarefa.VISUALIZAR, this);
+            }
         }
 
         #endregion Eventos
@@ -323,6 +448,7 @@ namespace Visao
             this.grb_metodo.Text = "Método - Rota: " + this.apiRepository.DAO.NomeRota;
             this.ControlaTarefa();
             this.CarregaTabelaVariaveisEntrada();
+            this.CarregaTabelaVariaveisSaida();
         }
 
         /// <summary>
@@ -445,7 +571,55 @@ namespace Visao
             this.CarregaTabelaVariaveisEntrada();
         }
 
+        /// <summary>
+        /// Método que carrega 
+        /// </summary>
+        public void CarregaTabelaVariaveisSaida()
+        {
+            this.listaSaidas = Model.MD_RetornoRotaRepository.RetornaRetornosRotas(this.metodoRota.DAO.Codigo);
+
+            this.dgv_camposSaida.Rows.Clear();
+            this.dgv_camposSaida.Columns.Clear();
+
+            this.dgv_camposSaida.Columns.Add("Retorno", "Retorno");
+            this.dgv_camposSaida.Columns.Add("Tipo campo", "Tipo campo");
+
+            this.listaSaidas.ForEach(c => CarregaTabelaVariaveisSaida(c));
+        }
+
+        /// <summary>
+        /// Método que carrega tabela de entrada
+        /// </summary>
+        /// <param name="campo"></param>
+        public void CarregaTabelaVariaveisSaida(Model.MD_RetornoRotaRepository campo)
+        {
+            List<string> list = new List<string>();
+            list.Add(campo.DAO.Tiporetorno);
+            list.Add(campo.DAO.CodigoClasseRetorno == -1 ? "Campo" : "Classe");
+
+            this.dgv_camposSaida.Rows.Add(list.ToArray());
+        }
+
+        /// <summary>
+        /// Método que adiciona na lista e no grid o novo campo
+        /// </summary>
+        /// <param name="campo"></param>
+        public void AdicionaSaida(Model.MD_RetornoRotaRepository campo)
+        {
+            this.CarregaTabelaVariaveisSaida(campo);
+            this.listaSaidas.Add(campo);
+        }
+
+        /// <summary>
+        /// Método que exclui na lista e no grid a classe
+        /// </summary>
+        /// <param name="campo"></param>
+        public void ExcluiSaida(Model.MD_RetornoRotaRepository classe)
+        {
+            this.listaSaidas.Remove(classe);
+            this.CarregaTabelaVariaveisSaida();
+        }
         #endregion Métodos
-        
+
     }
 }

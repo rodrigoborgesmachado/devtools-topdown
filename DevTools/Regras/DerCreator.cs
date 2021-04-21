@@ -173,7 +173,7 @@ namespace Regras
             builder.Append("</td>" + Environment.NewLine);
             builder.Append("</tr>" + Environment.NewLine);
             builder.Append("<tr>" + Environment.NewLine);
-            builder.Append("<td class=\"tabdata\" >" + tabela.DAO.Notas);
+            builder.Append("<td class=\"tabdata\" >" + tabela.DAO.Descricao);
             builder.Append("</td>" + Environment.NewLine);
             builder.Append("</tr>" + Environment.NewLine);
             builder.Append("</table>" + Environment.NewLine);

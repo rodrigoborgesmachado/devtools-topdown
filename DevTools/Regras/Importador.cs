@@ -24,12 +24,12 @@ namespace Regras
 
             try
             {
-                ApagaArquivosExportacao();
+                //ApagaArquivosExportacao();
 
                 if(AbrirAplicacaoBancoDados())
                 {
-                    ImportarArquivos(projeto);
                 }
+                    ImportarArquivos(projeto);
             }
             catch (Exception e)
             {
@@ -99,7 +99,7 @@ namespace Regras
             PreencheLista(ref campos);
 
             List<Model.Relacionamento> relacionamentos = new List<Model.Relacionamento>();
-            PreencheLista(ref relacionamentos);
+            //PreencheLista(ref relacionamentos);
 
             TratarImportacao(projeto, ref tabelas, ref campos, ref relacionamentos);
 
@@ -162,9 +162,6 @@ namespace Regras
         private static void PreencheLista(ref List<Model.Relacionamento> relacionamentos)
         {
             Util.CL_Files.WriteOnTheLog("Importador.PreencheLista()", Util.Global.TipoLog.DETALHADO);
-
-            if (!File.Exists(Global.app_exportacao_tabela_file))
-                return;
 
             string json = string.Empty;
             foreach (string linha in File.ReadAllLines(Global.app_exportacao_relacionamentos_file).ToList())

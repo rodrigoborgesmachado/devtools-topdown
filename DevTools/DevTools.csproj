@@ -146,11 +146,23 @@
     <Compile Include="Visao\UC_CadastroCampoClasseOuEntrada.Designer.cs">
       <DependentUpon>UC_CadastroCampoClasseOuEntrada.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visao\UC_CadastroCampoClasseRetorno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visao\UC_CadastroCampoClasseRetorno.Designer.cs">
+      <DependentUpon>UC_CadastroCampoClasseRetorno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Visao\UC_CadastroCampos.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Visao\UC_CadastroCampos.Designer.cs">
       <DependentUpon>UC_CadastroCampos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\UC_CadastroClasseSaida.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visao\UC_CadastroClasseSaida.Designer.cs">
+      <DependentUpon>UC_CadastroClasseSaida.cs</DependentUpon>
     </Compile>
     <Compile Include="Visao\UC_CadastroClassesEntrada.cs">
       <SubType>UserControl</SubType>
@@ -175,6 +187,12 @@
     </Compile>
     <Compile Include="Visao\UC_CadastroTabela.Designer.cs">
       <DependentUpon>UC_CadastroTabela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\UC_CadastroTipoRetorno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visao\UC_CadastroTipoRetorno.Designer.cs">
+      <DependentUpon>UC_CadastroTipoRetorno.cs</DependentUpon>
     </Compile>
     <Compile Include="Visao\UC_ControleMetodoRotaRepository.cs">
       <SubType>UserControl</SubType>
@@ -234,8 +252,14 @@
     <EmbeddedResource Include="Visao\UC_CadastroCampoClasseOuEntrada.resx">
       <DependentUpon>UC_CadastroCampoClasseOuEntrada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Visao\UC_CadastroCampoClasseRetorno.resx">
+      <DependentUpon>UC_CadastroCampoClasseRetorno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Visao\UC_CadastroCampos.resx">
       <DependentUpon>UC_CadastroCampos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\UC_CadastroClasseSaida.resx">
+      <DependentUpon>UC_CadastroClasseSaida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\UC_CadastroClassesEntrada.resx">
       <DependentUpon>UC_CadastroClassesEntrada.cs</DependentUpon>
@@ -248,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\UC_CadastroTabela.resx">
       <DependentUpon>UC_CadastroTabela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\UC_CadastroTipoRetorno.resx">
+      <DependentUpon>UC_CadastroTipoRetorno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\UC_ControleMetodoRotaRepository.resx">
       <DependentUpon>UC_ControleMetodoRotaRepository.cs</DependentUpon>

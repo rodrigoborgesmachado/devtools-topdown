@@ -10,6 +10,11 @@ namespace Util
 {
     public static class Global
     {
+        /// <summary>
+        /// Método que valida as tabelas que já foram verificadas
+        /// </summary>
+        public static List<string> tabelasVerificadas = new List<string>();
+
         public static string tempTable = "TESTE";
 
         // Caminho principal da aplicação

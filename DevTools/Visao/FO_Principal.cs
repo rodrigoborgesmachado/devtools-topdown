@@ -921,6 +921,17 @@ namespace Visao
         }
 
         /// <summary>
+        /// Método que abre a janela de cadastro de campo de saída
+        /// </summary>
+        public void AbrirCadastroCampoSaida(Model.MD_RetornoRotaRepository campoSaida, Model.MD_RotasRepository metodoRota, Util.Enumerator.Tarefa tarefa, UC_ControleMetodoRotaRepository controleMetodoRotaRepository)
+        {
+            Util.CL_Files.WriteOnTheLog("FO_Principal.AbrirCadastroCampoEntrada()", Util.Global.TipoLog.DETALHADO);
+
+            UC_CadastroTipoRetorno telaSaida = new UC_CadastroTipoRetorno(campoSaida, metodoRota, tarefa, controleMetodoRotaRepository, this);
+            this.AbreJanela(telaSaida, "Cadastro de campo de saída", Telas.CADASTRO_TIPO_SAIDA);
+        }
+
+        /// <summary>
         /// Método que abre a janela de cadastro de classe de entrada
         /// </summary>
         public void AbrirCadastroClasseEntrada(Model.MD_ClasseEntrada classeEntrada, Model.MD_RotasRepository metodoRota, Util.Enumerator.Tarefa tarefa, UC_ControleMetodoRotaRepository controleMetodoRotaRepository)
@@ -934,12 +945,56 @@ namespace Visao
         /// <summary>
         /// Método que abre a janela de cadastro de classe de entrada
         /// </summary>
+        public void AbrirCadastroClasseSaidaFilha(Model.MD_ClasseRetornoRepository classeRetorno, Model.MD_ClasseRetornoRepository classeRetornoMae, Util.Enumerator.Tarefa tarefa, UC_CadastroClasseSaida cadastroClasseSaida)
+        {
+            Util.CL_Files.WriteOnTheLog("FO_Principal.AbrirCadastroClasseFilha()", Util.Global.TipoLog.DETALHADO);
+
+            UC_CadastroClasseSaida cadastroClasseSaidaFilha = new UC_CadastroClasseSaida(classeRetorno, classeRetornoMae, tarefa, cadastroClasseSaida, this);
+            this.AbreJanela(cadastroClasseSaidaFilha, "Cadastro de Classe", Telas.CADASTRO_CLASSE_CLASSE_FILHA);
+        }
+
+        /// <summary>
+        /// Método que abre a janela de cadastro de classe de saída filha
+        /// </summary>
+        public void AbrirCadastroClasseSaida(Model.MD_ClasseRetornoRepository classeRetorno, Model.MD_RetornoRotaRepository retornoRotaRepository, Util.Enumerator.Tarefa tarefa, UC_CadastroTipoRetorno cadastroRotaRepository)
+        {
+            Util.CL_Files.WriteOnTheLog("FO_Principal.AbrirCadastroClasseFilha()", Util.Global.TipoLog.DETALHADO);
+
+            UC_CadastroClasseSaida cadastroClasseSaidaFilha = new UC_CadastroClasseSaida(classeRetorno, retornoRotaRepository, tarefa, cadastroRotaRepository, this);
+            this.AbreJanela(cadastroClasseSaidaFilha, "Cadastro de Classe", Telas.CADASTRO_CLASSE_SAIDA);
+        }
+
+        /// <summary>
+        /// Método que abre a janela de cadastro de classe de entrada
+        /// </summary>
         public void AbrirCadastroClasseEntradaFilha(Model.MD_ClasseEntrada classeEntrada, Model.MD_ClasseEntrada classeMae, Model.MD_RotasRepository metodoRota, Util.Enumerator.Tarefa tarefa, UC_CadastroClassesEntrada cadastroClasseEntrada)
         {
             Util.CL_Files.WriteOnTheLog("FO_Principal.AbrirCadastroClasseEntradaFilha()", Util.Global.TipoLog.DETALHADO);
 
             UC_CadastroClassesEntrada telaClasseEntrada = new UC_CadastroClassesEntrada(classeEntrada, classeMae, metodoRota, tarefa, cadastroClasseEntrada, this);
             this.AbreJanela(telaClasseEntrada, "Cadastro de Classe", Telas.CADASTRO_CLASSE_CLASSE_FILHA);
+        }
+
+        /// <summary>
+        /// Método que abre a janela de cadastro de classe de saída filha
+        /// </summary>
+        public void AbrirCadastroCampoSaida(Model.MD_CamposClasseRetorno campoRetorno, Model.MD_RetornoRotaRepository retornoRotaRepository, Util.Enumerator.Tarefa tarefa, UC_CadastroTipoRetorno telaClasseSaida)
+        {
+            Util.CL_Files.WriteOnTheLog("FO_Principal.AbrirCadastroCampoRetorno()", Util.Global.TipoLog.DETALHADO);
+
+            UC_CadastroCampoClasseRetorno cadastroCampoRetorno = new UC_CadastroCampoClasseRetorno(campoRetorno, retornoRotaRepository, tarefa, telaClasseSaida, this);
+            this.AbreJanela(cadastroCampoRetorno, "Cadastro de Campo", Telas.CADASTRO_CAMPO_SAIDA);
+        }
+
+        /// <summary>
+        /// Método que abre a janela de cadastro de classe de saída filha
+        /// </summary>
+        public void AbrirCadastroCampoSaida(Model.MD_CamposClasseRetorno campoRetorno, Model.MD_ClasseRetornoRepository retornoClasseRepository, Util.Enumerator.Tarefa tarefa, UC_CadastroClasseSaida telaClasseSaida)
+        {
+            Util.CL_Files.WriteOnTheLog("FO_Principal.AbrirCadastroCampoRetorno()", Util.Global.TipoLog.DETALHADO);
+
+            UC_CadastroCampoClasseRetorno cadastroCampoRetorno = new UC_CadastroCampoClasseRetorno(campoRetorno, retornoClasseRepository, tarefa, telaClasseSaida, this);
+            this.AbreJanela(cadastroCampoRetorno, "Cadastro de Campo", Telas.CADASTRO_CAMPO_SAIDA_CLASSE);
         }
 
         /// <summary>

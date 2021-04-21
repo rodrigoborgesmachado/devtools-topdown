@@ -382,6 +382,9 @@ namespace Visao
             this.listaCampos = Model.MD_CamposClasseEntrada.RetornaMetodosApi(this.classeEntrada.DAO.Codigo);
             this.listaClasses = Model.MD_ClasseEntrada.RetornaClassesFilhas(this.classeEntrada.DAO.Codigo);
 
+            this.dgv_camposClasse.Rows.Clear();
+            this.dgv_camposClasse.Columns.Clear();
+
             this.dgv_camposClasse.Columns.Add("Código", "Código");
             this.dgv_camposClasse.Columns.Add("Tipo", "Tipo");
             this.dgv_camposClasse.Columns.Add("Nome", "Nome");

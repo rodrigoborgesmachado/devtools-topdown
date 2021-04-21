@@ -12,7 +12,7 @@ namespace DAO
     /// <summary>
     /// [RETORNOROTAREPOSITORY] Tabela RETORNOROTAREPOSITORY
     /// </summary>
-    public class MD_Retornorotarepository : MDN_Model
+    public class MD_RetornoRotaRepository : MDN_Model
     {
         #region Atributos e Propriedades
 
@@ -52,7 +52,7 @@ namespace DAO
         /// <summary>
         /// [CODIGOCLASSERETORNO] Código da classe de retorno (quando preencher pegar informações da classe)
         /// <summary>
-        public int Codigoclasseretorno
+        public int CodigoClasseRetorno
         {
             get
             {
@@ -80,6 +80,22 @@ namespace DAO
             }
         }
 
+        private string ehclasse;
+        /// <summary>
+        /// [EHCLASSE] 
+        /// <summary>
+        public string EhClasse
+        {
+            get
+            {
+                return this.ehclasse;
+            }
+            set
+            {
+                this.ehclasse = value;
+            }
+        }
+
 
 		#endregion Atributos e Propriedades
 
@@ -88,14 +104,15 @@ namespace DAO
 		/// <summary>
         /// Construtor Principal da classe
         /// </summary>
-        public MD_Retornorotarepository()
+        public MD_RetornoRotaRepository()
             : base()
         {
             base.table = new MDN_Table("RETORNOROTAREPOSITORY");
             this.table.Fields_Table.Add(new MDN_Campo("CODIGO", false, Util.Enumerator.DataType.INT, 0, true, false, 0, 0));
-            this.table.Fields_Table.Add(new MDN_Campo("CODIGOROTAREPOSITORY", true, Util.Enumerator.DataType.INT, 0, false, false, 0, 0));
-            this.table.Fields_Table.Add(new MDN_Campo("CODIGOCLASSERETORNO", true, Util.Enumerator.DataType.INT, 0, false, false, 0, 0));
+            this.table.Fields_Table.Add(new MDN_Campo("CODIGOROTAREPOSITORY", true, Util.Enumerator.DataType.INT, -1, false, false, 0, 0));
+            this.table.Fields_Table.Add(new MDN_Campo("CODIGOCLASSERETORNO", true, Util.Enumerator.DataType.INT, -1, false, false, 0, 0));
             this.table.Fields_Table.Add(new MDN_Campo("TIPORETORNO", false, Util.Enumerator.DataType.STRING, "", false, false, 100, 0));
+            this.table.Fields_Table.Add(new MDN_Campo("EHCLASSE", true, Util.Enumerator.DataType.CHAR, "0", false, false, 1, 0));
 
             if (!base.table.ExistsTable())
                 base.table.CreateTable(false);
@@ -107,7 +124,7 @@ namespace DAO
         /// Construtor Secundário da classe
         /// </summary>
         /// <param name="CODIGO">
-        public MD_Retornorotarepository(int codigo)
+        public MD_RetornoRotaRepository(int codigo)
             :this()
         {
             this.codigo = codigo;
@@ -136,8 +153,9 @@ namespace DAO
             else if (reader.Read())
             {
                 this.Codigorotarepository = int.Parse(reader["CODIGOROTAREPOSITORY"].ToString());
-                this.Codigoclasseretorno = int.Parse(reader["CODIGOCLASSERETORNO"].ToString());
+                this.CodigoClasseRetorno = int.Parse(reader["CODIGOCLASSERETORNO"].ToString());
                 this.Tiporetorno = reader["TIPORETORNO"].ToString();
+                this.EhClasse = reader["EHCLASSE"].ToString();
 
                 this.Empty = false;
                 reader.Close();
@@ -168,7 +186,7 @@ namespace DAO
             string sentenca = string.Empty;
 
             sentenca = "INSERT INTO " + table.Table_Name + " (" + table.TodosCampos() + ")" + 
-                              " VALUES (" + this.codigo + ", " + this.codigorotarepository + ", " + this.codigoclasseretorno + ",  '" + this.tiporetorno + "')";
+                              " VALUES (" + this.codigo + ", " + this.codigorotarepository + ", " + this.codigoclasseretorno + ",  '" + this.tiporetorno + "',  '" + this.ehclasse + "')";
             if (DataBase.Connection.Insert(sentenca))
             {
                 Empty = false;
@@ -186,7 +204,7 @@ namespace DAO
             string sentenca = string.Empty;
 
             sentenca = "UPDATE " + table.Table_Name + " SET " + 
-                        "CODIGO = " + Codigo + ", CODIGOROTAREPOSITORY = " + Codigorotarepository + ", CODIGOCLASSERETORNO = " + Codigoclasseretorno + ", TIPORETORNO = '" + Tiporetorno + "'" + 
+                        "CODIGO = " + Codigo + ", CODIGOROTAREPOSITORY = " + Codigorotarepository + ", CODIGOCLASSERETORNO = " + CodigoClasseRetorno + ", TIPORETORNO = '" + Tiporetorno + "', EHCLASSE = '" + EhClasse + "'" + 
                         " WHERE CODIGO = " + Codigo + "";
 
             return DataBase.Connection.Update(sentenca);
