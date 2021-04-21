@@ -26,16 +26,18 @@ namespace Visao
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            // TODO criar tabela de usuários e formulário para cadastrar novos usuários
-            //if(Util.WebUtil.Login.ValidaLogin(this.tbx_login.Text, this.tbx_password.Text.GetHashCode().ToString()))
-            if(true)
+#if (DEBUG)
+            if(true)      
+#else
+            if (Util.WebUtil.Login.ValidaLogin(this.tbx_login.Text, this.tbx_password.Text.GetHashCode().ToString()))
+#endif
             {
                 this.DialogResult = DialogResult.OK;
                 this.Dispose();
             }
             else
             {
-                Visao.Message.MensagemAlerta("Login inválido!");
+                Message.MensagemAlerta("Login inválido!");
             }
         }
 
