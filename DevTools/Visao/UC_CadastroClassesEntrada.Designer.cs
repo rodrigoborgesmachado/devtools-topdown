@@ -314,6 +314,7 @@
             "Não Aplica",
             "Query",
             "FromBody",
+            "FromRoute",
             "Url"});
             this.cmb_tipoEntrada.Location = new System.Drawing.Point(93, 51);
             this.cmb_tipoEntrada.Name = "cmb_tipoEntrada";
