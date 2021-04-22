@@ -260,6 +260,18 @@ namespace Visao
                     {
                         this.cadastroTipoRetorno.AdicionaCampoRetorno(this.campoRetorno);
                     }
+
+                    if (Message.MensagemConfirmaçãoYesNo("Deseja cadastrar mais um campo?") == DialogResult.Yes)
+                    {
+                        if (classeRepository != null)
+                        {
+                            this.principal.AbrirCadastroCampoSaida(new Model.MD_CamposClasseRetorno(DataBase.Connection.GetIncrement("CAMPOSCLASSERETORNO")), this.classeRepository, Util.Enumerator.Tarefa.INCLUIR, this.telaClasseSaida);
+                        }
+                        else
+                        {
+                            this.principal.AbrirCadastroCampoSaida(new Model.MD_CamposClasseRetorno(DataBase.Connection.GetIncrement("CAMPOSCLASSERETORNO")), this.retornoRotaRepository, Util.Enumerator.Tarefa.INCLUIR, this.cadastroTipoRetorno);
+                        }
+                    }
                 }
                 else
                 {
