@@ -403,7 +403,7 @@
             // tbx_ConsultaProcedure
             // 
             this.tbx_ConsultaProcedure.Location = new System.Drawing.Point(109, 112);
-            this.tbx_ConsultaProcedure.MaxLength = 50;
+            this.tbx_ConsultaProcedure.MaxLength = 35000;
             this.tbx_ConsultaProcedure.Name = "tbx_ConsultaProcedure";
             this.tbx_ConsultaProcedure.Size = new System.Drawing.Size(448, 23);
             this.tbx_ConsultaProcedure.TabIndex = 22;
