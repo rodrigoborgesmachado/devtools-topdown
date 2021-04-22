@@ -36,15 +36,15 @@
             this.btn_fechar = new System.Windows.Forms.Button();
             this.pan_tot = new System.Windows.Forms.Panel();
             this.grb_cadastro = new System.Windows.Forms.GroupBox();
-            this.tbx_nomeCampo = new System.Windows.Forms.TextBox();
-            this.lbl_nome = new System.Windows.Forms.Label();
-            this.btn_info_campo = new System.Windows.Forms.Button();
-            this.lbl_tipoEntrada = new System.Windows.Forms.Label();
-            this.btn_info_tipoEntrada = new System.Windows.Forms.Button();
-            this.cmb_tipoEntrada = new System.Windows.Forms.ComboBox();
             this.cmb_tipoCampo = new System.Windows.Forms.ComboBox();
             this.lbl_tipoCampo = new System.Windows.Forms.Label();
             this.btn_info_tipoCampo = new System.Windows.Forms.Button();
+            this.cmb_tipoEntrada = new System.Windows.Forms.ComboBox();
+            this.lbl_tipoEntrada = new System.Windows.Forms.Label();
+            this.btn_info_tipoEntrada = new System.Windows.Forms.Button();
+            this.tbx_nomeCampo = new System.Windows.Forms.TextBox();
+            this.lbl_nome = new System.Windows.Forms.Label();
+            this.btn_info_campo = new System.Windows.Forms.Button();
             this.pan_botton.SuspendLayout();
             this.pan_top.SuspendLayout();
             this.pan_tot.SuspendLayout();
@@ -135,68 +135,6 @@
             this.grb_cadastro.TabStop = false;
             this.grb_cadastro.Text = "Cadastro de campo - Entrada";
             // 
-            // tbx_nomeCampo
-            // 
-            this.tbx_nomeCampo.Location = new System.Drawing.Point(93, 22);
-            this.tbx_nomeCampo.MaxLength = 50;
-            this.tbx_nomeCampo.Name = "tbx_nomeCampo";
-            this.tbx_nomeCampo.Size = new System.Drawing.Size(446, 23);
-            this.tbx_nomeCampo.TabIndex = 6;
-            // 
-            // lbl_nome
-            // 
-            this.lbl_nome.AutoSize = true;
-            this.lbl_nome.Location = new System.Drawing.Point(6, 25);
-            this.lbl_nome.Name = "lbl_nome";
-            this.lbl_nome.Size = new System.Drawing.Size(48, 16);
-            this.lbl_nome.TabIndex = 8;
-            this.lbl_nome.Text = "Campo";
-            // 
-            // btn_info_campo
-            // 
-            this.btn_info_campo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_info_campo.BackgroundImage")));
-            this.btn_info_campo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_info_campo.Location = new System.Drawing.Point(545, 22);
-            this.btn_info_campo.Name = "btn_info_campo";
-            this.btn_info_campo.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_campo.TabIndex = 7;
-            this.btn_info_campo.UseVisualStyleBackColor = true;
-            this.btn_info_campo.Click += new System.EventHandler(this.btn_info_campo_Click);
-            // 
-            // lbl_tipoEntrada
-            // 
-            this.lbl_tipoEntrada.AutoSize = true;
-            this.lbl_tipoEntrada.Location = new System.Drawing.Point(6, 54);
-            this.lbl_tipoEntrada.Name = "lbl_tipoEntrada";
-            this.lbl_tipoEntrada.Size = new System.Drawing.Size(81, 16);
-            this.lbl_tipoEntrada.TabIndex = 11;
-            this.lbl_tipoEntrada.Text = "Tipo Entrada";
-            // 
-            // btn_info_tipoEntrada
-            // 
-            this.btn_info_tipoEntrada.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_info_tipoEntrada.BackgroundImage")));
-            this.btn_info_tipoEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_info_tipoEntrada.Location = new System.Drawing.Point(545, 53);
-            this.btn_info_tipoEntrada.Name = "btn_info_tipoEntrada";
-            this.btn_info_tipoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_tipoEntrada.TabIndex = 10;
-            this.btn_info_tipoEntrada.UseVisualStyleBackColor = true;
-            this.btn_info_tipoEntrada.Click += new System.EventHandler(this.btn_info_tipoEntrada_Click);
-            // 
-            // cmb_tipoEntrada
-            // 
-            this.cmb_tipoEntrada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_tipoEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmb_tipoEntrada.FormattingEnabled = true;
-            this.cmb_tipoEntrada.Items.AddRange(new object[] {
-            "Query",
-            "FromBody",
-            "Url"});
-            this.cmb_tipoEntrada.Location = new System.Drawing.Point(93, 51);
-            this.cmb_tipoEntrada.Name = "cmb_tipoEntrada";
-            this.cmb_tipoEntrada.Size = new System.Drawing.Size(446, 23);
-            this.cmb_tipoEntrada.TabIndex = 22;
-            // 
             // cmb_tipoCampo
             // 
             this.cmb_tipoCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -232,6 +170,69 @@
             this.btn_info_tipoCampo.TabIndex = 23;
             this.btn_info_tipoCampo.UseVisualStyleBackColor = true;
             this.btn_info_tipoCampo.Click += new System.EventHandler(this.btn_info_tipoCampo_Click);
+            // 
+            // cmb_tipoEntrada
+            // 
+            this.cmb_tipoEntrada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_tipoEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmb_tipoEntrada.FormattingEnabled = true;
+            this.cmb_tipoEntrada.Items.AddRange(new object[] {
+            "Query",
+            "FromBody",
+            "FromRoute",
+            "Url"});
+            this.cmb_tipoEntrada.Location = new System.Drawing.Point(93, 51);
+            this.cmb_tipoEntrada.Name = "cmb_tipoEntrada";
+            this.cmb_tipoEntrada.Size = new System.Drawing.Size(446, 23);
+            this.cmb_tipoEntrada.TabIndex = 22;
+            // 
+            // lbl_tipoEntrada
+            // 
+            this.lbl_tipoEntrada.AutoSize = true;
+            this.lbl_tipoEntrada.Location = new System.Drawing.Point(6, 54);
+            this.lbl_tipoEntrada.Name = "lbl_tipoEntrada";
+            this.lbl_tipoEntrada.Size = new System.Drawing.Size(81, 16);
+            this.lbl_tipoEntrada.TabIndex = 11;
+            this.lbl_tipoEntrada.Text = "Tipo Entrada";
+            // 
+            // btn_info_tipoEntrada
+            // 
+            this.btn_info_tipoEntrada.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_info_tipoEntrada.BackgroundImage")));
+            this.btn_info_tipoEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_info_tipoEntrada.Location = new System.Drawing.Point(545, 53);
+            this.btn_info_tipoEntrada.Name = "btn_info_tipoEntrada";
+            this.btn_info_tipoEntrada.Size = new System.Drawing.Size(20, 20);
+            this.btn_info_tipoEntrada.TabIndex = 10;
+            this.btn_info_tipoEntrada.UseVisualStyleBackColor = true;
+            this.btn_info_tipoEntrada.Click += new System.EventHandler(this.btn_info_tipoEntrada_Click);
+            // 
+            // tbx_nomeCampo
+            // 
+            this.tbx_nomeCampo.Location = new System.Drawing.Point(93, 22);
+            this.tbx_nomeCampo.MaxLength = 50;
+            this.tbx_nomeCampo.Name = "tbx_nomeCampo";
+            this.tbx_nomeCampo.Size = new System.Drawing.Size(446, 23);
+            this.tbx_nomeCampo.TabIndex = 6;
+            // 
+            // lbl_nome
+            // 
+            this.lbl_nome.AutoSize = true;
+            this.lbl_nome.Location = new System.Drawing.Point(6, 25);
+            this.lbl_nome.Name = "lbl_nome";
+            this.lbl_nome.Size = new System.Drawing.Size(48, 16);
+            this.lbl_nome.TabIndex = 8;
+            this.lbl_nome.Text = "Campo";
+            // 
+            // btn_info_campo
+            // 
+            this.btn_info_campo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_info_campo.BackgroundImage")));
+            this.btn_info_campo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_info_campo.Location = new System.Drawing.Point(545, 22);
+            this.btn_info_campo.Name = "btn_info_campo";
+            this.btn_info_campo.Size = new System.Drawing.Size(20, 20);
+            this.btn_info_campo.TabIndex = 7;
+            this.btn_info_campo.UseVisualStyleBackColor = true;
+            this.btn_info_campo.Click += new System.EventHandler(this.btn_info_campo_Click);
             // 
             // UC_CadastroCampoClasseOuEntrada
             // 
