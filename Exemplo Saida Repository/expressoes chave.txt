@@ -1,0 +1,72 @@
+Substituir:
+	Controller:
+		#ROTAAPI
+		#NOMECLASSE (já contém Controller)
+		#NOMEINTERFACEQUERY (já contém Query)
+		#NOMEVARIAVELINTERFACEQUERY
+		#METODOS
+	
+		Métodos:
+			#ROTAMETODO
+			#OBJETORETORNO
+			#NOMEMETODO (já contém Async)
+			#OBEJTOSVALIDACAOENTRADA
+			#NOMEINTERFACEQUERY (já contém Query)
+			
+	Query Interface:
+		#NOMEINTERFACEQUERY (já contém Query)
+		#METODOSINTERFACE
+		
+		Métodos:
+			#OBJETORETORNO
+			#NOMEMETODO (já contém Async)
+			
+	Query:
+		#NOMEIMPLEMENTACAOQUERY (já contém Query)
+		#NOMEINTERFACEQUERY (já contém Query)
+		#NOMEINTERFACEREPOSITORY (já contém Repository)
+		#NOMEVARIAVELREPOSITORY (já contém Repository)
+		#METODOS
+		
+		Métodos:
+			#OBJETORETORNO
+			#NOMEMETODO (já contém Async)
+			#NOMECLASSEVALIDATION (já contém Validation)
+			#FILTROSREPOSITORY
+			
+	Repository Interface:
+		#NOMEINTERFACEREPOSITORY (já contém Repository)
+		#METODOS
+		
+		Métodos:
+			#COMENTARIOENTRADAS
+			#RETORNOREPOSITORY
+			#NOMEMETODOREPOSITORY (já contém Async)
+			#FILTROSREPOSITORY
+			
+	Repository:
+		#NOMEINTERFACEREPOSITORY (já contém Repository)
+		#NOMEREPOSITORY (já contém Repository)
+		#METODOREPOSITORY
+		
+		Métodos:
+			#COMENTARIOENTRADAS
+			#RETORNOREPOSITORY
+			#NOMEMETODOREPOSITORY (já contém Async)
+			#NOMEINTERFACEREPOSITORY (já contém  Repository)
+			#NOMEMETODOREPOSITORY (já contém Async)
+			#COMENTARIOFILTROSENTRADA
+			#CONSULTA
+			#CLASSEENTITY (já contém Entity)
+			#FILTROSCONSULTA
+			
+	DTO:
+		#NOMECLASSEDTO (já contém DTO)
+		#CAMPOSDTO
+		
+	Entity:
+		#CLASSEENTITY (já contém Entity)
+		#CAMPOSENTITY
+	
+	Validation:
+		#NOMECLASSEVALIDATIONValidation
