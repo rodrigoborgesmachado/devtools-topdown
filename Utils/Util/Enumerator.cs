@@ -79,5 +79,20 @@ namespace Util
             // Arquivos do Model
             MODEL = 1
         }
+
+        public enum ClassesApi
+        {
+            GERENCIADOR = 0,
+            REPOSITORY = 1
+        }
+
+        public enum MetodoApi
+        {
+            POST = 0,
+            GET = 1,
+            DELETE = 2,
+            PUT = 3
+        }
+
     }
 }

@@ -63,7 +63,7 @@ namespace Model
         /// <returns>Lista das tabelas</returns>
         public static List<MD_CamposClasseRetorno> RetornaRetornosCampoRota(int codigoClasseRetorno)
         {
-            string sentenca = new DAO.MD_CamposClasseRetorno().table.CreateCommandSQLTable() + " WHERE CODIGOCLASSE = " + codigoClasseRetorno;
+            string sentenca = new DAO.MD_CamposClasseRetorno().table.CreateCommandSQLTable() + " WHERE CODIGOCLASSEREFERENTE = " + codigoClasseRetorno;
 
             DbDataReader reader = DataBase.Connection.Select(sentenca);
             List<MD_CamposClasseRetorno> campos = new List<MD_CamposClasseRetorno>();
