@@ -74,6 +74,10 @@
     <Compile Include="Regras\Backup.cs" />
     <Compile Include="Regras\ClassCreater.cs" />
     <Compile Include="Regras\ClassesGenericas.cs" />
+    <Compile Include="Regras\ClassesRotasApi\ClasseCreatorGeneric.cs" />
+    <Compile Include="Regras\ClassesRotasApi\ClasseCreatorGerenciador.cs" />
+    <Compile Include="Regras\ClassesRotasApi\ClasseCreatorRepository.cs" />
+    <Compile Include="Regras\ClassesRotasApi\MontaClasse.cs" />
     <Compile Include="Regras\DerCreator.cs" />
     <Compile Include="Regras\Importador.cs" />
     <Compile Include="Regras\Parametros.cs" />
