@@ -32,19 +32,20 @@
             this.tbx_nomeClasse = new System.Windows.Forms.TextBox();
             this.grb_cadastroClasse = new System.Windows.Forms.GroupBox();
             this.lbl_tipoCampo = new System.Windows.Forms.Label();
+            this.btn_info_nomeClasse = new System.Windows.Forms.Button();
             this.dgv_camposClasse = new System.Windows.Forms.DataGridView();
             this.grb_cadastro = new System.Windows.Forms.GroupBox();
             this.grb_camposClasse = new System.Windows.Forms.GroupBox();
-            this.btn_excluir = new System.Windows.Forms.Button();
-            this.btn_confirmar = new System.Windows.Forms.Button();
-            this.pan_botton = new System.Windows.Forms.Panel();
-            this.pan_top = new System.Windows.Forms.Panel();
             this.btn_visualizarVariavelEntrada = new System.Windows.Forms.Button();
             this.btn_removerCampoEntrada = new System.Windows.Forms.Button();
             this.btn_editarCampoEntrada = new System.Windows.Forms.Button();
             this.btn_adicionarCampoEntrada = new System.Windows.Forms.Button();
-            this.btn_info_nomeClasse = new System.Windows.Forms.Button();
+            this.btn_excluir = new System.Windows.Forms.Button();
+            this.btn_confirmar = new System.Windows.Forms.Button();
+            this.pan_botton = new System.Windows.Forms.Panel();
+            this.pan_top = new System.Windows.Forms.Panel();
             this.btn_fechar = new System.Windows.Forms.Button();
+            this.btn_reload_tabela = new System.Windows.Forms.Button();
             this.grb_cadastroClasse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_camposClasse)).BeginInit();
             this.grb_cadastro.SuspendLayout();
@@ -59,7 +60,7 @@
             this.tbx_nomeClasse.MaxLength = 50;
             this.tbx_nomeClasse.Name = "tbx_nomeClasse";
             this.tbx_nomeClasse.Size = new System.Drawing.Size(483, 23);
-            this.tbx_nomeClasse.TabIndex = 25;
+            this.tbx_nomeClasse.TabIndex = 1;
             // 
             // grb_cadastroClasse
             // 
@@ -82,6 +83,17 @@
             this.lbl_tipoCampo.Size = new System.Drawing.Size(44, 16);
             this.lbl_tipoCampo.TabIndex = 24;
             this.lbl_tipoCampo.Text = "Classe";
+            // 
+            // btn_info_nomeClasse
+            // 
+            this.btn_info_nomeClasse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_info_nomeClasse.BackgroundImage")));
+            this.btn_info_nomeClasse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_info_nomeClasse.Location = new System.Drawing.Point(545, 18);
+            this.btn_info_nomeClasse.Name = "btn_info_nomeClasse";
+            this.btn_info_nomeClasse.Size = new System.Drawing.Size(20, 20);
+            this.btn_info_nomeClasse.TabIndex = 2;
+            this.btn_info_nomeClasse.UseVisualStyleBackColor = true;
+            this.btn_info_nomeClasse.Click += new System.EventHandler(this.btn_info_nomeClasse_Click);
             // 
             // dgv_camposClasse
             // 
@@ -107,7 +119,7 @@
             this.dgv_camposClasse.ShowCellToolTips = false;
             this.dgv_camposClasse.Size = new System.Drawing.Size(693, 356);
             this.dgv_camposClasse.StandardTab = true;
-            this.dgv_camposClasse.TabIndex = 39;
+            this.dgv_camposClasse.TabIndex = 3;
             // 
             // grb_cadastro
             // 
@@ -123,6 +135,7 @@
             // 
             // grb_camposClasse
             // 
+            this.grb_camposClasse.Controls.Add(this.btn_reload_tabela);
             this.grb_camposClasse.Controls.Add(this.dgv_camposClasse);
             this.grb_camposClasse.Controls.Add(this.btn_visualizarVariavelEntrada);
             this.grb_camposClasse.Controls.Add(this.btn_removerCampoEntrada);
@@ -136,6 +149,57 @@
             this.grb_camposClasse.TabStop = false;
             this.grb_camposClasse.Text = "Campos da Classe";
             // 
+            // btn_visualizarVariavelEntrada
+            // 
+            this.btn_visualizarVariavelEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_visualizarVariavelEntrada.BackgroundImage = global::DevTools.Properties.Resources.eye_100px20x20;
+            this.btn_visualizarVariavelEntrada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_visualizarVariavelEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_visualizarVariavelEntrada.Location = new System.Drawing.Point(708, 100);
+            this.btn_visualizarVariavelEntrada.Name = "btn_visualizarVariavelEntrada";
+            this.btn_visualizarVariavelEntrada.Size = new System.Drawing.Size(20, 20);
+            this.btn_visualizarVariavelEntrada.TabIndex = 7;
+            this.btn_visualizarVariavelEntrada.UseVisualStyleBackColor = true;
+            this.btn_visualizarVariavelEntrada.Click += new System.EventHandler(this.btn_visualizarVariavelEntrada_Click);
+            // 
+            // btn_removerCampoEntrada
+            // 
+            this.btn_removerCampoEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_removerCampoEntrada.BackgroundImage = global::DevTools.Properties.Resources.close_outline_100px20x20;
+            this.btn_removerCampoEntrada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_removerCampoEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_removerCampoEntrada.Location = new System.Drawing.Point(708, 74);
+            this.btn_removerCampoEntrada.Name = "btn_removerCampoEntrada";
+            this.btn_removerCampoEntrada.Size = new System.Drawing.Size(20, 20);
+            this.btn_removerCampoEntrada.TabIndex = 6;
+            this.btn_removerCampoEntrada.UseVisualStyleBackColor = true;
+            this.btn_removerCampoEntrada.Click += new System.EventHandler(this.btn_removerCampoEntrada_Click);
+            // 
+            // btn_editarCampoEntrada
+            // 
+            this.btn_editarCampoEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_editarCampoEntrada.BackgroundImage = global::DevTools.Properties.Resources.lead_pencil_100px20x20;
+            this.btn_editarCampoEntrada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_editarCampoEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_editarCampoEntrada.Location = new System.Drawing.Point(708, 48);
+            this.btn_editarCampoEntrada.Name = "btn_editarCampoEntrada";
+            this.btn_editarCampoEntrada.Size = new System.Drawing.Size(20, 20);
+            this.btn_editarCampoEntrada.TabIndex = 5;
+            this.btn_editarCampoEntrada.UseVisualStyleBackColor = true;
+            this.btn_editarCampoEntrada.Click += new System.EventHandler(this.btn_editarCampoEntrada_Click);
+            // 
+            // btn_adicionarCampoEntrada
+            // 
+            this.btn_adicionarCampoEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_adicionarCampoEntrada.BackgroundImage = global::DevTools.Properties.Resources.plus20x20;
+            this.btn_adicionarCampoEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_adicionarCampoEntrada.Location = new System.Drawing.Point(708, 22);
+            this.btn_adicionarCampoEntrada.Name = "btn_adicionarCampoEntrada";
+            this.btn_adicionarCampoEntrada.Size = new System.Drawing.Size(20, 20);
+            this.btn_adicionarCampoEntrada.TabIndex = 4;
+            this.btn_adicionarCampoEntrada.UseVisualStyleBackColor = true;
+            this.btn_adicionarCampoEntrada.Click += new System.EventHandler(this.btn_adicionarCampoEntrada_Click);
+            // 
             // btn_excluir
             // 
             this.btn_excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -143,7 +207,7 @@
             this.btn_excluir.Location = new System.Drawing.Point(579, 3);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(75, 29);
-            this.btn_excluir.TabIndex = 24;
+            this.btn_excluir.TabIndex = 10;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = true;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
@@ -155,7 +219,7 @@
             this.btn_confirmar.Location = new System.Drawing.Point(662, 3);
             this.btn_confirmar.Name = "btn_confirmar";
             this.btn_confirmar.Size = new System.Drawing.Size(75, 29);
-            this.btn_confirmar.TabIndex = 23;
+            this.btn_confirmar.TabIndex = 9;
             this.btn_confirmar.Text = "Cadastrar";
             this.btn_confirmar.UseVisualStyleBackColor = true;
             this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
@@ -179,68 +243,6 @@
             this.pan_top.Size = new System.Drawing.Size(740, 20);
             this.pan_top.TabIndex = 30;
             // 
-            // btn_visualizarVariavelEntrada
-            // 
-            this.btn_visualizarVariavelEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_visualizarVariavelEntrada.BackgroundImage = global::DevTools.Properties.Resources.eye_100px20x20;
-            this.btn_visualizarVariavelEntrada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_visualizarVariavelEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_visualizarVariavelEntrada.Location = new System.Drawing.Point(708, 100);
-            this.btn_visualizarVariavelEntrada.Name = "btn_visualizarVariavelEntrada";
-            this.btn_visualizarVariavelEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_visualizarVariavelEntrada.TabIndex = 38;
-            this.btn_visualizarVariavelEntrada.UseVisualStyleBackColor = true;
-            this.btn_visualizarVariavelEntrada.Click += new System.EventHandler(this.btn_visualizarVariavelEntrada_Click);
-            // 
-            // btn_removerCampoEntrada
-            // 
-            this.btn_removerCampoEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_removerCampoEntrada.BackgroundImage = global::DevTools.Properties.Resources.close_outline_100px20x20;
-            this.btn_removerCampoEntrada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_removerCampoEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_removerCampoEntrada.Location = new System.Drawing.Point(708, 74);
-            this.btn_removerCampoEntrada.Name = "btn_removerCampoEntrada";
-            this.btn_removerCampoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_removerCampoEntrada.TabIndex = 37;
-            this.btn_removerCampoEntrada.UseVisualStyleBackColor = true;
-            this.btn_removerCampoEntrada.Click += new System.EventHandler(this.btn_removerCampoEntrada_Click);
-            // 
-            // btn_editarCampoEntrada
-            // 
-            this.btn_editarCampoEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_editarCampoEntrada.BackgroundImage = global::DevTools.Properties.Resources.lead_pencil_100px20x20;
-            this.btn_editarCampoEntrada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_editarCampoEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_editarCampoEntrada.Location = new System.Drawing.Point(708, 48);
-            this.btn_editarCampoEntrada.Name = "btn_editarCampoEntrada";
-            this.btn_editarCampoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_editarCampoEntrada.TabIndex = 36;
-            this.btn_editarCampoEntrada.UseVisualStyleBackColor = true;
-            this.btn_editarCampoEntrada.Click += new System.EventHandler(this.btn_editarCampoEntrada_Click);
-            // 
-            // btn_adicionarCampoEntrada
-            // 
-            this.btn_adicionarCampoEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_adicionarCampoEntrada.BackgroundImage = global::DevTools.Properties.Resources.plus20x20;
-            this.btn_adicionarCampoEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_adicionarCampoEntrada.Location = new System.Drawing.Point(708, 22);
-            this.btn_adicionarCampoEntrada.Name = "btn_adicionarCampoEntrada";
-            this.btn_adicionarCampoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_adicionarCampoEntrada.TabIndex = 35;
-            this.btn_adicionarCampoEntrada.UseVisualStyleBackColor = true;
-            this.btn_adicionarCampoEntrada.Click += new System.EventHandler(this.btn_adicionarCampoEntrada_Click);
-            // 
-            // btn_info_nomeClasse
-            // 
-            this.btn_info_nomeClasse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_info_nomeClasse.BackgroundImage")));
-            this.btn_info_nomeClasse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_info_nomeClasse.Location = new System.Drawing.Point(545, 18);
-            this.btn_info_nomeClasse.Name = "btn_info_nomeClasse";
-            this.btn_info_nomeClasse.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_nomeClasse.TabIndex = 23;
-            this.btn_info_nomeClasse.UseVisualStyleBackColor = true;
-            this.btn_info_nomeClasse.Click += new System.EventHandler(this.btn_info_nomeClasse_Click);
-            // 
             // btn_fechar
             // 
             this.btn_fechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -250,9 +252,22 @@
             this.btn_fechar.Location = new System.Drawing.Point(720, 0);
             this.btn_fechar.Name = "btn_fechar";
             this.btn_fechar.Size = new System.Drawing.Size(20, 20);
-            this.btn_fechar.TabIndex = 17;
+            this.btn_fechar.TabIndex = 11;
             this.btn_fechar.UseVisualStyleBackColor = false;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
+            // 
+            // btn_reload_tabela
+            // 
+            this.btn_reload_tabela.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_reload_tabela.BackgroundImage = global::DevTools.Properties.Resources.refresh120x20;
+            this.btn_reload_tabela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_reload_tabela.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_reload_tabela.Location = new System.Drawing.Point(708, 126);
+            this.btn_reload_tabela.Name = "btn_reload_tabela";
+            this.btn_reload_tabela.Size = new System.Drawing.Size(20, 20);
+            this.btn_reload_tabela.TabIndex = 8;
+            this.btn_reload_tabela.UseVisualStyleBackColor = true;
+            this.btn_reload_tabela.Click += new System.EventHandler(this.btn_reload_tabela_Click);
             // 
             // UC_CadastroClasseSaida
             // 
@@ -293,5 +308,6 @@
         private System.Windows.Forms.Button btn_confirmar;
         private System.Windows.Forms.Panel pan_botton;
         private System.Windows.Forms.Panel pan_top;
+        private System.Windows.Forms.Button btn_reload_tabela;
     }
 }

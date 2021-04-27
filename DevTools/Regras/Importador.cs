@@ -24,7 +24,7 @@ namespace Regras
 
             try
             {
-                //ApagaArquivosExportacao();
+                ApagaArquivosExportacao();
 
                 if(AbrirAplicacaoBancoDados())
                 {
@@ -377,6 +377,7 @@ namespace Regras
                 campo.DAO.Tamanho = c.Size;
                 campo.DAO.TipoCampo = Model.MD_TipoCampo.RetornaTipoCampo(c.Type).DAO;
                 campo.DAO.Unique = c.Unique;
+                campo.DAO.Comentario = c.Comments;
 
                 if (existe)
                 {

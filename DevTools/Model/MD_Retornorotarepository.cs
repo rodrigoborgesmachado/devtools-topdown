@@ -40,7 +40,7 @@ namespace Model
         /// </summary>
         /// <param name="projeto">Código do projeto</param>
         /// <returns>Lista das tabelas</returns>
-        public static List<MD_RetornoRotaRepository> RetornaRetornosRotas(int rota)
+        public static List<MD_RetornoRotaRepository> RetornaRetornosMetodos(int rota)
         {
             string sentenca = new DAO.MD_RetornoRotaRepository().table.CreateCommandSQLTable() + " WHERE CODIGOROTAREPOSITORY = " + rota + " ORDER BY TIPORETORNO";
 

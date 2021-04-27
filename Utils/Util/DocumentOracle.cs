@@ -98,27 +98,29 @@ namespace Util
         public static void RetornaDetalhesCampos(Visao.BarraDeCarregamento barra, ref List<Model.Campo> campos)
         {
             string sentenca = @"SELECT
-                                    col.COLUMN_NAME,
-                                    col.DATA_TYPE,
-                                    col.NULLABLE,
-                                    '' AS DATA_DEFAULT,
-                                    case
-                                        when allCons.CONSTRAINT_TYPE = 'P' then
-                                          '1'
-                                        else '0'
-                                    end primarykey,
-                                    case
-                                        when allCons.CONSTRAINT_TYPE = 'U' then
-                                          '1'
-                                        else '0'
-                                    end isunique,
-                                    col.DATA_LENGTH,
-                                    col.DATA_PRECISION,
-                                    col.TABLE_NAME
-                                FROM all_tab_columns col
-                                LEFT JOIN all_cons_columns consCol on (col.COLUMN_NAME = consCol.COLUMN_NAME)
-                                LEFT JOIN all_constraints allCons on (consCol.CONSTRAINT_NAME = allCons.CONSTRAINT_NAME)
-                                WHERE(NOT col.TABLE_NAME LIKE '%$%') AND(NOT col.TABLE_NAME LIKE '%LOGMNR%')";
+                                   col.COLUMN_NAME,
+                                   col.DATA_TYPE,
+                                   col.NULLABLE,
+                                   '' AS DATA_DEFAULT,
+                                   case
+                                       when allCons.CONSTRAINT_TYPE = 'P' then
+                                         '1'
+                                       else '0'
+                                   end primarykey,
+                                   case
+                                       when allCons.CONSTRAINT_TYPE = 'U' then
+                                         '1'
+                                       else '0'
+                                   end isunique,
+                                   col.DATA_LENGTH,
+                                   col.DATA_PRECISION,
+                                   col.TABLE_NAME,
+                                   COMM.COMMENTS
+                               FROM all_tab_columns col
+                               LEFT JOIN ALL_COL_COMMENTS COMM ON (col.COLUMN_NAME = COMM.COLUMN_NAME AND col.TABLE_NAME = COMM.TABLE_NAME)
+                               LEFT JOIN all_cons_columns consCol on (col.COLUMN_NAME = consCol.COLUMN_NAME)
+                               LEFT JOIN all_constraints allCons on (consCol.CONSTRAINT_NAME = allCons.CONSTRAINT_NAME)
+                               WHERE(NOT col.TABLE_NAME LIKE '%$%') AND(NOT col.TABLE_NAME LIKE '%LOGMNR%')";
 
             DbDataReader reader = DataBase.Connection.Select(sentenca);
 
@@ -135,6 +137,7 @@ namespace Util
                 string tamanho = reader["DATA_LENGTH"].ToString();
                 string precisao = reader["DATA_PRECISION"].ToString();
                 string tabela = reader["TABLE_NAME"].ToString();
+                string comments = reader["COMMENTS"].ToString();
 
                 Model.Campo c = new Model.Campo();
                 c.Name_Field = nome;
@@ -146,6 +149,7 @@ namespace Util
                 c.Size = string.IsNullOrEmpty(tamanho) ? 0 : int.Parse(tamanho);
                 c.Precision = string.IsNullOrEmpty(precisao) ? decimal.Zero : decimal.Parse(precisao);
                 c.Tabela = tabela;
+                c.Comments = comments;
 
                 campos.Add(c);
             }

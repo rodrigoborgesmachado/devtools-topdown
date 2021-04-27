@@ -122,6 +122,10 @@ namespace Visao
                     }
                 }
             }
+            else if(this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                this.btn_fechar_Click(null, null);
+            }
             else
             {
                 this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
@@ -248,30 +252,47 @@ namespace Visao
                 bool retorno = tarefa == Util.Enumerator.Tarefa.INCLUIR ? this.campoRetorno.DAO.Insert() : this.campoRetorno.DAO.Update();
                 if (retorno)
                 {
-                    Message.MensagemSucesso((tarefa == Util.Enumerator.Tarefa.INCLUIR ? "Incluído" : "Alterado") + "com sucesso!");
+                    Message.MensagemSucesso((tarefa == Util.Enumerator.Tarefa.INCLUIR ? "Incluído" : "Alterado") + " com sucesso!");
 
-                    this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
-                    this.InicializaUserControl();
-                    if (classeRepository != null)
-                    {
-                        this.telaClasseSaida.AdicionaCampoRetorno(this.campoRetorno);
-                    }
-                    else
-                    {
-                        this.cadastroTipoRetorno.AdicionaCampoRetorno(this.campoRetorno);
-                    }
-
-                    if (Message.MensagemConfirmaçãoYesNo("Deseja cadastrar mais um campo?") == DialogResult.Yes)
+                    if(this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
                     {
                         if (classeRepository != null)
                         {
-                            this.principal.AbrirCadastroCampoSaida(new Model.MD_CamposClasseRetorno(DataBase.Connection.GetIncrement("CAMPOSCLASSERETORNO")), this.classeRepository, Util.Enumerator.Tarefa.INCLUIR, this.telaClasseSaida);
+                            this.telaClasseSaida.AdicionaCampoRetorno(this.campoRetorno);
                         }
                         else
                         {
-                            this.principal.AbrirCadastroCampoSaida(new Model.MD_CamposClasseRetorno(DataBase.Connection.GetIncrement("CAMPOSCLASSERETORNO")), this.retornoRotaRepository, Util.Enumerator.Tarefa.INCLUIR, this.cadastroTipoRetorno);
+                            this.cadastroTipoRetorno.AdicionaCampoRetorno(this.campoRetorno);
+                        }
+
+                        if (Message.MensagemConfirmaçãoYesNo("Deseja cadastrar mais um campo?") == DialogResult.Yes)
+                        {
+                            if (classeRepository != null)
+                            {
+                                this.principal.AbrirCadastroCampoSaida(new Model.MD_CamposClasseRetorno(DataBase.Connection.GetIncrement("CAMPOSCLASSERETORNO")), this.classeRepository, Util.Enumerator.Tarefa.INCLUIR, this.telaClasseSaida);
+                            }
+                            else
+                            {
+                                this.principal.AbrirCadastroCampoSaida(new Model.MD_CamposClasseRetorno(DataBase.Connection.GetIncrement("CAMPOSCLASSERETORNO")), this.retornoRotaRepository, Util.Enumerator.Tarefa.INCLUIR, this.cadastroTipoRetorno);
+                            }
+                        }
+                        else
+                        {
+                            this.btn_fechar_Click(null, null);
                         }
                     }
+                    else
+                    {
+                        if (classeRepository != null)
+                        {
+                            this.telaClasseSaida.IniciaUserControl();
+                        }
+                        else
+                        {
+                            this.cadastroTipoRetorno.IniciaUserControl();
+                        }
+                    }
+                    
                 }
                 else
                 {

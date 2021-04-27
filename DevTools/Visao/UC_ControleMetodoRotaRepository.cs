@@ -83,7 +83,7 @@ namespace Visao
             if(this.tarefa == Util.Enumerator.Tarefa.VISUALIZAR)
             {
                 this.tarefa = Util.Enumerator.Tarefa.EDITAR;
-                this.InicializaUserControl();
+                this.IniciaUserControl();
             }
             else if (string.IsNullOrEmpty(this.tbx_nomeMetodo.Text))
             {
@@ -100,7 +100,7 @@ namespace Visao
             else
             {
                 this.metodoRota.DAO.Consulta = this.tbx_ConsultaProcedure.Text;
-                this.metodoRota.DAO.Codigoapirepository = this.apiRepository.DAO.Codigo;
+                this.metodoRota.DAO.CodigoApiRepository = this.apiRepository.DAO.Codigo;
                 this.metodoRota.DAO.NomeMetodo = this.tbx_nomeMetodo.Text;
                 this.metodoRota.DAO.Rota = this.tbx_rota.Text;
                 this.metodoRota.DAO.TipoMetodo = this.cmb_tipoMetodo.SelectedItem.ToString();
@@ -110,12 +110,17 @@ namespace Visao
                 if (retorno)
                 {
                     Message.MensagemSucesso((tarefa == Util.Enumerator.Tarefa.EDITAR ? "Alterado" : "Incluído") + " com sucesso!");
-                    if (this.cadastroRota == null)
+                    if (this.cadastroRota != null && tarefa == Util.Enumerator.Tarefa.EDITAR)
                     {
                         this.cadastroRota.IniciaUserControl();
                     }
+                    else if(this.cadastroRota != null)
+                    {
+                        this.cadastroRota.AdicionaMetodo(this.metodoRota);
+                    }
+
                     this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
-                    this.InicializaUserControl();
+                    this.IniciaUserControl();
                 }
                 else
                 {
@@ -138,7 +143,7 @@ namespace Visao
                     if (this.metodoRota.DAO.Delete())
                     {
                         Message.MensagemSucesso("Excluído com sucesso!");
-                        if(this.cadastroRota == null)
+                        if(this.cadastroRota != null)
                         {
                             this.cadastroRota.IniciaUserControl();
                         }
@@ -152,7 +157,7 @@ namespace Visao
                 else
                 {
                     this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
-                    this.InicializaUserControl();
+                    this.IniciaUserControl();
                 }
             }
             else if(tarefa == Util.Enumerator.Tarefa.INCLUIR)
@@ -162,7 +167,7 @@ namespace Visao
             else
             {
                 this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
-                this.InicializaUserControl();
+                this.IniciaUserControl();
             }
         }
 
@@ -369,7 +374,7 @@ namespace Visao
             }
             else
             {
-                if(Message.MensagemConfirmaçãoYesNo("Deseja excluir o campo de saída " + this.listaSaidas[this.dgv_camposSaida.SelectedRows[0].Index].DAO.Tiporetorno + "?") == DialogResult.Yes)
+                if(Message.MensagemConfirmaçãoYesNo("Deseja excluir o campo de saída " + this.listaSaidas[this.dgv_camposSaida.SelectedRows[0].Index].DAO.TipoRetorno + "?") == DialogResult.Yes)
                 {
                     if (this.listaSaidas[this.dgv_camposSaida.SelectedRows[0].Index].DAO.Delete())
                     {
@@ -432,7 +437,7 @@ namespace Visao
             this.principal = principal;
             this.cadastroRota = cadastroRota;
 
-            this.InicializaUserControl();
+            this.IniciaUserControl();
         }
 
         #endregion Construtores
@@ -442,7 +447,7 @@ namespace Visao
         /// <summary>
         /// Método que inicializa a tela
         /// </summary>
-        public void InicializaUserControl()
+        public void IniciaUserControl()
         {
             this.Dock = DockStyle.Fill;
             this.grb_metodo.Text = "Método - Rota: " + this.apiRepository.DAO.NomeRota;
@@ -576,7 +581,7 @@ namespace Visao
         /// </summary>
         public void CarregaTabelaVariaveisSaida()
         {
-            this.listaSaidas = Model.MD_RetornoRotaRepository.RetornaRetornosRotas(this.metodoRota.DAO.Codigo);
+            this.listaSaidas = Model.MD_RetornoRotaRepository.RetornaRetornosMetodos(this.metodoRota.DAO.Codigo);
 
             this.dgv_camposSaida.Rows.Clear();
             this.dgv_camposSaida.Columns.Clear();
@@ -594,7 +599,7 @@ namespace Visao
         public void CarregaTabelaVariaveisSaida(Model.MD_RetornoRotaRepository campo)
         {
             List<string> list = new List<string>();
-            list.Add(campo.DAO.Tiporetorno);
+            list.Add(campo.DAO.TipoRetorno);
             list.Add(campo.DAO.CodigoClasseRetorno == -1 ? "Campo" : "Classe");
 
             this.dgv_camposSaida.Rows.Add(list.ToArray());

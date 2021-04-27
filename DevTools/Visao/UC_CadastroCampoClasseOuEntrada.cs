@@ -90,7 +90,15 @@ namespace Visao
         /// <param name="e"></param>
         private void btn_confirmar_Click(object sender, EventArgs e)
         {
-            this.Confirma();
+            if(this.tarefa == Util.Enumerator.Tarefa.VISUALIZAR)
+            {
+                this.tarefa = Util.Enumerator.Tarefa.EDITAR;
+                this.IniciaUserControl();
+            }
+            else
+            {
+                this.Confirma();
+            }
         }
 
         /// <summary>
@@ -115,6 +123,10 @@ namespace Visao
                         Message.MensagemErro("Erro ao excluir");
                     }
                 }
+            }
+            else if (this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                this.btn_fechar_Click(null, null);
             }
             else
             {
@@ -232,9 +244,14 @@ namespace Visao
                         }
                         else
                         {
-                            this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
-                            this.IniciaUserControl();
+                            this.btn_fechar_Click(null, null);
                         }
+                    }
+                    else
+                    {
+                        this.controleMetodoRotaRepository.IniciaUserControl();
+                        this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
+                        this.IniciaUserControl();
                     }
                 }
                 else

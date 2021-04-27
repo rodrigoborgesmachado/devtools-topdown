@@ -22,8 +22,9 @@ namespace Regras.ClassesRotasApi
         /// Método que implementa a criação da classe
         /// </summary>
         /// <returns></returns>
-        public override bool CriaClasses()
+        public override bool CriaClasses(out string mensagemErro)
         {
+            mensagemErro = string.Empty;
             return true;
         }
     }

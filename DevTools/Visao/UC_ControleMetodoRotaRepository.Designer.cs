@@ -91,7 +91,7 @@
             this.btn_excluir.Location = new System.Drawing.Point(581, 3);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(75, 29);
-            this.btn_excluir.TabIndex = 8;
+            this.btn_excluir.TabIndex = 21;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = true;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
@@ -103,7 +103,7 @@
             this.btn_confirmar.Location = new System.Drawing.Point(662, 3);
             this.btn_confirmar.Name = "btn_confirmar";
             this.btn_confirmar.Size = new System.Drawing.Size(75, 29);
-            this.btn_confirmar.TabIndex = 7;
+            this.btn_confirmar.TabIndex = 20;
             this.btn_confirmar.Text = "Cadastrar";
             this.btn_confirmar.UseVisualStyleBackColor = true;
             this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
@@ -126,7 +126,7 @@
             this.btn_fechar.Location = new System.Drawing.Point(720, 0);
             this.btn_fechar.Name = "btn_fechar";
             this.btn_fechar.Size = new System.Drawing.Size(20, 20);
-            this.btn_fechar.TabIndex = 17;
+            this.btn_fechar.TabIndex = 22;
             this.btn_fechar.UseVisualStyleBackColor = false;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
@@ -201,7 +201,7 @@
             this.dgv_camposSaida.ShowCellToolTips = false;
             this.dgv_camposSaida.Size = new System.Drawing.Size(683, 128);
             this.dgv_camposSaida.StandardTab = true;
-            this.dgv_camposSaida.TabIndex = 34;
+            this.dgv_camposSaida.TabIndex = 15;
             // 
             // btn_visualizarCampoSaida
             // 
@@ -212,7 +212,7 @@
             this.btn_visualizarCampoSaida.Location = new System.Drawing.Point(708, 100);
             this.btn_visualizarCampoSaida.Name = "btn_visualizarCampoSaida";
             this.btn_visualizarCampoSaida.Size = new System.Drawing.Size(20, 20);
-            this.btn_visualizarCampoSaida.TabIndex = 33;
+            this.btn_visualizarCampoSaida.TabIndex = 19;
             this.btn_visualizarCampoSaida.UseVisualStyleBackColor = true;
             this.btn_visualizarCampoSaida.Click += new System.EventHandler(this.btn_visualizarCampoSaida_Click);
             // 
@@ -225,7 +225,7 @@
             this.btn_removerCampoSaida.Location = new System.Drawing.Point(708, 74);
             this.btn_removerCampoSaida.Name = "btn_removerCampoSaida";
             this.btn_removerCampoSaida.Size = new System.Drawing.Size(20, 20);
-            this.btn_removerCampoSaida.TabIndex = 32;
+            this.btn_removerCampoSaida.TabIndex = 18;
             this.btn_removerCampoSaida.UseVisualStyleBackColor = true;
             this.btn_removerCampoSaida.Click += new System.EventHandler(this.btn_removerCampoSaida_Click);
             // 
@@ -238,7 +238,7 @@
             this.btn_editarCampoSaida.Location = new System.Drawing.Point(708, 48);
             this.btn_editarCampoSaida.Name = "btn_editarCampoSaida";
             this.btn_editarCampoSaida.Size = new System.Drawing.Size(20, 20);
-            this.btn_editarCampoSaida.TabIndex = 31;
+            this.btn_editarCampoSaida.TabIndex = 17;
             this.btn_editarCampoSaida.UseVisualStyleBackColor = true;
             this.btn_editarCampoSaida.Click += new System.EventHandler(this.btn_editarCampoSaida_Click);
             // 
@@ -250,7 +250,7 @@
             this.btn_cadastrarCampoSaida.Location = new System.Drawing.Point(708, 22);
             this.btn_cadastrarCampoSaida.Name = "btn_cadastrarCampoSaida";
             this.btn_cadastrarCampoSaida.Size = new System.Drawing.Size(20, 20);
-            this.btn_cadastrarCampoSaida.TabIndex = 30;
+            this.btn_cadastrarCampoSaida.TabIndex = 16;
             this.btn_cadastrarCampoSaida.UseVisualStyleBackColor = true;
             this.btn_cadastrarCampoSaida.Click += new System.EventHandler(this.btn_cadastrarCampoSaida_Click);
             // 
@@ -293,7 +293,7 @@
             this.dgv_camposEntrada.ShowCellToolTips = false;
             this.dgv_camposEntrada.Size = new System.Drawing.Size(683, 128);
             this.dgv_camposEntrada.StandardTab = true;
-            this.dgv_camposEntrada.TabIndex = 34;
+            this.dgv_camposEntrada.TabIndex = 10;
             // 
             // btn_visualizarVariavelEntrada
             // 
@@ -304,7 +304,7 @@
             this.btn_visualizarVariavelEntrada.Location = new System.Drawing.Point(708, 100);
             this.btn_visualizarVariavelEntrada.Name = "btn_visualizarVariavelEntrada";
             this.btn_visualizarVariavelEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_visualizarVariavelEntrada.TabIndex = 33;
+            this.btn_visualizarVariavelEntrada.TabIndex = 14;
             this.btn_visualizarVariavelEntrada.UseVisualStyleBackColor = true;
             this.btn_visualizarVariavelEntrada.Click += new System.EventHandler(this.btn_visualizarVariavelEntrada_Click);
             // 
@@ -317,7 +317,7 @@
             this.btn_removerCampoEntrada.Location = new System.Drawing.Point(708, 74);
             this.btn_removerCampoEntrada.Name = "btn_removerCampoEntrada";
             this.btn_removerCampoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_removerCampoEntrada.TabIndex = 32;
+            this.btn_removerCampoEntrada.TabIndex = 13;
             this.btn_removerCampoEntrada.UseVisualStyleBackColor = true;
             this.btn_removerCampoEntrada.Click += new System.EventHandler(this.btn_removerCampoEntrada_Click);
             // 
@@ -330,7 +330,7 @@
             this.btn_editarCampoEntrada.Location = new System.Drawing.Point(708, 48);
             this.btn_editarCampoEntrada.Name = "btn_editarCampoEntrada";
             this.btn_editarCampoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_editarCampoEntrada.TabIndex = 31;
+            this.btn_editarCampoEntrada.TabIndex = 12;
             this.btn_editarCampoEntrada.UseVisualStyleBackColor = true;
             this.btn_editarCampoEntrada.Click += new System.EventHandler(this.btn_editarCampoEntrada_Click);
             // 
@@ -342,7 +342,7 @@
             this.btn_adicionarCampoEntrada.Location = new System.Drawing.Point(708, 22);
             this.btn_adicionarCampoEntrada.Name = "btn_adicionarCampoEntrada";
             this.btn_adicionarCampoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_adicionarCampoEntrada.TabIndex = 30;
+            this.btn_adicionarCampoEntrada.TabIndex = 11;
             this.btn_adicionarCampoEntrada.UseVisualStyleBackColor = true;
             this.btn_adicionarCampoEntrada.Click += new System.EventHandler(this.btn_adicionarCampoEntrada_Click);
             // 
@@ -377,7 +377,7 @@
             this.btn_visualizarConsulta.Location = new System.Drawing.Point(589, 113);
             this.btn_visualizarConsulta.Name = "btn_visualizarConsulta";
             this.btn_visualizarConsulta.Size = new System.Drawing.Size(20, 20);
-            this.btn_visualizarConsulta.TabIndex = 34;
+            this.btn_visualizarConsulta.TabIndex = 9;
             this.btn_visualizarConsulta.UseVisualStyleBackColor = true;
             this.btn_visualizarConsulta.Click += new System.EventHandler(this.btn_visualizarConsulta_Click);
             // 
@@ -397,7 +397,7 @@
             this.btn_info_consultaProcedure.Location = new System.Drawing.Point(563, 113);
             this.btn_info_consultaProcedure.Name = "btn_info_consultaProcedure";
             this.btn_info_consultaProcedure.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_consultaProcedure.TabIndex = 23;
+            this.btn_info_consultaProcedure.TabIndex = 8;
             this.btn_info_consultaProcedure.UseVisualStyleBackColor = true;
             // 
             // tbx_ConsultaProcedure
@@ -406,7 +406,7 @@
             this.tbx_ConsultaProcedure.MaxLength = 35000;
             this.tbx_ConsultaProcedure.Name = "tbx_ConsultaProcedure";
             this.tbx_ConsultaProcedure.Size = new System.Drawing.Size(448, 23);
-            this.tbx_ConsultaProcedure.TabIndex = 22;
+            this.tbx_ConsultaProcedure.TabIndex = 7;
             // 
             // cmb_tipoMetodo
             // 
@@ -420,7 +420,7 @@
             this.cmb_tipoMetodo.Location = new System.Drawing.Point(111, 83);
             this.cmb_tipoMetodo.Name = "cmb_tipoMetodo";
             this.cmb_tipoMetodo.Size = new System.Drawing.Size(446, 23);
-            this.cmb_tipoMetodo.TabIndex = 21;
+            this.cmb_tipoMetodo.TabIndex = 5;
             // 
             // lbl_tipoMetodo
             // 
@@ -438,7 +438,7 @@
             this.btn_info_TipoMetodo.Location = new System.Drawing.Point(563, 84);
             this.btn_info_TipoMetodo.Name = "btn_info_TipoMetodo";
             this.btn_info_TipoMetodo.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_TipoMetodo.TabIndex = 19;
+            this.btn_info_TipoMetodo.TabIndex = 6;
             this.btn_info_TipoMetodo.UseVisualStyleBackColor = true;
             // 
             // lbl_rota
@@ -457,7 +457,7 @@
             this.btn_infoRotaMetodo.Location = new System.Drawing.Point(563, 52);
             this.btn_infoRotaMetodo.Name = "btn_infoRotaMetodo";
             this.btn_infoRotaMetodo.Size = new System.Drawing.Size(20, 20);
-            this.btn_infoRotaMetodo.TabIndex = 16;
+            this.btn_infoRotaMetodo.TabIndex = 4;
             this.btn_infoRotaMetodo.UseVisualStyleBackColor = true;
             // 
             // tbx_rota
@@ -466,7 +466,7 @@
             this.tbx_rota.MaxLength = 50;
             this.tbx_rota.Name = "tbx_rota";
             this.tbx_rota.Size = new System.Drawing.Size(448, 23);
-            this.tbx_rota.TabIndex = 15;
+            this.tbx_rota.TabIndex = 3;
             // 
             // lbl_nomeMetodo
             // 
@@ -484,7 +484,7 @@
             this.btn_info_metodo.Location = new System.Drawing.Point(563, 23);
             this.btn_info_metodo.Name = "btn_info_metodo";
             this.btn_info_metodo.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_metodo.TabIndex = 13;
+            this.btn_info_metodo.TabIndex = 2;
             this.btn_info_metodo.UseVisualStyleBackColor = true;
             // 
             // tbx_nomeMetodo
@@ -493,7 +493,7 @@
             this.tbx_nomeMetodo.MaxLength = 50;
             this.tbx_nomeMetodo.Name = "tbx_nomeMetodo";
             this.tbx_nomeMetodo.Size = new System.Drawing.Size(448, 23);
-            this.tbx_nomeMetodo.TabIndex = 12;
+            this.tbx_nomeMetodo.TabIndex = 1;
             // 
             // UC_ControleMetodoRotaRepository
             // 

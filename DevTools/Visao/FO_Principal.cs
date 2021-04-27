@@ -1336,7 +1336,7 @@ namespace Visao
                 }
                 else
                 {
-                    Message.MensagemSucesso("As classes foram geradas no diretórios: " + Util.Global.app_classes_directory + "!");
+                    Message.MensagemSucesso("As classes foram geradas no diretórios: " + Util.Global.app_classesSaida_directory + "!");
                 }
             }
         }

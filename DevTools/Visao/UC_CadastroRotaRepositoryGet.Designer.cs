@@ -53,6 +53,8 @@
             this.pan_botton = new System.Windows.Forms.Panel();
             this.pan_top = new System.Windows.Forms.Panel();
             this.btn_fechar = new System.Windows.Forms.Button();
+            this.btn_reload_tabela = new System.Windows.Forms.Button();
+            this.lbl_quantidadeMetodos = new System.Windows.Forms.Label();
             this.pan_tot.SuspendLayout();
             this.pan_formularioGeral.SuspendLayout();
             this.gpb_cadastroGeral.SuspendLayout();
@@ -108,6 +110,7 @@
             // 
             // grb_metodos
             // 
+            this.grb_metodos.Controls.Add(this.btn_reload_tabela);
             this.grb_metodos.Controls.Add(this.btn_visualizarMetodo);
             this.grb_metodos.Controls.Add(this.btn_removerMetodo);
             this.grb_metodos.Controls.Add(this.btn_editarMetodo);
@@ -130,7 +133,7 @@
             this.btn_visualizarMetodo.Location = new System.Drawing.Point(708, 100);
             this.btn_visualizarMetodo.Name = "btn_visualizarMetodo";
             this.btn_visualizarMetodo.Size = new System.Drawing.Size(20, 20);
-            this.btn_visualizarMetodo.TabIndex = 29;
+            this.btn_visualizarMetodo.TabIndex = 10;
             this.btn_visualizarMetodo.UseVisualStyleBackColor = true;
             this.btn_visualizarMetodo.Click += new System.EventHandler(this.btn_visualizarMetodo_Click);
             // 
@@ -143,7 +146,7 @@
             this.btn_removerMetodo.Location = new System.Drawing.Point(708, 74);
             this.btn_removerMetodo.Name = "btn_removerMetodo";
             this.btn_removerMetodo.Size = new System.Drawing.Size(20, 20);
-            this.btn_removerMetodo.TabIndex = 28;
+            this.btn_removerMetodo.TabIndex = 9;
             this.btn_removerMetodo.UseVisualStyleBackColor = true;
             this.btn_removerMetodo.Click += new System.EventHandler(this.btn_removerMetodo_Click);
             // 
@@ -156,7 +159,7 @@
             this.btn_editarMetodo.Location = new System.Drawing.Point(708, 48);
             this.btn_editarMetodo.Name = "btn_editarMetodo";
             this.btn_editarMetodo.Size = new System.Drawing.Size(20, 20);
-            this.btn_editarMetodo.TabIndex = 27;
+            this.btn_editarMetodo.TabIndex = 8;
             this.btn_editarMetodo.UseVisualStyleBackColor = true;
             this.btn_editarMetodo.Click += new System.EventHandler(this.btn_editarMetodo_Click);
             // 
@@ -168,7 +171,7 @@
             this.btn_adicionarMetodo.Location = new System.Drawing.Point(708, 22);
             this.btn_adicionarMetodo.Name = "btn_adicionarMetodo";
             this.btn_adicionarMetodo.Size = new System.Drawing.Size(20, 20);
-            this.btn_adicionarMetodo.TabIndex = 26;
+            this.btn_adicionarMetodo.TabIndex = 7;
             this.btn_adicionarMetodo.UseVisualStyleBackColor = true;
             this.btn_adicionarMetodo.Click += new System.EventHandler(this.btn_adicionarMetodo_Click);
             // 
@@ -231,7 +234,7 @@
             this.btn_info_descricao.Location = new System.Drawing.Point(560, 66);
             this.btn_info_descricao.Name = "btn_info_descricao";
             this.btn_info_descricao.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_descricao.TabIndex = 10;
+            this.btn_info_descricao.TabIndex = 5;
             this.btn_info_descricao.UseVisualStyleBackColor = true;
             this.btn_info_descricao.Click += new System.EventHandler(this.btn_info_descricao_Click);
             // 
@@ -241,7 +244,7 @@
             this.tbx_descricao.MaxLength = 50;
             this.tbx_descricao.Name = "tbx_descricao";
             this.tbx_descricao.Size = new System.Drawing.Size(448, 23);
-            this.tbx_descricao.TabIndex = 9;
+            this.tbx_descricao.TabIndex = 5;
             // 
             // lbl_rota
             // 
@@ -259,7 +262,7 @@
             this.btn_infoRota.Location = new System.Drawing.Point(560, 37);
             this.btn_infoRota.Name = "btn_infoRota";
             this.btn_infoRota.Size = new System.Drawing.Size(20, 20);
-            this.btn_infoRota.TabIndex = 7;
+            this.btn_infoRota.TabIndex = 3;
             this.btn_infoRota.UseVisualStyleBackColor = true;
             this.btn_infoRota.Click += new System.EventHandler(this.btn_infoRota_Click);
             // 
@@ -269,7 +272,7 @@
             this.tbx_rota.MaxLength = 50;
             this.tbx_rota.Name = "tbx_rota";
             this.tbx_rota.Size = new System.Drawing.Size(448, 23);
-            this.tbx_rota.TabIndex = 6;
+            this.tbx_rota.TabIndex = 3;
             // 
             // lbl_nomeRota
             // 
@@ -306,7 +309,7 @@
             this.btn_excluir.Location = new System.Drawing.Point(581, 3);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(75, 29);
-            this.btn_excluir.TabIndex = 8;
+            this.btn_excluir.TabIndex = 13;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = true;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
@@ -318,13 +321,14 @@
             this.btn_confirmar.Location = new System.Drawing.Point(662, 3);
             this.btn_confirmar.Name = "btn_confirmar";
             this.btn_confirmar.Size = new System.Drawing.Size(75, 29);
-            this.btn_confirmar.TabIndex = 7;
+            this.btn_confirmar.TabIndex = 12;
             this.btn_confirmar.Text = "Cadastrar";
             this.btn_confirmar.UseVisualStyleBackColor = true;
             this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
             // 
             // pan_botton
             // 
+            this.pan_botton.Controls.Add(this.lbl_quantidadeMetodos);
             this.pan_botton.Controls.Add(this.btn_excluir);
             this.pan_botton.Controls.Add(this.btn_confirmar);
             this.pan_botton.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -351,9 +355,31 @@
             this.btn_fechar.Location = new System.Drawing.Point(720, 0);
             this.btn_fechar.Name = "btn_fechar";
             this.btn_fechar.Size = new System.Drawing.Size(20, 20);
-            this.btn_fechar.TabIndex = 17;
+            this.btn_fechar.TabIndex = 14;
             this.btn_fechar.UseVisualStyleBackColor = false;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
+            // 
+            // btn_reload_tabela
+            // 
+            this.btn_reload_tabela.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_reload_tabela.BackgroundImage = global::DevTools.Properties.Resources.refresh120x20;
+            this.btn_reload_tabela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_reload_tabela.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_reload_tabela.Location = new System.Drawing.Point(708, 126);
+            this.btn_reload_tabela.Name = "btn_reload_tabela";
+            this.btn_reload_tabela.Size = new System.Drawing.Size(20, 20);
+            this.btn_reload_tabela.TabIndex = 11;
+            this.btn_reload_tabela.UseVisualStyleBackColor = true;
+            this.btn_reload_tabela.Click += new System.EventHandler(this.btn_reload_tabela_Click);
+            // 
+            // lbl_quantidadeMetodos
+            // 
+            this.lbl_quantidadeMetodos.AutoSize = true;
+            this.lbl_quantidadeMetodos.Location = new System.Drawing.Point(6, 10);
+            this.lbl_quantidadeMetodos.Name = "lbl_quantidadeMetodos";
+            this.lbl_quantidadeMetodos.Size = new System.Drawing.Size(70, 16);
+            this.lbl_quantidadeMetodos.TabIndex = 14;
+            this.lbl_quantidadeMetodos.Text = "X métodos";
             // 
             // UC_CadastroRotaRepository
             // 
@@ -375,6 +401,7 @@
             this.pan_dadosRota.ResumeLayout(false);
             this.pan_dadosRota.PerformLayout();
             this.pan_botton.ResumeLayout(false);
+            this.pan_botton.PerformLayout();
             this.pan_top.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -407,5 +434,7 @@
         private System.Windows.Forms.Button btn_info_descricao;
         private System.Windows.Forms.TextBox tbx_descricao;
         private System.Windows.Forms.Button btn_visualizarMetodo;
+        private System.Windows.Forms.Button btn_reload_tabela;
+        private System.Windows.Forms.Label lbl_quantidadeMetodos;
     }
 }

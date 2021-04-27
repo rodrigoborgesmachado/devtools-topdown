@@ -117,6 +117,10 @@ namespace Visao
                     }
                 }
             }
+            else if (this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                this.btn_fechar_Click(null, null);
+            }
             else
             {
                 this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
@@ -230,6 +234,16 @@ namespace Visao
             }
         }
 
+        /// <summary>
+        /// Evento lançado no clique do botão de reload da tabela
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_reload_tabela_Click(object sender, EventArgs e)
+        {
+            this.CarregaListagemMetodos();
+        }
+
         #endregion Eventos
 
         #region Construtores
@@ -307,7 +321,7 @@ namespace Visao
         /// <summary>
         /// Método que carrega no grid os métodos da rota
         /// </summary>
-        public void CarregaListagemMetodos()
+        private void CarregaListagemMetodos()
         {
             Util.CL_Files.WriteOnTheLog("UC_CadastroRotaRepositoryGet().CarregaListagemMetodos()", Util.Global.TipoLog.DETALHADO);
 
@@ -322,13 +336,16 @@ namespace Visao
             this.listaMetodos = Model.MD_RotasRepository.RetornaMetodosApi(this.apiRepository.DAO.Codigo);
 
             this.listaMetodos.ForEach(m => CarregaListagemMetodos(m));
+
+            this.lbl_quantidadeMetodos.Visible = this.listaMetodos.Count > 0;
+            this.lbl_quantidadeMetodos.Text = this.listaMetodos.Count.ToString("000") + " métodos";
         }
 
         /// <summary>
         /// Método que preenche a tabela com os métodos
         /// </summary>
         /// <param name="metodo"></param>
-        public void CarregaListagemMetodos(Model.MD_RotasRepository metodo)
+        private void CarregaListagemMetodos(Model.MD_RotasRepository metodo)
         {
             Util.CL_Files.WriteOnTheLog("UC_CadastroRotaRepositoryGet().CarregaListagemMetodos()", Util.Global.TipoLog.DETALHADO);
             List<string> list = new List<string>();
@@ -338,6 +355,16 @@ namespace Visao
             list.Add(metodo.DAO.Consulta);
 
             this.dgv_metodos.Rows.Add(list.ToArray());
+        }
+
+        /// <summary>
+        /// Método que adiciona o método ao cadastro da rota
+        /// </summary>
+        /// <param name="metodo"></param>
+        public void AdicionaMetodo(Model.MD_RotasRepository metodo)
+        {
+            this.listaMetodos.Add(metodo);
+            this.CarregaListagemMetodos(metodo);
         }
 
         #endregion Métodos

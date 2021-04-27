@@ -149,5 +149,18 @@ namespace Model
                 this.tabela = value;
             }
         }
+
+        string comments = string.Empty;
+        public string Comments
+        {
+            get
+            {
+                return this.comments;
+            }
+            set
+            {
+                this.comments = value;
+            }
+        }
     }
 }

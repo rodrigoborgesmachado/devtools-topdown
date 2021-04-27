@@ -36,7 +36,7 @@ namespace DAO
         /// <summary>
         /// [CODIGOAPIREPOSITORY] Código referente a qual rota está associada
         /// <summary>
-        public int Codigoapirepository
+        public int CodigoApiRepository
         {
             get
             {
@@ -169,7 +169,7 @@ namespace DAO
             }
             else if (reader.Read())
             {
-                this.Codigoapirepository = int.Parse(reader["CODIGOAPIREPOSITORY"].ToString());
+                this.CodigoApiRepository = int.Parse(reader["CODIGOAPIREPOSITORY"].ToString());
                 this.Rota = reader["ROTA"].ToString();
                 this.NomeMetodo = reader["NOMEMETODO"].ToString();
                 this.TipoMetodo = reader["TIPOMETODO"].ToString();
@@ -222,7 +222,7 @@ namespace DAO
             string sentenca = string.Empty;
 
             sentenca = "UPDATE " + table.Table_Name + " SET " + 
-                        "CODIGO = " + Codigo + ", CODIGOAPIREPOSITORY = " + Codigoapirepository + ", ROTA = '" + Rota + "', NOMEMETODO = '" + NomeMetodo + "', TIPOMETODO = '" + TipoMetodo + "', CONSULTA = '" + Consulta + "'" + 
+                        "CODIGO = " + Codigo + ", CODIGOAPIREPOSITORY = " + CodigoApiRepository + ", ROTA = '" + Rota + "', NOMEMETODO = '" + NomeMetodo + "', TIPOMETODO = '" + TipoMetodo + "', CONSULTA = '" + Consulta + "'" + 
                         " WHERE CODIGO = " + Codigo + "";
 
             return DataBase.Connection.Update(sentenca);

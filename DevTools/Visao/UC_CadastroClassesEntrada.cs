@@ -168,7 +168,7 @@ namespace Visao
                         if (campo.DAO.Delete())
                         {
                             Message.MensagemSucesso("Excluídos com sucesso");
-                            this.InicializaUserControl();
+                            this.IniciaUserControl();
                         }
                         else
                         {
@@ -184,7 +184,7 @@ namespace Visao
                         if (classe.DAO.Delete())
                         {
                             Message.MensagemSucesso("Excluídos com sucesso");
-                            this.InicializaUserControl();
+                            this.IniciaUserControl();
                         }
                         else
                         {
@@ -231,7 +231,7 @@ namespace Visao
             if(this.tarefa == Util.Enumerator.Tarefa.VISUALIZAR)
             {
                 this.tarefa = Util.Enumerator.Tarefa.EDITAR;
-                this.InicializaUserControl();
+                this.IniciaUserControl();
             }
             else
             {
@@ -265,11 +265,25 @@ namespace Visao
                     }
                 }
             }
+            else if(this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                this.btn_fechar_Click(null, null);
+            }
             else
             {
                 this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
-                this.InicializaUserControl();
+                this.IniciaUserControl();
             }
+        }
+
+        /// <summary>
+        /// Evento lançado no clique do botão de reload da tabela
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_reload_tabela_Click(object sender, EventArgs e)
+        {
+            this.CarregaTabelaCamposClasse();
         }
 
         #endregion Eventos
@@ -299,7 +313,7 @@ namespace Visao
             this.controleRotaRepository = controleRotaRepository;
             this.principal = principal;
             this.cadastroClasseMae = null;
-            this.InicializaUserControl();
+            this.IniciaUserControl();
         }
 
         /// <summary>
@@ -325,7 +339,7 @@ namespace Visao
             this.controleRotaRepository = null;
             this.principal = principal;
             this.cadastroClasseMae = cadastroClasseMae;
-            this.InicializaUserControl();
+            this.IniciaUserControl();
         }
 
         #endregion Construtores
@@ -335,7 +349,7 @@ namespace Visao
         /// <summary>
         /// Método que inicializa a tela
         /// </summary>
-        public void InicializaUserControl()
+        public void IniciaUserControl()
         {
             this.Dock = DockStyle.Fill;
             this.ControlaTarefa();
@@ -490,18 +504,33 @@ namespace Visao
                 {
                     Message.MensagemSucesso((this.tarefa == Util.Enumerator.Tarefa.INCLUIR ? "Incluído" : "Alterado") + " com sucesso");
 
-                    if(classeMae != null)
+                    if(this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
                     {
-                        this.cadastroClasseMae.AdicionaClasseEntrada(this.classeEntrada);
+                        if (classeMae != null)
+                        {
+                            this.cadastroClasseMae.AdicionaClasseEntrada(this.classeEntrada);
+                        }
+                        else
+                        {
+                            if (this.controleRotaRepository != null)
+                                this.controleRotaRepository.AdicionaClasseEntrada(this.classeEntrada);
+                        }
                     }
                     else
                     {
-                        if (this.controleRotaRepository != null)
-                            this.controleRotaRepository.AdicionaClasseEntrada(this.classeEntrada);
+                        if (classeMae != null)
+                        {
+                            this.cadastroClasseMae.IniciaUserControl();
+                        }
+                        else
+                        {
+                            if (this.controleRotaRepository != null)
+                                this.controleRotaRepository.IniciaUserControl();
+                        }
                     }
 
                     this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
-                    this.InicializaUserControl();
+                    this.IniciaUserControl();
                 }
                 else
                 {

@@ -45,7 +45,136 @@ namespace Util
         public static string app_exportacao_directory = app_main_directoty + "EXPORTACAO\\";
 
         // Nome do diretório de Classes
-        public static string app_classes_directory = app_main_directoty + "Classes\\";
+        public static string app_classesSaida_directory = app_main_directoty + "Classes Saída\\";
+
+        // Nome do diretório das Classes Saida - Controller
+        public static string app_classesSaidaController_directory = app_classesSaida_directory + "Controller\\";
+
+        // Nome do diretório das Classes Saida - Controller
+        public static string app_classesSaidaControllerFile = app_classesSaidaController_directory + "Controller.cs";
+
+        // Nome do diretório das Classes Saida - Controller
+        public static string app_classesSaidaControllerMetodosFile = app_classesSaidaController_directory + "METODOS.cs";
+
+        // Nome do diretório das Classes Saida - DTO
+        public static string app_classesSaidaDto_directory = app_classesSaida_directory + "DTO\\";
+
+        // Nome do diretório das Classes Saida - DTO
+        public static string app_classesSaidaDtoFile = app_classesSaidaDto_directory + "Repository.cs";
+
+        // Nome do diretório das Classes Saida - Entity
+        public static string app_classesSaidaEntity_directory = app_classesSaida_directory + "Entity\\";
+
+        // Nome do diretório das Classes Saida - Entity
+        public static string app_classesSaidaEntityFile = app_classesSaidaEntity_directory + "Entity.cs";
+
+        // Nome do diretório das Classes Saida - Query
+        public static string app_classesSaidaQuery_directory = app_classesSaida_directory + "Query\\";
+
+        // Nome do diretório das Classes Saida - Query
+        public static string app_classesSaidaQueryFile = app_classesSaidaQuery_directory + "Query.cs";
+
+        // Nome do diretório das Classes Saida - Query
+        public static string app_classesSaidaQueryMetodosFile = app_classesSaidaQuery_directory + "METODOS.cs";
+
+        // Nome do diretório das Classes Saida - Query - Interface
+        public static string app_classesSaidaQueryInterface_directory = app_classesSaida_directory + "Query - Interface\\";
+
+        // Nome do diretório das Classes Saida - Query - Interface
+        public static string app_classesSaidaQueryInterfaceFile = app_classesSaidaQueryInterface_directory + "IQuery.cs";
+
+        // Nome do diretório das Classes Saida - Query - Interface
+        public static string app_classesSaidaQueryInterfaceMetodosFile = app_classesSaidaQueryInterface_directory + "METODOS.cs";
+
+        // Nome do diretório das Classes Saida - Repository
+        public static string app_classesSaidaRepository_directory = app_classesSaida_directory + "Repository\\";
+
+        // Nome do diretório das Classes Saida - Repository
+        public static string app_classesSaidaRepositoryFile = app_classesSaidaRepository_directory + "Repository.cs";
+
+        // Nome do diretório das Classes Saida - Repository
+        public static string app_classesSaidaRepositoryMetodosFile = app_classesSaidaRepository_directory + "METODOS.cs";
+
+        // Nome do diretório das Classes Saida - Repository - Interface
+        public static string app_classesSaidaRepositoryInterface_directory = app_classesSaida_directory + "Repository - Interface\\";
+
+        // Nome do diretório das Classes Saida - Repository - Interface
+        public static string app_classesSaidaRepositoryInterfaceFile = app_classesSaidaRepositoryInterface_directory + "IRepository.cs";
+
+        // Nome do diretório das Classes Saida - Repository - Interface
+        public static string app_classesSaidaRepositoryInterfaceMetodosFile = app_classesSaidaRepositoryInterface_directory + "METODOS.cs";
+
+        // Nome do diretório das Classes Saida - Validations
+        public static string app_classesSaidaValidations_directory = app_classesSaida_directory + "Validations\\";
+
+        // Nome do diretório das Classes Saida - Validations
+        public static string app_classesSaidaValidationFile = app_classesSaidaValidations_directory + "Validation.cs";
+
+        // Nome do diretório das Classes base
+        public static string app_classesBase_directory = app_main_directoty + "Classes Base\\";
+
+        // Nome do diretório das Classes base - Controller
+        public static string app_classesBaseController_directory = app_classesBase_directory + "Controller\\";
+
+        // Nome do diretório das Classes base - Controller
+        public static string app_classesBaseControllerFile = app_classesBaseController_directory + "Controller.cs";
+
+        // Nome do diretório das Classes base - Controller
+        public static string app_classesBaseControllerMetodosFile = app_classesBaseController_directory + "METODOS.cs";
+
+        // Nome do diretório das Classes base - DTO
+        public static string app_classesBaseDto_directory = app_classesBase_directory + "Controller\\";
+
+        // Nome do diretório das Classes base - DTO
+        public static string app_classesBaseDtoFile = app_classesBaseDto_directory + "Repository.cs";
+
+        // Nome do diretório das Classes base - Entity
+        public static string app_classesBaseEntity_directory = app_classesBase_directory + "Entity\\";
+
+        // Nome do diretório das Classes base - Entity
+        public static string app_classesBaseEntityFile = app_classesBaseEntity_directory + "Entity.cs";
+
+        // Nome do diretório das Classes base - Query
+        public static string app_classesBaseQuery_directory = app_classesBase_directory + "Query\\";
+
+        // Nome do diretório das Classes base - Query
+        public static string app_classesBaseQueryFile = app_classesBaseQuery_directory + "Query.cs";
+
+        // Nome do diretório das Classes base - Query
+        public static string app_classesBaseQueryMetodosFile = app_classesBaseQuery_directory + "METODOS.cs";
+
+        // Nome do diretório das Classes base - Query - Interface
+        public static string app_classesBaseQueryInterface_directory = app_classesBase_directory + "Query - Interface\\";
+
+        // Nome do diretório das Classes base - Query - Interface
+        public static string app_classesBaseQueryInterfaceFile = app_classesBaseQuery_directory + "IQuery.cs";
+
+        // Nome do diretório das Classes base - Query - Interface
+        public static string app_classesBaseQueryInterfaceMetodosFile = app_classesBaseQuery_directory + "METODOS.cs";
+
+        // Nome do diretório das Classes base - Repository
+        public static string app_classesBaseRepository_directory = app_classesBase_directory + "Repository\\";
+
+        // Nome do diretório das Classes base - Repository
+        public static string app_classesBaseRepositoryFile = app_classesBaseRepository_directory + "Repository.cs";
+
+        // Nome do diretório das Classes base - Repository
+        public static string app_classesBaseRepositoryMetodosFile = app_classesBaseRepository_directory + "METODOS.cs";
+
+        // Nome do diretório das Classes base - Repository - Interface
+        public static string app_classesBaseRepositoryInterface_directory = app_classesBase_directory + "Repository - Interface\\";
+
+        // Nome do diretório das Classes base - Repository - Interface
+        public static string app_classesBaseRepositoryInterfaceFile = app_classesBaseRepositoryInterface_directory + "IRepository.cs";
+
+        // Nome do diretório das Classes base - Repository - Interface
+        public static string app_classesBaseRepositoryInterfaceMetodosFile = app_classesBaseRepositoryInterface_directory + "METODOS.cs";
+
+        // Nome do diretório das Classes base - Validations
+        public static string app_classesBaseValidations_directory = app_classesBase_directory + "Validations\\";
+
+        // Nome do diretório das Classes base - Validations
+        public static string app_classesBaseValidationFile = app_classesBaseValidations_directory + "Validation.cs";
 
         // Nome do diretório de relatórios
         public static string app_rel_directory = app_main_directoty + "Relatorios\\";

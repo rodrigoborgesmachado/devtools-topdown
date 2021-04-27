@@ -51,6 +51,7 @@
             this.btn_info_tipoEntrada = new System.Windows.Forms.Button();
             this.cmb_tipoEntrada = new System.Windows.Forms.ComboBox();
             this.lbl_tipoEntrada = new System.Windows.Forms.Label();
+            this.btn_reload_tabela = new System.Windows.Forms.Button();
             this.pan_botton.SuspendLayout();
             this.pan_top.SuspendLayout();
             this.grb_cadastro.SuspendLayout();
@@ -76,7 +77,7 @@
             this.btn_excluir.Location = new System.Drawing.Point(579, 3);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(75, 29);
-            this.btn_excluir.TabIndex = 24;
+            this.btn_excluir.TabIndex = 14;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = true;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
@@ -88,7 +89,7 @@
             this.btn_confirmar.Location = new System.Drawing.Point(662, 3);
             this.btn_confirmar.Name = "btn_confirmar";
             this.btn_confirmar.Size = new System.Drawing.Size(75, 29);
-            this.btn_confirmar.TabIndex = 23;
+            this.btn_confirmar.TabIndex = 13;
             this.btn_confirmar.Text = "Cadastrar";
             this.btn_confirmar.UseVisualStyleBackColor = true;
             this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
@@ -111,7 +112,7 @@
             this.btn_fechar.Location = new System.Drawing.Point(720, 0);
             this.btn_fechar.Name = "btn_fechar";
             this.btn_fechar.Size = new System.Drawing.Size(20, 20);
-            this.btn_fechar.TabIndex = 17;
+            this.btn_fechar.TabIndex = 15;
             this.btn_fechar.UseVisualStyleBackColor = false;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
@@ -129,6 +130,7 @@
             // 
             // grb_camposClasse
             // 
+            this.grb_camposClasse.Controls.Add(this.btn_reload_tabela);
             this.grb_camposClasse.Controls.Add(this.dgv_camposClasse);
             this.grb_camposClasse.Controls.Add(this.btn_visualizarVariavelEntrada);
             this.grb_camposClasse.Controls.Add(this.btn_removerCampoEntrada);
@@ -166,7 +168,7 @@
             this.dgv_camposClasse.ShowCellToolTips = false;
             this.dgv_camposClasse.Size = new System.Drawing.Size(693, 289);
             this.dgv_camposClasse.StandardTab = true;
-            this.dgv_camposClasse.TabIndex = 39;
+            this.dgv_camposClasse.TabIndex = 7;
             // 
             // btn_visualizarVariavelEntrada
             // 
@@ -177,7 +179,7 @@
             this.btn_visualizarVariavelEntrada.Location = new System.Drawing.Point(708, 100);
             this.btn_visualizarVariavelEntrada.Name = "btn_visualizarVariavelEntrada";
             this.btn_visualizarVariavelEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_visualizarVariavelEntrada.TabIndex = 38;
+            this.btn_visualizarVariavelEntrada.TabIndex = 11;
             this.btn_visualizarVariavelEntrada.UseVisualStyleBackColor = true;
             this.btn_visualizarVariavelEntrada.Click += new System.EventHandler(this.btn_visualizarVariavelEntrada_Click);
             // 
@@ -190,7 +192,7 @@
             this.btn_removerCampoEntrada.Location = new System.Drawing.Point(708, 74);
             this.btn_removerCampoEntrada.Name = "btn_removerCampoEntrada";
             this.btn_removerCampoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_removerCampoEntrada.TabIndex = 37;
+            this.btn_removerCampoEntrada.TabIndex = 10;
             this.btn_removerCampoEntrada.UseVisualStyleBackColor = true;
             this.btn_removerCampoEntrada.Click += new System.EventHandler(this.btn_removerCampoEntrada_Click);
             // 
@@ -203,7 +205,7 @@
             this.btn_editarCampoEntrada.Location = new System.Drawing.Point(708, 48);
             this.btn_editarCampoEntrada.Name = "btn_editarCampoEntrada";
             this.btn_editarCampoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_editarCampoEntrada.TabIndex = 36;
+            this.btn_editarCampoEntrada.TabIndex = 9;
             this.btn_editarCampoEntrada.UseVisualStyleBackColor = true;
             this.btn_editarCampoEntrada.Click += new System.EventHandler(this.btn_editarCampoEntrada_Click);
             // 
@@ -215,7 +217,7 @@
             this.btn_adicionarCampoEntrada.Location = new System.Drawing.Point(708, 22);
             this.btn_adicionarCampoEntrada.Name = "btn_adicionarCampoEntrada";
             this.btn_adicionarCampoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_adicionarCampoEntrada.TabIndex = 35;
+            this.btn_adicionarCampoEntrada.TabIndex = 8;
             this.btn_adicionarCampoEntrada.UseVisualStyleBackColor = true;
             this.btn_adicionarCampoEntrada.Click += new System.EventHandler(this.btn_adicionarCampoEntrada_Click);
             // 
@@ -244,7 +246,7 @@
             this.tbx_classe.MaxLength = 50;
             this.tbx_classe.Name = "tbx_classe";
             this.tbx_classe.Size = new System.Drawing.Size(446, 23);
-            this.tbx_classe.TabIndex = 25;
+            this.tbx_classe.TabIndex = 5;
             // 
             // tbx_nomeClasse
             // 
@@ -252,7 +254,7 @@
             this.tbx_nomeClasse.MaxLength = 50;
             this.tbx_nomeClasse.Name = "tbx_nomeClasse";
             this.tbx_nomeClasse.Size = new System.Drawing.Size(446, 23);
-            this.tbx_nomeClasse.TabIndex = 6;
+            this.tbx_nomeClasse.TabIndex = 1;
             // 
             // btn_info_campo
             // 
@@ -261,7 +263,7 @@
             this.btn_info_campo.Location = new System.Drawing.Point(545, 22);
             this.btn_info_campo.Name = "btn_info_campo";
             this.btn_info_campo.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_campo.TabIndex = 7;
+            this.btn_info_campo.TabIndex = 2;
             this.btn_info_campo.UseVisualStyleBackColor = true;
             this.btn_info_campo.Click += new System.EventHandler(this.btn_info_campo_Click);
             // 
@@ -290,7 +292,7 @@
             this.btn_info_tipoCampo.Location = new System.Drawing.Point(545, 82);
             this.btn_info_tipoCampo.Name = "btn_info_tipoCampo";
             this.btn_info_tipoCampo.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_tipoCampo.TabIndex = 23;
+            this.btn_info_tipoCampo.TabIndex = 4;
             this.btn_info_tipoCampo.UseVisualStyleBackColor = true;
             this.btn_info_tipoCampo.Click += new System.EventHandler(this.btn_info_tipoCampo_Click);
             // 
@@ -301,7 +303,7 @@
             this.btn_info_tipoEntrada.Location = new System.Drawing.Point(545, 53);
             this.btn_info_tipoEntrada.Name = "btn_info_tipoEntrada";
             this.btn_info_tipoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_tipoEntrada.TabIndex = 10;
+            this.btn_info_tipoEntrada.TabIndex = 3;
             this.btn_info_tipoEntrada.UseVisualStyleBackColor = true;
             this.btn_info_tipoEntrada.Click += new System.EventHandler(this.btn_info_tipoEntrada_Click);
             // 
@@ -319,7 +321,7 @@
             this.cmb_tipoEntrada.Location = new System.Drawing.Point(93, 51);
             this.cmb_tipoEntrada.Name = "cmb_tipoEntrada";
             this.cmb_tipoEntrada.Size = new System.Drawing.Size(446, 23);
-            this.cmb_tipoEntrada.TabIndex = 22;
+            this.cmb_tipoEntrada.TabIndex = 3;
             // 
             // lbl_tipoEntrada
             // 
@@ -329,6 +331,19 @@
             this.lbl_tipoEntrada.Size = new System.Drawing.Size(81, 16);
             this.lbl_tipoEntrada.TabIndex = 11;
             this.lbl_tipoEntrada.Text = "Tipo Entrada";
+            // 
+            // btn_reload_tabela
+            // 
+            this.btn_reload_tabela.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_reload_tabela.BackgroundImage = global::DevTools.Properties.Resources.refresh120x20;
+            this.btn_reload_tabela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_reload_tabela.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_reload_tabela.Location = new System.Drawing.Point(708, 126);
+            this.btn_reload_tabela.Name = "btn_reload_tabela";
+            this.btn_reload_tabela.Size = new System.Drawing.Size(20, 20);
+            this.btn_reload_tabela.TabIndex = 12;
+            this.btn_reload_tabela.UseVisualStyleBackColor = true;
+            this.btn_reload_tabela.Click += new System.EventHandler(this.btn_reload_tabela_Click);
             // 
             // UC_CadastroClassesEntrada
             // 
@@ -376,5 +391,6 @@
         private System.Windows.Forms.Button btn_removerCampoEntrada;
         private System.Windows.Forms.Button btn_editarCampoEntrada;
         private System.Windows.Forms.Button btn_adicionarCampoEntrada;
+        private System.Windows.Forms.Button btn_reload_tabela;
     }
 }

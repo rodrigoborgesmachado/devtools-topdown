@@ -228,6 +228,15 @@ namespace Visao
                     if (this.classeRetorno.DAO.Delete())
                     {
                         Message.MensagemSucesso("Excluído com sucesso!");
+                        if (classeRetornoMae == null)
+                        {
+                            this.telaCadastroTipoRetorno.IniciaUserControl();
+                        }
+                        else
+                        {
+                            this.telaClasseMae.IniciaUserControl();
+                        }
+                        this.btn_fechar_Click(null, null);
                     }
                     else
                     {
@@ -235,11 +244,25 @@ namespace Visao
                     }
                 }
             }
+            else if (this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                this.btn_fechar_Click(null, null);
+            }
             else
             {
                 this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
                 this.IniciaUserControl();
             }
+        }
+
+        /// <summary>
+        /// Evento disparado no clique da opção de reload da tela
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_reload_tabela_Click(object sender, EventArgs e)
+        {
+            this.CarregaTabelaCamposClasse();
         }
 
         #endregion Eventos
@@ -458,15 +481,28 @@ namespace Visao
                 if (retorno)
                 {
                     Message.MensagemSucesso((tarefa == Util.Enumerator.Tarefa.INCLUIR ? "Incluído" : "Alterado") + " com sucesso");
-                    if(classeRetornoMae == null)
+                    if(this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
                     {
-                        this.telaCadastroTipoRetorno.AdicionaCampoRetorno(this.classeRetorno);
+                        if(classeRetornoMae == null)
+                        {
+                            this.telaCadastroTipoRetorno.AdicionaCampoRetorno(this.classeRetorno);
+                        }
+                        else
+                        {
+                            this.telaClasseMae.AdicionaCampoRetorno(this.classeRetorno);
+                        }
                     }
                     else
                     {
-                        this.telaClasseMae.AdicionaCampoRetorno(this.classeRetorno);
+                        if (classeRetornoMae == null)
+                        {
+                            this.telaCadastroTipoRetorno.IniciaUserControl();
+                        }
+                        else
+                        {
+                            this.telaClasseMae.IniciaUserControl();
+                        }
                     }
-
                     this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
                     this.IniciaUserControl();
                 }
@@ -477,8 +513,8 @@ namespace Visao
             }
         }
 
-        #endregion Métodos
 
+        #endregion Métodos
         
     }
 }

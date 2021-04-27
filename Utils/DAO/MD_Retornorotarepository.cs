@@ -68,7 +68,7 @@ namespace DAO
         /// <summary>
         /// [TIPORETORNO] tipo de retorno
         /// <summary>
-        public string Tiporetorno
+        public string TipoRetorno
         {
             get
             {
@@ -154,7 +154,7 @@ namespace DAO
             {
                 this.Codigorotarepository = int.Parse(reader["CODIGOROTAREPOSITORY"].ToString());
                 this.CodigoClasseRetorno = int.Parse(reader["CODIGOCLASSERETORNO"].ToString());
-                this.Tiporetorno = reader["TIPORETORNO"].ToString();
+                this.TipoRetorno = reader["TIPORETORNO"].ToString();
                 this.EhClasse = reader["EHCLASSE"].ToString();
 
                 this.Empty = false;
@@ -204,7 +204,7 @@ namespace DAO
             string sentenca = string.Empty;
 
             sentenca = "UPDATE " + table.Table_Name + " SET " + 
-                        "CODIGO = " + Codigo + ", CODIGOROTAREPOSITORY = " + Codigorotarepository + ", CODIGOCLASSERETORNO = " + CodigoClasseRetorno + ", TIPORETORNO = '" + Tiporetorno + "', EHCLASSE = '" + EhClasse + "'" + 
+                        "CODIGO = " + Codigo + ", CODIGOROTAREPOSITORY = " + Codigorotarepository + ", CODIGOCLASSERETORNO = " + CodigoClasseRetorno + ", TIPORETORNO = '" + TipoRetorno + "', EHCLASSE = '" + EhClasse + "'" + 
                         " WHERE CODIGO = " + Codigo + "";
 
             return DataBase.Connection.Update(sentenca);

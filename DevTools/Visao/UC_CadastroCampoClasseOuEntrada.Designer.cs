@@ -68,7 +68,7 @@
             this.btn_excluir.Location = new System.Drawing.Point(579, 3);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(75, 29);
-            this.btn_excluir.TabIndex = 24;
+            this.btn_excluir.TabIndex = 8;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = true;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
@@ -80,7 +80,7 @@
             this.btn_confirmar.Location = new System.Drawing.Point(662, 3);
             this.btn_confirmar.Name = "btn_confirmar";
             this.btn_confirmar.Size = new System.Drawing.Size(75, 29);
-            this.btn_confirmar.TabIndex = 23;
+            this.btn_confirmar.TabIndex = 7;
             this.btn_confirmar.Text = "Cadastrar";
             this.btn_confirmar.UseVisualStyleBackColor = true;
             this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
@@ -103,7 +103,7 @@
             this.btn_fechar.Location = new System.Drawing.Point(720, 0);
             this.btn_fechar.Name = "btn_fechar";
             this.btn_fechar.Size = new System.Drawing.Size(20, 20);
-            this.btn_fechar.TabIndex = 17;
+            this.btn_fechar.TabIndex = 9;
             this.btn_fechar.UseVisualStyleBackColor = false;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
@@ -149,7 +149,7 @@
             this.cmb_tipoCampo.Location = new System.Drawing.Point(93, 80);
             this.cmb_tipoCampo.Name = "cmb_tipoCampo";
             this.cmb_tipoCampo.Size = new System.Drawing.Size(446, 23);
-            this.cmb_tipoCampo.TabIndex = 25;
+            this.cmb_tipoCampo.TabIndex = 4;
             // 
             // lbl_tipoCampo
             // 
@@ -167,7 +167,7 @@
             this.btn_info_tipoCampo.Location = new System.Drawing.Point(545, 82);
             this.btn_info_tipoCampo.Name = "btn_info_tipoCampo";
             this.btn_info_tipoCampo.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_tipoCampo.TabIndex = 23;
+            this.btn_info_tipoCampo.TabIndex = 6;
             this.btn_info_tipoCampo.UseVisualStyleBackColor = true;
             this.btn_info_tipoCampo.Click += new System.EventHandler(this.btn_info_tipoCampo_Click);
             // 
@@ -184,7 +184,7 @@
             this.cmb_tipoEntrada.Location = new System.Drawing.Point(93, 51);
             this.cmb_tipoEntrada.Name = "cmb_tipoEntrada";
             this.cmb_tipoEntrada.Size = new System.Drawing.Size(446, 23);
-            this.cmb_tipoEntrada.TabIndex = 22;
+            this.cmb_tipoEntrada.TabIndex = 3;
             // 
             // lbl_tipoEntrada
             // 
@@ -202,7 +202,7 @@
             this.btn_info_tipoEntrada.Location = new System.Drawing.Point(545, 53);
             this.btn_info_tipoEntrada.Name = "btn_info_tipoEntrada";
             this.btn_info_tipoEntrada.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_tipoEntrada.TabIndex = 10;
+            this.btn_info_tipoEntrada.TabIndex = 4;
             this.btn_info_tipoEntrada.UseVisualStyleBackColor = true;
             this.btn_info_tipoEntrada.Click += new System.EventHandler(this.btn_info_tipoEntrada_Click);
             // 
@@ -212,7 +212,7 @@
             this.tbx_nomeCampo.MaxLength = 50;
             this.tbx_nomeCampo.Name = "tbx_nomeCampo";
             this.tbx_nomeCampo.Size = new System.Drawing.Size(446, 23);
-            this.tbx_nomeCampo.TabIndex = 6;
+            this.tbx_nomeCampo.TabIndex = 1;
             // 
             // lbl_nome
             // 
@@ -230,7 +230,7 @@
             this.btn_info_campo.Location = new System.Drawing.Point(545, 22);
             this.btn_info_campo.Name = "btn_info_campo";
             this.btn_info_campo.Size = new System.Drawing.Size(20, 20);
-            this.btn_info_campo.TabIndex = 7;
+            this.btn_info_campo.TabIndex = 2;
             this.btn_info_campo.UseVisualStyleBackColor = true;
             this.btn_info_campo.Click += new System.EventHandler(this.btn_info_campo_Click);
             // 

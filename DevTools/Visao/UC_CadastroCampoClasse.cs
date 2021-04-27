@@ -114,6 +114,10 @@ namespace Visao
                     }
                 }
             }
+            else if(this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                this.btn_fechar_Click(null, null);
+            }
             else
             {
                 this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
@@ -184,6 +188,7 @@ namespace Visao
             {
                 this.tbx_nomeCampo.Text = string.Empty;
                 this.cmb_tipoCampo.SelectedIndex = 0;
+                this.tbx_nomeCampo.Focus();
             }
         }
 
@@ -211,22 +216,27 @@ namespace Visao
 
                 if (retorno)
                 {
-                    Message.MensagemSucesso((tarefa == Util.Enumerator.Tarefa.INCLUIR ? "Incluído" : "Alteradp") + " com sucesso");
+                    Message.MensagemSucesso((tarefa == Util.Enumerator.Tarefa.INCLUIR ? "Incluído" : "Alterado") + " com sucesso");
 
                     if (tarefa == Util.Enumerator.Tarefa.INCLUIR)
-                        this.cadastroClassesEntrada.AdicionaCampoEntrada(campo);
-                    else
-                        this.cadastroClassesEntrada.InicializaUserControl();
-
-                    if(Message.MensagemConfirmaçãoYesNo("Deseja cadastrar mais campo para a classe " + this.classe.DAO.NomeClasse + "?") == DialogResult.Yes)
                     {
-                        this.campo = new Model.MD_CamposClasseEntrada(DataBase.Connection.GetIncrement("CAMPOSCLASSEENTRADA"));
-                        this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
-                        this.InicialisUserControl();
+                        this.cadastroClassesEntrada.AdicionaCampoEntrada(campo);
+                        if (Message.MensagemConfirmaçãoYesNo("Deseja cadastrar mais campo para a classe " + this.classe.DAO.NomeClasse + "?") == DialogResult.Yes)
+                        {
+                            this.campo = new Model.MD_CamposClasseEntrada(DataBase.Connection.GetIncrement("CAMPOSCLASSEENTRADA"));
+                            this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
+                            this.InicialisUserControl();
+                        }
+                        else
+                        {
+                            this.btn_fechar_Click(null, null);
+                        }
                     }
                     else
                     {
-                        this.btn_fechar_Click(null, null);
+                        this.cadastroClassesEntrada.IniciaUserControl();
+                        this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
+                        this.cadastroClassesEntrada.IniciaUserControl();
                     }
                 }
                 else

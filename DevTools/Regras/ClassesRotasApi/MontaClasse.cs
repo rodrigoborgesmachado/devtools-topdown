@@ -42,7 +42,8 @@ namespace Regras.ClassesRotasApi
         /// <returns></returns>
         public bool CriaClasses()
         {
-            return this.classeCreator.CriaClasses();
+            string mensagemErro = string.Empty;
+            return this.classeCreator.CriaClasses(out mensagemErro);
         }
 
     }

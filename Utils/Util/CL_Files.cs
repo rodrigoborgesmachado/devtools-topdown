@@ -123,24 +123,87 @@ namespace Util
         {
             if (Directory.Exists(Global.app_main_directoty))
                 Directory.Delete(Global.app_main_directoty, true);
+
             if (Directory.Exists(Global.app_temp_directory))
                 Directory.Delete(Global.app_temp_directory, true);
+
             if (Directory.Exists(Global.app_logs_directoty))
                 Directory.Delete(Global.app_logs_directoty, true);
+
             if (Directory.Exists(Global.app_out_directory))
                 Directory.Delete(Global.app_out_directory, true);
+
             if (Directory.Exists(Global.app_base_directory))
                 Directory.Delete(Global.app_base_directory, true);
+
             if (Directory.Exists(Global.app_DER_directory))
                 Directory.Delete(Global.app_DER_directory, true);
+
             if (Directory.Exists(Global.app_Script_directory))
                 Directory.Delete(Global.app_Script_directory, true);
+
             if (Directory.Exists(Global.app_exportacao_directory))
                 Directory.Delete(Global.app_exportacao_directory, true);
+
             if (Directory.Exists(Global.app_importacao_directory))
                 Directory.Delete(Global.app_importacao_directory, true);
-            if (Directory.Exists(Global.app_classes_directory))
-                Directory.Delete(Global.app_classes_directory, true);
+
+            if (Directory.Exists(Global.app_classesSaida_directory))
+                Directory.Delete(Global.app_classesSaida_directory, true);
+
+            if (Directory.Exists(Global.app_classesSaida_directory))
+                Directory.Delete(Global.app_classesSaida_directory, true);
+
+            if (Directory.Exists(Global.app_classesSaidaController_directory))
+                Directory.Delete(Global.app_classesSaidaController_directory, true);
+
+            if (Directory.Exists(Global.app_classesSaidaDto_directory))
+                Directory.Delete(Global.app_classesSaidaDto_directory, true);
+
+            if (Directory.Exists(Global.app_classesSaidaEntity_directory))
+                Directory.Delete(Global.app_classesSaidaEntity_directory, true);
+
+            if (Directory.Exists(Global.app_classesSaidaQuery_directory))
+                Directory.Delete(Global.app_classesSaidaQuery_directory, true);
+
+            if (Directory.Exists(Global.app_classesSaidaQueryInterface_directory))
+                Directory.Delete(Global.app_classesSaidaQueryInterface_directory, true);
+
+            if (Directory.Exists(Global.app_classesSaidaRepository_directory))
+                Directory.Delete(Global.app_classesSaidaRepository_directory, true);
+
+            if (Directory.Exists(Global.app_classesSaidaRepositoryInterface_directory))
+                Directory.Delete(Global.app_classesSaidaRepositoryInterface_directory, true);
+
+            if (Directory.Exists(Global.app_classesSaidaValidations_directory))
+                Directory.Delete(Global.app_classesSaidaValidations_directory, true);
+
+            if (Directory.Exists(Global.app_classesBase_directory))
+                Directory.Delete(Global.app_classesBase_directory, true);
+
+            if (Directory.Exists(Global.app_classesBaseController_directory))
+                Directory.Delete(Global.app_classesBaseController_directory, true);
+
+            if (Directory.Exists(Global.app_classesBaseDto_directory))
+                Directory.Delete(Global.app_classesBaseDto_directory, true);
+
+            if (Directory.Exists(Global.app_classesBaseEntity_directory))
+                Directory.Delete(Global.app_classesBaseEntity_directory, true);
+
+            if (Directory.Exists(Global.app_classesBaseQuery_directory))
+                Directory.Delete(Global.app_classesBaseQuery_directory, true);
+
+            if (Directory.Exists(Global.app_classesBaseQueryInterface_directory))
+                Directory.Delete(Global.app_classesBaseQueryInterface_directory, true);
+
+            if (Directory.Exists(Global.app_classesBaseRepository_directory))
+                Directory.Delete(Global.app_classesBaseRepository_directory, true);
+
+            if (Directory.Exists(Global.app_classesBaseRepositoryInterface_directory))
+                Directory.Delete(Global.app_classesBaseRepositoryInterface_directory, true);
+
+            if (Directory.Exists(Global.app_classesBaseValidations_directory))
+                Directory.Delete(Global.app_classesBaseValidations_directory, true);
         }
 
         /// <summary>
@@ -150,24 +213,87 @@ namespace Util
         {
             if (!Directory.Exists(Global.app_main_directoty))
                 Directory.CreateDirectory(Global.app_main_directoty);
+
             if (!Directory.Exists(Global.app_temp_directory))
                 Directory.CreateDirectory(Global.app_temp_directory);
+
             if (!Directory.Exists(Global.app_logs_directoty))
                 Directory.CreateDirectory(Global.app_logs_directoty);
+
             if (!Directory.Exists(Global.app_out_directory))
                 Directory.CreateDirectory(Global.app_out_directory);
+
             if (!Directory.Exists(Global.app_base_directory))
                 Directory.CreateDirectory(Global.app_base_directory);
+
             if (!Directory.Exists(Global.app_DER_directory))
                 Directory.CreateDirectory(Global.app_DER_directory);
+
             if (!Directory.Exists(Global.app_Script_directory))
                 Directory.CreateDirectory(Global.app_Script_directory);
+
             if (!Directory.Exists(Global.app_importacao_directory))
                 Directory.CreateDirectory(Global.app_importacao_directory);
+
             if (!Directory.Exists(Global.app_exportacao_directory))
                 Directory.CreateDirectory(Global.app_exportacao_directory);
-            if (!Directory.Exists(Global.app_classes_directory))
-                Directory.CreateDirectory(Global.app_classes_directory);
+
+            if (!Directory.Exists(Global.app_classesSaida_directory))
+                Directory.CreateDirectory(Global.app_classesSaida_directory);
+
+            if (Directory.Exists(Global.app_classesSaida_directory))
+                Directory.CreateDirectory(Global.app_classesSaida_directory);
+
+            if (Directory.Exists(Global.app_classesSaidaController_directory))
+                Directory.CreateDirectory(Global.app_classesSaidaController_directory);
+
+            if (Directory.Exists(Global.app_classesSaidaDto_directory))
+                Directory.CreateDirectory(Global.app_classesSaidaDto_directory);
+
+            if (Directory.Exists(Global.app_classesSaidaEntity_directory))
+                Directory.CreateDirectory(Global.app_classesSaidaEntity_directory);
+
+            if (Directory.Exists(Global.app_classesSaidaQuery_directory))
+                Directory.CreateDirectory(Global.app_classesSaidaQuery_directory);
+
+            if (Directory.Exists(Global.app_classesSaidaQueryInterface_directory))
+                Directory.CreateDirectory(Global.app_classesSaidaQueryInterface_directory);
+
+            if (Directory.Exists(Global.app_classesSaidaRepository_directory))
+                Directory.CreateDirectory(Global.app_classesSaidaRepository_directory);
+
+            if (Directory.Exists(Global.app_classesSaidaRepositoryInterface_directory))
+                Directory.CreateDirectory(Global.app_classesSaidaRepositoryInterface_directory);
+
+            if (Directory.Exists(Global.app_classesSaidaValidations_directory))
+                Directory.CreateDirectory(Global.app_classesSaidaValidations_directory);
+
+            if (Directory.Exists(Global.app_classesBase_directory))
+                Directory.CreateDirectory(Global.app_classesBase_directory);
+
+            if (Directory.Exists(Global.app_classesBaseController_directory))
+                Directory.CreateDirectory(Global.app_classesBaseController_directory);
+
+            if (Directory.Exists(Global.app_classesBaseDto_directory))
+                Directory.CreateDirectory(Global.app_classesBaseDto_directory);
+
+            if (Directory.Exists(Global.app_classesBaseEntity_directory))
+                Directory.CreateDirectory(Global.app_classesBaseEntity_directory);
+
+            if (Directory.Exists(Global.app_classesBaseQuery_directory))
+                Directory.CreateDirectory(Global.app_classesBaseQuery_directory);
+
+            if (Directory.Exists(Global.app_classesBaseQueryInterface_directory))
+                Directory.CreateDirectory(Global.app_classesBaseQueryInterface_directory);
+
+            if (Directory.Exists(Global.app_classesBaseRepository_directory))
+                Directory.CreateDirectory(Global.app_classesBaseRepository_directory);
+
+            if (Directory.Exists(Global.app_classesBaseRepositoryInterface_directory))
+                Directory.CreateDirectory(Global.app_classesBaseRepositoryInterface_directory);
+
+            if (Directory.Exists(Global.app_classesBaseValidations_directory))
+                Directory.CreateDirectory(Global.app_classesBaseValidations_directory);
         }
 
         /// <summary>

@@ -203,7 +203,7 @@ namespace Visao
             if(this.tarefa == Util.Enumerator.Tarefa.VISUALIZAR)
             {
                 this.tarefa = Util.Enumerator.Tarefa.EDITAR;
-                this.InicializaUserControl();
+                this.IniciaUserControl();
             }
             else
             {
@@ -221,11 +221,15 @@ namespace Visao
             if(this.tarefa != Util.Enumerator.Tarefa.VISUALIZAR)
             {
                 this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
-                this.InicializaUserControl();
+                this.IniciaUserControl();
+            }
+            else if (this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+            {
+                this.btn_fechar_Click(null, null);
             }
             else
             {
-                if(Message.MensagemConfirmaçãoYesNo("Deseja excluir o tipo de retorno " + this.retornoRotaApi.DAO.Tiporetorno) == DialogResult.Yes)
+                if(Message.MensagemConfirmaçãoYesNo("Deseja excluir o tipo de retorno " + this.retornoRotaApi.DAO.TipoRetorno) == DialogResult.Yes)
                 {
                     if (this.retornoRotaApi.DAO.Delete())
                     {
@@ -239,6 +243,16 @@ namespace Visao
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Evento lançado no clique do botão de reload da tabela
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_reload_tabela_Click(object sender, EventArgs e)
+        {
+            this.CarregaTabelaCamposClasse();
         }
 
         #endregion Eventos
@@ -262,7 +276,7 @@ namespace Visao
             this.controleMetodoRotaRepository = controleMetodoRotaRepository;
             this.principal = principal;
 
-            this.InicializaUserControl();
+            this.IniciaUserControl();
             this.ckb_classe.CheckedChanged += delegate { this.grb_camposClasse.Visible = this.ckb_classe.Checked; };
         }
 
@@ -273,7 +287,7 @@ namespace Visao
         /// <summary>
         /// Método que incializa o formulário
         /// </summary>
-        public void InicializaUserControl()
+        public void IniciaUserControl()
         {
             this.Dock = DockStyle.Fill;
             this.ControlaTarefa();
@@ -304,7 +318,7 @@ namespace Visao
 
             if(tarefa != Util.Enumerator.Tarefa.INCLUIR)
             {
-                this.tbx_tipoCampo.Text = retornoRotaApi.DAO.Tiporetorno;
+                this.tbx_tipoCampo.Text = retornoRotaApi.DAO.TipoRetorno;
                 this.ckb_classe.Checked = retornoRotaApi.DAO.EhClasse != "0";
             }
             else
@@ -431,17 +445,26 @@ namespace Visao
                     this.retornoRotaApi.DAO.CodigoClasseRetorno = -1;
                 }
                 this.retornoRotaApi.DAO.Codigorotarepository = this.rota.DAO.Codigo;
-                this.retornoRotaApi.DAO.Tiporetorno = this.tbx_tipoCampo.Text;
+                this.retornoRotaApi.DAO.TipoRetorno = this.tbx_tipoCampo.Text;
 
                 bool retorno = this.tarefa == Util.Enumerator.Tarefa.INCLUIR ? this.retornoRotaApi.DAO.Insert() : this.retornoRotaApi.DAO.Update();
                 if (retorno)
                 {
                     Message.MensagemSucesso("Cadastrado com sucesso!");
-                    if(this.controleMetodoRotaRepository != null)
-                        this.controleMetodoRotaRepository.AdicionaSaida(this.retornoRotaApi);
+
+                    if(this.tarefa == Util.Enumerator.Tarefa.INCLUIR)
+                    {
+                        if (this.controleMetodoRotaRepository != null)
+                            this.controleMetodoRotaRepository.AdicionaSaida(this.retornoRotaApi);
+                    }
+                    else
+                    {
+                        if (this.controleMetodoRotaRepository != null)
+                            this.controleMetodoRotaRepository.IniciaUserControl();
+                    }
 
                     this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
-                    this.InicializaUserControl();
+                    this.IniciaUserControl();
                 }
                 else
                 {

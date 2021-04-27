@@ -110,12 +110,12 @@ namespace Regras
         {
             Util.CL_Files.WriteOnTheLog("ClassCreater.MontaArquivo()", Util.Global.TipoLog.DETALHADO);
 
-            if (!Directory.Exists(Global.app_classes_directory + "Model\\"))
+            if (!Directory.Exists(Global.app_classesSaida_directory + "Model\\"))
             {
-                Directory.CreateDirectory(Global.app_classes_directory + "Model\\");
+                Directory.CreateDirectory(Global.app_classesSaida_directory + "Model\\");
             }
 
-            string diretorioArquivo = Global.app_classes_directory + "Model\\" + NomeClasse(table) + ".cs";
+            string diretorioArquivo = Global.app_classesSaida_directory + "Model\\" + NomeClasse(table) + ".cs";
             string _classe = classe.ToString();
 
             _classe = _classe.Replace("#NOMETABELA", table.Table_Name);
@@ -141,12 +141,12 @@ namespace Regras
         {
             Util.CL_Files.WriteOnTheLog("ClassCreater.MontaArquivo()", Util.Global.TipoLog.DETALHADO);
 
-            if(!Directory.Exists(Global.app_classes_directory + "DAO\\"))
+            if(!Directory.Exists(Global.app_classesSaida_directory + "DAO\\"))
             {
-                Directory.CreateDirectory(Global.app_classes_directory + "DAO\\");
+                Directory.CreateDirectory(Global.app_classesSaida_directory + "DAO\\");
             }
 
-            string diretorioArquivo = Global.app_classes_directory + "DAO\\" + NomeClasse(table) + ".cs";
+            string diretorioArquivo = Global.app_classesSaida_directory + "DAO\\" + NomeClasse(table) + ".cs";
             string _classe = classe.ToString();
 
             _classe = _classe.Replace("@NOMETABELA", table.Table_Name);
@@ -165,7 +165,7 @@ namespace Regras
         {
             Util.CL_Files.WriteOnTheLog("ClassCreater.ApagarArquivos()", Util.Global.TipoLog.DETALHADO);
 
-            foreach (string file in Directory.GetFiles(Global.app_classes_directory))
+            foreach (string file in Directory.GetFiles(Global.app_classesSaida_directory))
             {
                 File.Delete(file);
             }
