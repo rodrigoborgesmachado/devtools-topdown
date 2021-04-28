@@ -88,7 +88,7 @@ namespace Util
 
             RetornaDetalhesCampos(barra, ref campos);
 
-            PreencheArquivoCampos(campos);
+            //PreencheArquivoCampos(campos);
         }
 
         /// <summary>
@@ -97,6 +97,11 @@ namespace Util
         /// <returns></returns>
         public static void RetornaDetalhesCampos(Visao.BarraDeCarregamento barra, ref List<Model.Campo> campos)
         {
+            if (File.Exists(Global.app_exportacao_campos_file))
+            {
+                File.Delete(Global.app_exportacao_campos_file);
+            }
+
             string sentenca = @"SELECT
                                    col.COLUMN_NAME,
                                    col.DATA_TYPE,
@@ -151,7 +156,11 @@ namespace Util
                 c.Tabela = tabela;
                 c.Comments = comments;
 
-                campos.Add(c);
+                //campos.Add(c);
+
+                string json = JsonConvert.SerializeObject(c);
+                CL_Files file = new CL_Files(Global.app_exportacao_campos_file);
+                file.WriteOnTheEndWithLine(json);
             }
             reader.Close();
 
