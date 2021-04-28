@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using System.Data.SqlClient;
 using System.Data.Common;
 using Model;
+using System.Data;
 
 namespace Util
 {
@@ -130,22 +131,26 @@ namespace Util
                                WHERE(NOT col.TABLE_NAME LIKE '%$%') AND(NOT col.TABLE_NAME LIKE '%LOGMNR%')";
 
             DbDataReader reader = DataBase.Connection.Select(sentenca);
-            Util.CL_Files.WriteOnTheLog("Rodou consulta", Global.TipoLog.SIMPLES);
+            DataTable table = new DataTable();
+            table.Load(reader);
+            Util.CL_Files.WriteOnTheLog("Rodou consulta. Resultados: " + table.Rows.Count, Global.TipoLog.SIMPLES);
+            reader.Close();
+            Util.CL_Files.WriteOnTheLog("Fechou conexão", Global.TipoLog.SIMPLES);
 
-            while (reader.Read())
+            foreach (DataRow row in table.Rows)
             {
                 barra.AvancaBarra(1);
 
-                string nome = reader["COLUMN_NAME"].ToString();
-                bool notnull = reader["NULLABLE"].ToString().ToUpper().Equals("YES");
-                string tipo = reader["DATA_TYPE"].ToString();
-                string valueDefault = reader["DATA_DEFAULT"].ToString();
-                bool primarykey = reader["primarykey"].ToString().Equals("1");
-                bool unique = reader["isunique"].ToString().Equals("1");
-                string tamanho = reader["DATA_LENGTH"].ToString();
-                string precisao = reader["DATA_PRECISION"].ToString();
-                string tabela = reader["TABLE_NAME"].ToString();
-                string comments = reader["COMMENTS"].ToString();
+                string nome = row["COLUMN_NAME"].ToString();
+                bool notnull = row["NULLABLE"].ToString().ToUpper().Equals("YES");
+                string tipo = row["DATA_TYPE"].ToString();
+                string valueDefault = row["DATA_DEFAULT"].ToString();
+                bool primarykey = row["primarykey"].ToString().Equals("1");
+                bool unique = row["isunique"].ToString().Equals("1");
+                string tamanho = row["DATA_LENGTH"].ToString();
+                string precisao = row["DATA_PRECISION"].ToString();
+                string tabela = row["TABLE_NAME"].ToString();
+                string comments = row["COMMENTS"].ToString();
 
                 Model.Campo c = new Model.Campo();
                 c.Name_Field = nome;
@@ -165,7 +170,6 @@ namespace Util
                 CL_Files file = new CL_Files(Global.app_exportacao_campos_file);
                 file.WriteOnTheEndWithLine(json);
             }
-            reader.Close();
 
         }
 
