@@ -97,6 +97,8 @@ namespace Util
         /// <returns></returns>
         public static void RetornaDetalhesCampos(Visao.BarraDeCarregamento barra, ref List<Model.Campo> campos)
         {
+            Util.CL_Files.WriteOnTheLog("Iniciando RetornaDetalhesCampos", Global.TipoLog.SIMPLES);
+
             if (File.Exists(Global.app_exportacao_campos_file))
             {
                 File.Delete(Global.app_exportacao_campos_file);
@@ -128,6 +130,7 @@ namespace Util
                                WHERE(NOT col.TABLE_NAME LIKE '%$%') AND(NOT col.TABLE_NAME LIKE '%LOGMNR%')";
 
             DbDataReader reader = DataBase.Connection.Select(sentenca);
+            Util.CL_Files.WriteOnTheLog("Rodou consulta", Global.TipoLog.SIMPLES);
 
             while (reader.Read())
             {
