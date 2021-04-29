@@ -142,7 +142,7 @@ namespace Regras
                 return;
 
             string json = string.Empty;
-            campos = JsonConvert.DeserializeObject<List<Model.Campo>>(String.Join("}", File.ReadAllLines(Global.app_exportacao_campos_file)));
+            campos = JsonConvert.DeserializeObject<List<Model.Campo>>(String.Join(Environment.NewLine, File.ReadAllLines(Global.app_exportacao_campos_file)));
         }
 
         /// <summary>
