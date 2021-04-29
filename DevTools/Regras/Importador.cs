@@ -127,12 +127,7 @@ namespace Regras
                 return;
 
             string json = string.Empty;
-            foreach(string linha in File.ReadAllLines(Global.app_exportacao_tabela_file).ToList())
-            {
-                json += linha;
-            }
-
-            tabelas = JsonConvert.DeserializeObject<List<Model.Tabela>>(json);
+            tabelas = JsonConvert.DeserializeObject<List<Model.Tabela>>(String.Join("}", File.ReadAllLines(Global.app_exportacao_tabela_file)));
         }
 
         /// <summary>
@@ -147,12 +142,7 @@ namespace Regras
                 return;
 
             string json = string.Empty;
-            foreach (string linha in File.ReadAllLines(Global.app_exportacao_campos_file).ToList())
-            {
-                json += linha;
-            }
-
-            campos = JsonConvert.DeserializeObject<List<Model.Campo>>(json);
+            campos = JsonConvert.DeserializeObject<List<Model.Campo>>(String.Join("}", File.ReadAllLines(Global.app_exportacao_campos_file)));
         }
 
         /// <summary>
