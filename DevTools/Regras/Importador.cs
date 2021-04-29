@@ -24,7 +24,7 @@ namespace Regras
 
             try
             {
-                ApagaArquivosExportacao();
+                //ApagaArquivosExportacao();
 
                 if(AbrirAplicacaoBancoDados())
                 {
