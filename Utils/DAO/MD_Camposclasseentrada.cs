@@ -52,7 +52,7 @@ namespace DAO
         /// <summary>
         /// [TIPOCAMPO] 
         /// <summary>
-        public string Tipocampo
+        public string TipoCampo
         {
             get
             {
@@ -68,7 +68,7 @@ namespace DAO
         /// <summary>
         /// [NOMECAMPO] 
         /// <summary>
-        public string Nomecampo
+        public string NomeCampo
         {
             get
             {
@@ -153,8 +153,8 @@ namespace DAO
             else if (reader.Read())
             {
                 this.Codigoclasseentrada = int.Parse(reader["CODIGOCLASSEENTRADA"].ToString());
-                this.Tipocampo = reader["TIPOCAMPO"].ToString();
-                this.Nomecampo = reader["NOMECAMPO"].ToString();
+                this.TipoCampo = reader["TIPOCAMPO"].ToString();
+                this.NomeCampo = reader["NOMECAMPO"].ToString();
                 this.Classereferente = int.Parse(reader["CLASSEREFERENTE"].ToString());
 
                 this.Empty = false;
@@ -204,7 +204,7 @@ namespace DAO
             string sentenca = string.Empty;
 
             sentenca = "UPDATE " + table.Table_Name + " SET " + 
-                        "CODIGO = " + Codigo + ", CODIGOCLASSEENTRADA = " + Codigoclasseentrada + ", TIPOCAMPO = '" + Tipocampo + "', NOMECAMPO = '" + Nomecampo + "', CLASSEREFERENTE = " + Classereferente + "" + 
+                        "CODIGO = " + Codigo + ", CODIGOCLASSEENTRADA = " + Codigoclasseentrada + ", TIPOCAMPO = '" + TipoCampo + "', NOMECAMPO = '" + NomeCampo + "', CLASSEREFERENTE = " + Classereferente + "" + 
                         " WHERE CODIGO = " + Codigo + "";
 
             return DataBase.Connection.Update(sentenca);

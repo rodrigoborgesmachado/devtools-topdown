@@ -798,9 +798,9 @@ namespace Visao
                 this.AbrirJanelaRota(this.projeto.DAO.Codigo, api.DAO.Codigo, Tarefa.EDITAR);
             });
 
-            MenuItem item_CriarClasses = new MenuItem();
-            item_CriarClasses.Tag = api.DAO.Codigo;
-            item_CriarClasses = new MenuItem("ExcluirRota", delegate
+            MenuItem item_excluirRota = new MenuItem();
+            item_excluirRota.Tag = api.DAO.Codigo;
+            item_excluirRota = new MenuItem("Excluir Rota", delegate
             {
                 if (Message.MensagemConfirmaçãoYesNo("Deseja excluir a rota: " + api.DAO.NomeRota + "?") == DialogResult.Yes)
                 {
@@ -825,9 +825,40 @@ namespace Visao
                 this.AbrirJanelaCadastroMetotoRotaRepository(api.DAO.Codigo, DataBase.Connection.GetIncrement("ROTASREPOSITORY"), Tarefa.INCLUIR);
             });
 
+            MenuItem item_CriarClasses = new MenuItem();
+            item_CriarClasses.Tag = api.DAO.Codigo;
+            item_CriarClasses = new MenuItem("Criar Classes", delegate
+            {
+                Regras.ClassesRotasApi.ClasseCreatorRepository repository = new Regras.ClassesRotasApi.ClasseCreatorRepository(api);
+
+                if(Message.MensagemConfirmaçãoYesNo("Deseja criar todas as classes para a rota " + api.DAO.NomeRota) == DialogResult.Yes)
+                {
+                    string mensagemErro = string.Empty;
+                    repository.CriaClasses(out mensagemErro);
+
+                    if (!string.IsNullOrEmpty(mensagemErro))
+                    {
+                        Message.MensagemAlerta("Houve Erros!");
+                        Message.MensagemAlerta(mensagemErro);
+                    }
+                    else
+                    {
+                        Message.MensagemSucesso("Classes criadas no caminho: " + Util.Global.app_classesSaida_directory);
+                        Regras.Relatorios.PassoAPassoRepository rel = new Regras.Relatorios.PassoAPassoRepository();
+                        rel.CriarRelatorio(out mensagemErro);
+
+                        if (!string.IsNullOrEmpty(mensagemErro))
+                        {
+                            Message.MensagemAlerta(mensagemErro);
+                        }
+                    }
+                }
+            });
+
             menu.MenuItems.Add(item_AdicionarRota);
-            menu.MenuItems.Add(item_CriarClasses);
+            menu.MenuItems.Add(item_excluirRota);
             menu.MenuItems.Add(item_AdicionarMetodo);
+            menu.MenuItems.Add(item_CriarClasses);
 
             node.ContextMenu = menu;
         }

@@ -10,6 +10,7 @@ Substituir:
 			#ROTAMETODO
 			#OBJETORETORNO
 			#NOMEMETODO (já contém Async)
+			#OBJETOSENTRADA
 			#OBEJTOSVALIDACAOENTRADA
 			#NOMEINTERFACEQUERY (já contém Query)
 			
@@ -54,7 +55,6 @@ Substituir:
 			#RETORNOREPOSITORY
 			#NOMEMETODOREPOSITORY (já contém Async)
 			#NOMEINTERFACEREPOSITORY (já contém  Repository)
-			#NOMEMETODOREPOSITORY (já contém Async)
 			#COMENTARIOFILTROSENTRADA
 			#CONSULTA
 			#CLASSEENTITY (já contém Entity)
@@ -69,4 +69,9 @@ Substituir:
 		#CAMPOSENTITY
 	
 	Validation:
-		#NOMECLASSEVALIDATIONValidation
+		#NOMECLASSEVALIDATION (já contém Validation)
+		
+	Profile:
+		#NOMEPROFILE (já contém DTO e Entity (EntityToDto))
+		#CLASSEENTITY
+		#CLASSEDTO

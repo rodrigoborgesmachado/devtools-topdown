@@ -3,32 +3,32 @@
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route(#ROTAMETODO)]
+        [Route("#ROTAMETODO")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(List<ErrorResponse>), StatusCodes.Status400BadRequest)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult<ResponseDTO<#OBJETORETORNO>>> #NOMEMETODOAsync(#OBJETOSENTRADA)
+        public async Task<ActionResult<ResponseDTO<#OBJETORETORNO>>> #NOMEMETODO(#OBJETOSENTRADA)
         {
             try
             {
-                _logger.LogDebug($"[{nameof(#NOMECLASSEController)}]:[{nameof(#NOMEMETODOAsync)}] - inicializando execucao.");
+                _logger.LogDebug($"[{nameof(#NOMECLASSE)}]:[{nameof(#NOMEMETODO)}] - inicializando execucao.");
 
                 var filter = new BaseRequestDTO
                 {
-                    #OBEJTOSVALIDACAOENTRADA
+#OBEJTOSVALIDACAOENTRADA
                 };
 
                 return await ExecutarGetAsync(async (_limit, _offset) =>
                 {
                     return await _cache.GetDataCacheAsync(
                         filter?.ConvertToString(),
-                        nameof(#NOMEMETODOAsync), 
+                        nameof(#NOMEMETODO), 
                         15, 
-                        () => #NOMEVARIAVELINTERFACEQUERY.#NOMEMETODOAsync(filter));
+                        () => #NOMEVARIAVELINTERFACEQUERY.#NOMEMETODO(filter));
                 });
             }
             finally
             {
-				_logger.LogDebug($"[{nameof(#NOMECLASSEController)}]:[{nameof(#NOMEMETODOAsync)}] - finalizando execucao.");
+				_logger.LogDebug($"[{nameof(#NOMECLASSE)}]:[{nameof(#NOMEMETODO)}] - finalizando execucao."); 
             }
         }

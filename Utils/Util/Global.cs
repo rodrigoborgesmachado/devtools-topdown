@@ -50,65 +50,29 @@ namespace Util
         // Nome do diretório das Classes Saida - Controller
         public static string app_classesSaidaController_directory = app_classesSaida_directory + "Controller\\";
 
-        // Nome do diretório das Classes Saida - Controller
-        public static string app_classesSaidaControllerFile = app_classesSaidaController_directory + "Controller.cs";
-
-        // Nome do diretório das Classes Saida - Controller
-        public static string app_classesSaidaControllerMetodosFile = app_classesSaidaController_directory + "METODOS.cs";
-
         // Nome do diretório das Classes Saida - DTO
         public static string app_classesSaidaDto_directory = app_classesSaida_directory + "DTO\\";
-
-        // Nome do diretório das Classes Saida - DTO
-        public static string app_classesSaidaDtoFile = app_classesSaidaDto_directory + "Repository.cs";
 
         // Nome do diretório das Classes Saida - Entity
         public static string app_classesSaidaEntity_directory = app_classesSaida_directory + "Entity\\";
 
-        // Nome do diretório das Classes Saida - Entity
-        public static string app_classesSaidaEntityFile = app_classesSaidaEntity_directory + "Entity.cs";
+        // Nome do diretório das Classes Saida - Profile
+        public static string app_classesSaidaProfile_directory = app_classesSaida_directory + "Profiles\\";
 
         // Nome do diretório das Classes Saida - Query
         public static string app_classesSaidaQuery_directory = app_classesSaida_directory + "Query\\";
 
-        // Nome do diretório das Classes Saida - Query
-        public static string app_classesSaidaQueryFile = app_classesSaidaQuery_directory + "Query.cs";
-
-        // Nome do diretório das Classes Saida - Query
-        public static string app_classesSaidaQueryMetodosFile = app_classesSaidaQuery_directory + "METODOS.cs";
-
         // Nome do diretório das Classes Saida - Query - Interface
         public static string app_classesSaidaQueryInterface_directory = app_classesSaida_directory + "Query - Interface\\";
-
-        // Nome do diretório das Classes Saida - Query - Interface
-        public static string app_classesSaidaQueryInterfaceFile = app_classesSaidaQueryInterface_directory + "IQuery.cs";
-
-        // Nome do diretório das Classes Saida - Query - Interface
-        public static string app_classesSaidaQueryInterfaceMetodosFile = app_classesSaidaQueryInterface_directory + "METODOS.cs";
 
         // Nome do diretório das Classes Saida - Repository
         public static string app_classesSaidaRepository_directory = app_classesSaida_directory + "Repository\\";
 
-        // Nome do diretório das Classes Saida - Repository
-        public static string app_classesSaidaRepositoryFile = app_classesSaidaRepository_directory + "Repository.cs";
-
-        // Nome do diretório das Classes Saida - Repository
-        public static string app_classesSaidaRepositoryMetodosFile = app_classesSaidaRepository_directory + "METODOS.cs";
-
         // Nome do diretório das Classes Saida - Repository - Interface
         public static string app_classesSaidaRepositoryInterface_directory = app_classesSaida_directory + "Repository - Interface\\";
 
-        // Nome do diretório das Classes Saida - Repository - Interface
-        public static string app_classesSaidaRepositoryInterfaceFile = app_classesSaidaRepositoryInterface_directory + "IRepository.cs";
-
-        // Nome do diretório das Classes Saida - Repository - Interface
-        public static string app_classesSaidaRepositoryInterfaceMetodosFile = app_classesSaidaRepositoryInterface_directory + "METODOS.cs";
-
         // Nome do diretório das Classes Saida - Validations
         public static string app_classesSaidaValidations_directory = app_classesSaida_directory + "Validations\\";
-
-        // Nome do diretório das Classes Saida - Validations
-        public static string app_classesSaidaValidationFile = app_classesSaidaValidations_directory + "Validation.cs";
 
         // Nome do diretório das Classes base
         public static string app_classesBase_directory = app_main_directoty + "Classes Base\\";
@@ -123,16 +87,22 @@ namespace Util
         public static string app_classesBaseControllerMetodosFile = app_classesBaseController_directory + "METODOS.cs";
 
         // Nome do diretório das Classes base - DTO
-        public static string app_classesBaseDto_directory = app_classesBase_directory + "Controller\\";
+        public static string app_classesBaseDto_directory = app_classesBase_directory + "DTO\\";
 
         // Nome do diretório das Classes base - DTO
-        public static string app_classesBaseDtoFile = app_classesBaseDto_directory + "Repository.cs";
+        public static string app_classesBaseDtoFile = app_classesBaseDto_directory + "DTO.cs";
 
         // Nome do diretório das Classes base - Entity
         public static string app_classesBaseEntity_directory = app_classesBase_directory + "Entity\\";
 
         // Nome do diretório das Classes base - Entity
         public static string app_classesBaseEntityFile = app_classesBaseEntity_directory + "Entity.cs";
+
+        // Nome do diretório das Classes base - Entity
+        public static string app_classesBaseProfile_directory = app_classesBase_directory + "Profiles\\";
+
+        // Nome do diretório das Classes base - Entity
+        public static string app_classesBaseProfileFile = app_classesBaseProfile_directory + "EntityToDTO.cs";
 
         // Nome do diretório das Classes base - Query
         public static string app_classesBaseQuery_directory = app_classesBase_directory + "Query\\";
@@ -147,10 +117,10 @@ namespace Util
         public static string app_classesBaseQueryInterface_directory = app_classesBase_directory + "Query - Interface\\";
 
         // Nome do diretório das Classes base - Query - Interface
-        public static string app_classesBaseQueryInterfaceFile = app_classesBaseQuery_directory + "IQuery.cs";
+        public static string app_classesBaseQueryInterfaceFile = app_classesBaseQueryInterface_directory + "IQuery.cs";
 
         // Nome do diretório das Classes base - Query - Interface
-        public static string app_classesBaseQueryInterfaceMetodosFile = app_classesBaseQuery_directory + "METODOS.cs";
+        public static string app_classesBaseQueryInterfaceMetodosFile = app_classesBaseQueryInterface_directory + "METODOS.cs";
 
         // Nome do diretório das Classes base - Repository
         public static string app_classesBaseRepository_directory = app_classesBase_directory + "Repository\\";
@@ -235,6 +205,12 @@ namespace Util
 
         // Nome da classe de MDN_Campo
         public static string app_claseMDNCampo_file = "MDN_Campo.cs";
+
+        // Caminho da pasta de arquivos temporários
+        public static string app_relatorio_directory = app_main_directoty + "Rel\\";
+
+        // Nome do arquivo html temporário
+        public static string app_relatorio_passo_a_passoRepository = app_relatorio_directory + "passoPassoRepository.html";
 
         public static string usuarioFtp = "ph20598337134";
         public static string senhaFtp = "qbj1ACjd**";

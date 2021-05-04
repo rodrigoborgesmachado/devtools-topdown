@@ -151,8 +151,8 @@ namespace Util
             if (Directory.Exists(Global.app_classesSaida_directory))
                 Directory.Delete(Global.app_classesSaida_directory, true);
 
-            if (Directory.Exists(Global.app_classesSaida_directory))
-                Directory.Delete(Global.app_classesSaida_directory, true);
+            if (Directory.Exists(Global.app_classesSaidaProfile_directory))
+                Directory.Delete(Global.app_classesSaidaProfile_directory, true);
 
             if (Directory.Exists(Global.app_classesSaidaController_directory))
                 Directory.Delete(Global.app_classesSaidaController_directory, true);
@@ -181,6 +181,9 @@ namespace Util
             if (Directory.Exists(Global.app_classesBase_directory))
                 Directory.Delete(Global.app_classesBase_directory, true);
 
+            if (Directory.Exists(Global.app_classesBaseProfile_directory))
+                Directory.Delete(Global.app_classesBaseProfile_directory, true);
+
             if (Directory.Exists(Global.app_classesBaseController_directory))
                 Directory.Delete(Global.app_classesBaseController_directory, true);
 
@@ -204,6 +207,9 @@ namespace Util
 
             if (Directory.Exists(Global.app_classesBaseValidations_directory))
                 Directory.Delete(Global.app_classesBaseValidations_directory, true);
+
+            if (Directory.Exists(Global.app_relatorio_directory))
+                Directory.Delete(Global.app_relatorio_directory, true);
         }
 
         /// <summary>
@@ -241,59 +247,65 @@ namespace Util
             if (!Directory.Exists(Global.app_classesSaida_directory))
                 Directory.CreateDirectory(Global.app_classesSaida_directory);
 
-            if (Directory.Exists(Global.app_classesSaida_directory))
-                Directory.CreateDirectory(Global.app_classesSaida_directory);
+            if (!Directory.Exists(Global.app_classesSaidaProfile_directory))
+                Directory.CreateDirectory(Global.app_classesSaidaProfile_directory);
 
-            if (Directory.Exists(Global.app_classesSaidaController_directory))
+            if (!Directory.Exists(Global.app_classesSaidaController_directory))
                 Directory.CreateDirectory(Global.app_classesSaidaController_directory);
 
-            if (Directory.Exists(Global.app_classesSaidaDto_directory))
+            if (!Directory.Exists(Global.app_classesSaidaDto_directory))
                 Directory.CreateDirectory(Global.app_classesSaidaDto_directory);
 
-            if (Directory.Exists(Global.app_classesSaidaEntity_directory))
+            if (!Directory.Exists(Global.app_classesSaidaEntity_directory))
                 Directory.CreateDirectory(Global.app_classesSaidaEntity_directory);
 
-            if (Directory.Exists(Global.app_classesSaidaQuery_directory))
+            if (!Directory.Exists(Global.app_classesSaidaQuery_directory))
                 Directory.CreateDirectory(Global.app_classesSaidaQuery_directory);
 
-            if (Directory.Exists(Global.app_classesSaidaQueryInterface_directory))
+            if (!Directory.Exists(Global.app_classesSaidaQueryInterface_directory))
                 Directory.CreateDirectory(Global.app_classesSaidaQueryInterface_directory);
 
-            if (Directory.Exists(Global.app_classesSaidaRepository_directory))
+            if (!Directory.Exists(Global.app_classesSaidaRepository_directory))
                 Directory.CreateDirectory(Global.app_classesSaidaRepository_directory);
 
-            if (Directory.Exists(Global.app_classesSaidaRepositoryInterface_directory))
+            if (!Directory.Exists(Global.app_classesSaidaRepositoryInterface_directory))
                 Directory.CreateDirectory(Global.app_classesSaidaRepositoryInterface_directory);
 
-            if (Directory.Exists(Global.app_classesSaidaValidations_directory))
+            if (!Directory.Exists(Global.app_classesSaidaValidations_directory))
                 Directory.CreateDirectory(Global.app_classesSaidaValidations_directory);
 
-            if (Directory.Exists(Global.app_classesBase_directory))
+            if (!Directory.Exists(Global.app_classesBase_directory))
                 Directory.CreateDirectory(Global.app_classesBase_directory);
 
-            if (Directory.Exists(Global.app_classesBaseController_directory))
+            if (!Directory.Exists(Global.app_classesBaseProfile_directory))
+                Directory.CreateDirectory(Global.app_classesBaseProfile_directory);
+
+            if (!Directory.Exists(Global.app_classesBaseController_directory))
                 Directory.CreateDirectory(Global.app_classesBaseController_directory);
 
-            if (Directory.Exists(Global.app_classesBaseDto_directory))
+            if (!Directory.Exists(Global.app_classesBaseDto_directory))
                 Directory.CreateDirectory(Global.app_classesBaseDto_directory);
 
-            if (Directory.Exists(Global.app_classesBaseEntity_directory))
+            if (!Directory.Exists(Global.app_classesBaseEntity_directory))
                 Directory.CreateDirectory(Global.app_classesBaseEntity_directory);
 
-            if (Directory.Exists(Global.app_classesBaseQuery_directory))
+            if (!Directory.Exists(Global.app_classesBaseQuery_directory))
                 Directory.CreateDirectory(Global.app_classesBaseQuery_directory);
 
-            if (Directory.Exists(Global.app_classesBaseQueryInterface_directory))
+            if (!Directory.Exists(Global.app_classesBaseQueryInterface_directory))
                 Directory.CreateDirectory(Global.app_classesBaseQueryInterface_directory);
 
-            if (Directory.Exists(Global.app_classesBaseRepository_directory))
+            if (!Directory.Exists(Global.app_classesBaseRepository_directory))
                 Directory.CreateDirectory(Global.app_classesBaseRepository_directory);
 
-            if (Directory.Exists(Global.app_classesBaseRepositoryInterface_directory))
+            if (!Directory.Exists(Global.app_classesBaseRepositoryInterface_directory))
                 Directory.CreateDirectory(Global.app_classesBaseRepositoryInterface_directory);
 
-            if (Directory.Exists(Global.app_classesBaseValidations_directory))
+            if (!Directory.Exists(Global.app_classesBaseValidations_directory))
                 Directory.CreateDirectory(Global.app_classesBaseValidations_directory);
+
+            if (!Directory.Exists(Global.app_relatorio_directory))
+                Directory.CreateDirectory(Global.app_relatorio_directory);
         }
 
         /// <summary>

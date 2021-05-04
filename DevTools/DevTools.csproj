@@ -81,6 +81,8 @@
     <Compile Include="Regras\DerCreator.cs" />
     <Compile Include="Regras\Importador.cs" />
     <Compile Include="Regras\Parametros.cs" />
+    <Compile Include="Regras\Relatorios\PassoAPassoRepository.cs" />
+    <Compile Include="Regras\Relatorios\RelatoriosBase.cs" />
     <Compile Include="Regras\ScriptBanco.cs" />
     <Compile Include="Regras\UtilHelper.cs" />
     <Compile Include="Regras\Versao.cs" />
@@ -137,6 +139,12 @@
     </Compile>
     <Compile Include="Visao\FO_Relacionamento.Designer.cs">
       <DependentUpon>FO_Relacionamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FO_WebPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FO_WebPage.Designer.cs">
+      <DependentUpon>FO_WebPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Visao\UC_CadastroCampoClasse.cs">
       <SubType>UserControl</SubType>
@@ -249,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\FO_Relacionamento.resx">
       <DependentUpon>FO_Relacionamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FO_WebPage.resx">
+      <DependentUpon>FO_WebPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\UC_CadastroCampoClasse.resx">
       <DependentUpon>UC_CadastroCampoClasse.cs</DependentUpon>

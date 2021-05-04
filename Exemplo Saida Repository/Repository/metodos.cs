@@ -1,21 +1,21 @@
 		/// <summary>
         /// 
         /// </summary>
-        #COMENTARIOENTRADAS
-        /// <returns>Lista com os planos</returns>
-        public async Task<#RETORNOREPOSITORY> #NOMEMETODOREPOSITORYAsync(#FILTROSREPOSITORY)
+#COMENTARIOENTRADAS
+        /// <returns></returns>
+        public async Task<#RETORNOREPOSITORY> #NOMEMETODOREPOSITORY(#FILTROSREPOSITORY)
         {
             var conn = GetConnection();
 
             try
             {
-                _logger.LogDebug($"[{nameof(#NOMEINTERFACEREPOSITORYRepository)}]:[{nameof(#NOMEMETODOREPOSITORYAsync)}] - inicializando. #COMENTARIOFILTROSENTRADA");
+                _logger.LogDebug($"[{nameof(#NOMEINTERFACEREPOSITORY)}]:[{nameof(#NOMEMETODOREPOSITORY)}] - inicializando. #COMENTARIOFILTROSENTRADA");
 
                 const string sql = @" #CONSULTA";
 
-                _logger.LogDebug($"[{nameof(#NOMEINTERFACEREPOSITORYRepository)}]:[{nameof(#NOMEMETODOREPOSITORYAsync)}] - SQL: {Environment.NewLine}{sql}");
+                _logger.LogDebug($"[{nameof(#NOMEINTERFACEREPOSITORY)}]:[{nameof(#NOMEMETODOREPOSITORY)}] - SQL: {Environment.NewLine}{sql}");
 
-                return await conn.QueryAsync<#CLASSEENTITYEntity>(sql, new { #FILTROSCONSULTA});
+                return await conn.QueryAsync<#CLASSEENTITY>(sql, new { #FILTROSCONSULTA});
             }
             finally
             {

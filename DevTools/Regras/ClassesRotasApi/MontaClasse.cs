@@ -40,9 +40,9 @@ namespace Regras.ClassesRotasApi
         /// Método que cria as classes
         /// </summary>
         /// <returns></returns>
-        public bool CriaClasses()
+        public bool CriaClasses(out string mensagemErro)
         {
-            string mensagemErro = string.Empty;
+            mensagemErro = string.Empty;
             return this.classeCreator.CriaClasses(out mensagemErro);
         }
 

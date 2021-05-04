@@ -100,7 +100,7 @@ namespace Visao
         {
             if(this.tarefa == Util.Enumerator.Tarefa.VISUALIZAR)
             {
-                if(Message.MensagemConfirmaçãoYesNo("Deseja excluir o campo " + this.campo.DAO.Nomecampo + "?") == DialogResult.Yes)
+                if(Message.MensagemConfirmaçãoYesNo("Deseja excluir o campo " + this.campo.DAO.NomeCampo + "?") == DialogResult.Yes)
                 {
                     if (this.campo.DAO.Delete())
                     {
@@ -181,8 +181,8 @@ namespace Visao
 
             if(this.tarefa != Util.Enumerator.Tarefa.INCLUIR)
             {
-                this.tbx_nomeCampo.Text = this.campo.DAO.Nomecampo;
-                this.cmb_tipoCampo.SelectedItem = this.campo.DAO.Tipocampo;
+                this.tbx_nomeCampo.Text = this.campo.DAO.NomeCampo;
+                this.cmb_tipoCampo.SelectedItem = this.campo.DAO.TipoCampo;
             }
             else
             {
@@ -209,8 +209,8 @@ namespace Visao
             {
                 this.campo.DAO.Classereferente = this.classe.DAO.Codigo;
                 this.campo.DAO.Codigoclasseentrada = -1;
-                this.campo.DAO.Nomecampo = this.tbx_nomeCampo.Text;
-                this.campo.DAO.Tipocampo = this.cmb_tipoCampo.SelectedItem.ToString();
+                this.campo.DAO.NomeCampo = this.tbx_nomeCampo.Text;
+                this.campo.DAO.TipoCampo = this.cmb_tipoCampo.SelectedItem.ToString();
 
                 bool retorno = tarefa == Util.Enumerator.Tarefa.INCLUIR ? this.campo.DAO.Insert() : this.campo.DAO.Update();
 

@@ -89,7 +89,7 @@ namespace Util
 
             RetornaDetalhesCampos(barra, ref campos);
 
-            //PreencheArquivoCampos(campos);
+            PreencheArquivoCampos(campos);
         }
 
         /// <summary>
@@ -164,11 +164,7 @@ namespace Util
                 c.Tabela = tabela;
                 c.Comments = comments;
 
-                //campos.Add(c);
-
-                string json = JsonConvert.SerializeObject(c);
-                CL_Files file = new CL_Files(Global.app_exportacao_campos_file);
-                file.WriteOnTheEndWithLine(json);
+                campos.Add(c);
             }
 
         }

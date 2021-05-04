@@ -163,7 +163,7 @@ namespace Visao
                 if (tipo.Equals("Campo"))
                 {
                     Model.MD_CamposClasseEntrada campo = new Model.MD_CamposClasseEntrada(codigo);
-                    if(Message.MensagemConfirmaçãoYesNo("Deseja excluir o campo " + campo.DAO.Nomecampo + "?") == DialogResult.Yes)
+                    if(Message.MensagemConfirmaçãoYesNo("Deseja excluir o campo " + campo.DAO.NomeCampo + "?") == DialogResult.Yes)
                     {
                         if (campo.DAO.Delete())
                         {
@@ -393,7 +393,7 @@ namespace Visao
         /// </summary>
         public void CarregaTabelaCamposClasse()
         {
-            this.listaCampos = Model.MD_CamposClasseEntrada.RetornaMetodosApi(this.classeEntrada.DAO.Codigo);
+            this.listaCampos = Model.MD_CamposClasseEntrada.RetornaCamposClasseEntrada(this.classeEntrada.DAO.Codigo);
             this.listaClasses = Model.MD_ClasseEntrada.RetornaClassesFilhas(this.classeEntrada.DAO.Codigo);
 
             this.dgv_camposClasse.Rows.Clear();
@@ -417,8 +417,8 @@ namespace Visao
             List<string> list = new List<string>();
             list.Add(campo.DAO.Codigo.ToString());
             list.Add("Campo");
-            list.Add(campo.DAO.Nomecampo);
-            list.Add(campo.DAO.Tipocampo);
+            list.Add(campo.DAO.NomeCampo);
+            list.Add(campo.DAO.TipoCampo);
 
             this.dgv_camposClasse.Rows.Add(list.ToArray());
         }

@@ -3,12 +3,12 @@
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
-        public async Task<ResponseDTO<#OBJETORETORNO>> #NOMEMETODOAsync(BaseRequestDTO filter)
+        public async Task<ResponseDTO<#OBJETORETORNO>> #NOMEMETODO(BaseRequestDTO filter)
         {
             var response = new ResponseDTO<#OBJETORETORNO>();
             try
             {
-                var responseValidation = new #NOMECLASSEVALIDATIONValidation().Validate(filter);
+                var responseValidation = new #NOMECLASSEVALIDATION().Validate(filter);
 
                 if (!responseValidation.IsValid)
                 {
@@ -16,7 +16,7 @@
                     return response;
                 }
 
-                var retorno = await _repository.#NOMEMETODOAsync(#FILTROSREPOSITORY);
+                var retorno = await _repository.#NOMEMETODO(#FILTROSREPOSITORY);
 
                 response.Results = _mapper.Map<#OBJETORETORNO>(retorno);
             }

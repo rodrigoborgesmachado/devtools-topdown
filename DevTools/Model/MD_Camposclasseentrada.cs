@@ -40,9 +40,9 @@ namespace Model
         /// </summary>
         /// <param name="projeto">Código do projeto</param>
         /// <returns>Lista das tabelas</returns>
-        public static List<MD_CamposClasseEntrada> RetornaMetodosApi(int rota)
+        public static List<MD_CamposClasseEntrada> RetornaCamposClasseEntrada(int codigoClasseReferente)
         {
-            string sentenca = new DAO.MD_CamposClasseEntrada().table.CreateCommandSQLTable() + " WHERE CLASSEREFERENTE = " + rota + " ORDER BY NOMECAMPO";
+            string sentenca = new DAO.MD_CamposClasseEntrada().table.CreateCommandSQLTable() + " WHERE CLASSEREFERENTE = " + codigoClasseReferente + " ORDER BY NOMECAMPO";
 
             DbDataReader reader = DataBase.Connection.Select(sentenca);
             List<MD_CamposClasseEntrada> campos = new List<MD_CamposClasseEntrada>();

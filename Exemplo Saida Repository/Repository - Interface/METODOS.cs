@@ -1,6 +1,6 @@
 		/// <summary>
         /// 
         /// </summary>
-        #COMENTARIOENTRADAS
+#COMENTARIOENTRADAS
         /// <returns></returns>
-        Task<#RETORNOREPOSITORY> #NOMEMETODOREPOSITORYAsync(#FILTROSREPOSITORY);
+        Task<#RETORNOREPOSITORY> #NOMEMETODOREPOSITORY(#FILTROSREPOSITORY);

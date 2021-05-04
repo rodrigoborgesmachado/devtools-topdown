@@ -94,5 +94,29 @@ namespace Util
             PUT = 3
         }
 
+        public enum TipoClasseBase
+        {
+            DTO = 0,
+            ENTITY
+        }
+
+        public enum TipoClasseRepository
+        {
+            CONTROLLER = 0,
+            DTO = 1,
+            ENTITY = 2,
+            QUERYINTERFACE = 3,
+            QUERY = 4,
+            REPOSITORYINTERFACE = 5,
+            REPOSITORY = 6,
+            VALIDATIONS = 7,
+            PROFILES = 8
+        }
+
+        public enum TipoRelatorio
+        {
+            PASSO_A_PASSO_REPOSITORY
+        }
+
     }
 }
