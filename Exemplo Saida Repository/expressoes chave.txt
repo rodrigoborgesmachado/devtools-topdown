@@ -75,3 +75,61 @@ Substituir:
 		#NOMEPROFILE (já contém DTO e Entity (EntityToDto))
 		#CLASSEENTITY
 		#CLASSEDTO
+		
+Gerenciador:
+
+	Configuration:
+		#NOMECLASSE (já contém ServiceConfiguration)
+
+	Controller:
+		#ROTA
+		#NOMECLASSE (já contém Controller)
+		#CONFIGURATION (já contém Configuration)
+		#METODOS
+			
+		Métodos:
+			#ROTA
+			#RETORNO
+			#NOMEMETODO
+			#ENTRADAMETODOCONTROLLER
+			#COMENTARIOENTRADAMETODOCONTROLLER
+			#REPOSITORYRETORNO
+			#URL (observar quando houver entrada por url)
+			
+	DTO:
+		#NOMECLASSE (já contém DTO)
+		#PROPRIEDADES
+		
+		Propriedades:
+			#TIPO 
+			#NOME
+			
+	Model:
+		#NOMECLASSE
+		#PROPRIEDADES
+			
+		Propriedades:
+			#TIPO 
+			#NOME
+			
+	Model Retorno:
+		#NOMECLASSE (Já contém retorno)
+		#TIPOOBJETORETORNO
+		#NOMEOBJETORETORNO
+		
+	Profile:
+		#CLASSEDTO
+		#CLASSEMODEL
+		#MEMBROS
+		
+		Membros:
+			#PARAMETRO
+			
+	Profile Retorno:
+		#CLASSERETORNOREPOSIROTY
+		#CLASSERETORNOMODEL
+		#MEMBROS
+		
+		Membros:
+			#ORIGEM
+	

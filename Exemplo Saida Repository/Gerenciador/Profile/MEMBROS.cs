@@ -1,0 +1,1 @@
+				.ForMember(dest => dest.#PARAMETRO, opts => opts.MapFrom(src => src.#PARAMETRO))
