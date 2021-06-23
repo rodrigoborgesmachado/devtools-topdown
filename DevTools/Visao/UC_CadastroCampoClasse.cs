@@ -224,7 +224,7 @@ namespace Visao
                         if (Message.MensagemConfirmaçãoYesNo("Deseja cadastrar mais campo para a classe " + this.classe.DAO.NomeClasse + "?") == DialogResult.Yes)
                         {
                             this.campo = new Model.MD_CamposClasseEntrada(DataBase.Connection.GetIncrement("CAMPOSCLASSEENTRADA"));
-                            this.tarefa = Util.Enumerator.Tarefa.VISUALIZAR;
+                            this.tarefa = Util.Enumerator.Tarefa.INCLUIR;
                             this.InicialisUserControl();
                         }
                         else

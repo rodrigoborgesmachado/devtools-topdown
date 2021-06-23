@@ -210,7 +210,7 @@ namespace Regras
                 builder.AppendLine("                                            <font size=\"-1\">");
                 builder.AppendLine("                                                <b>Nome da rota:</b> " + rota.DAO.NomeMetodo);
                 builder.AppendLine("                                                <br>");
-                builder.AppendLine("                                                <b>Url de acesso:</b> " + (string.IsNullOrEmpty(rota.DAO.Rota) ? api.DAO.Rota : rota.DAO.Rota));
+                builder.AppendLine("                                                <b>Url de acesso:</b> " + (string.IsNullOrEmpty(rota.DAO.Rota) ? api.DAO.Rota : api.DAO.Rota + "/" + rota.DAO.Rota));
                 builder.AppendLine("                                                <br>");
                 builder.AppendLine("												<b>Tipo Requisição:</b> " + rota.DAO.TipoMetodo);
                 builder.AppendLine("                                                <br>");

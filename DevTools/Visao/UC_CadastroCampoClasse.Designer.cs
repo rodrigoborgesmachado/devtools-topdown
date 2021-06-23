@@ -128,10 +128,12 @@
             "int",
             "decimal",
             "char",
-            "DateTime"});
+            "DateTime",
+            "bool",
+            "enumerator"});
             this.cmb_tipoCampo.Location = new System.Drawing.Point(93, 51);
             this.cmb_tipoCampo.Name = "cmb_tipoCampo";
-            this.cmb_tipoCampo.Size = new System.Drawing.Size(446, 23);
+            this.cmb_tipoCampo.Size = new System.Drawing.Size(446, 27);
             this.cmb_tipoCampo.TabIndex = 3;
             // 
             // lbl_tipoCampo
@@ -139,7 +141,7 @@
             this.lbl_tipoCampo.AutoSize = true;
             this.lbl_tipoCampo.Location = new System.Drawing.Point(6, 54);
             this.lbl_tipoCampo.Name = "lbl_tipoCampo";
-            this.lbl_tipoCampo.Size = new System.Drawing.Size(78, 16);
+            this.lbl_tipoCampo.Size = new System.Drawing.Size(91, 19);
             this.lbl_tipoCampo.TabIndex = 24;
             this.lbl_tipoCampo.Text = "Tipo Campo";
             // 
@@ -159,7 +161,7 @@
             this.tbx_nomeCampo.Location = new System.Drawing.Point(93, 22);
             this.tbx_nomeCampo.MaxLength = 50;
             this.tbx_nomeCampo.Name = "tbx_nomeCampo";
-            this.tbx_nomeCampo.Size = new System.Drawing.Size(446, 23);
+            this.tbx_nomeCampo.Size = new System.Drawing.Size(446, 27);
             this.tbx_nomeCampo.TabIndex = 1;
             // 
             // lbl_nome
@@ -167,7 +169,7 @@
             this.lbl_nome.AutoSize = true;
             this.lbl_nome.Location = new System.Drawing.Point(6, 25);
             this.lbl_nome.Name = "lbl_nome";
-            this.lbl_nome.Size = new System.Drawing.Size(48, 16);
+            this.lbl_nome.Size = new System.Drawing.Size(57, 19);
             this.lbl_nome.TabIndex = 8;
             this.lbl_nome.Text = "Campo";
             // 
@@ -184,7 +186,7 @@
             // 
             // UC_CadastroCampoClasse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(238)))));
             this.Controls.Add(this.grb_cadastro);
