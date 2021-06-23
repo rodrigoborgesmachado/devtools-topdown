@@ -99,7 +99,7 @@ namespace DAO
         /// <summary>
         /// [CODIGOCLASSEREFERENTE] 
         /// <summary>
-        public string CodigoRotaRetorno
+        public string CodigoClasseReferente
         {
             get
             {
@@ -172,7 +172,7 @@ namespace DAO
                 this.TipoCampo = reader["TIPOCAMPO"].ToString();
                 this.NomeCampo = reader["NOMECAMPO"].ToString();
                 this.Comentariocampo = reader["COMENTARIOCAMPO"].ToString();
-                this.CodigoRotaRetorno = reader["CODIGOCLASSEREFERENTE"].ToString();
+                this.CodigoClasseReferente = reader["CODIGOCLASSEREFERENTE"].ToString();
 
                 this.Empty = false;
                 reader.Close();
@@ -221,7 +221,7 @@ namespace DAO
             string sentenca = string.Empty;
 
             sentenca = "UPDATE " + table.Table_Name + " SET " + 
-                        "CODIGO = " + Codigo + ", CODIGOCLASSE = '" + Codigoclasse + "', TIPOCAMPO = '" + TipoCampo + "', NOMECAMPO = '" + NomeCampo + "', COMENTARIOCAMPO = '" + Comentariocampo + "', CODIGOCLASSEREFERENTE = '" + CodigoRotaRetorno + "'" + 
+                        "CODIGO = " + Codigo + ", CODIGOCLASSE = '" + Codigoclasse + "', TIPOCAMPO = '" + TipoCampo + "', NOMECAMPO = '" + NomeCampo + "', COMENTARIOCAMPO = '" + Comentariocampo + "', CODIGOCLASSEREFERENTE = '" + CodigoClasseReferente + "'" + 
                         " WHERE CODIGO = " + Codigo + "";
 
             return DataBase.Connection.Update(sentenca);

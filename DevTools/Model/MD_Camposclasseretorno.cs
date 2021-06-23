@@ -42,7 +42,7 @@ namespace Model
         /// <returns>Lista das tabelas</returns>
         public static List<MD_CamposClasseRetorno> RetornaRetornosCampoClasses(int codigoClasseRetorno)
         {
-            string sentenca = "SELECT CAMPOS.CODIGO FROM CAMPOSCLASSERETORNO CAMPOS INNER JOIN ROTASREPOSITORY ROTA ON (ROTA.CODIGO = CAMPOS.CODIGOCLASSEREFERENTE) INNER JOIN CLASSERETORNOREPOSITORY RETORNO ON (RETORNO.ROTARETORNO =  ROTA.CODIGO) WHERE RETORNO.CODIGO = " + codigoClasseRetorno;
+            string sentenca = "SELECT CAMPOS.CODIGO FROM CAMPOSCLASSERETORNO CAMPOS INNER JOIN CLASSERETORNOREPOSITORY RETORNO ON (RETORNO.CODIGO =  CAMPOS.CODIGOCLASSEREFERENTE OR RETORNO.CODIGO = CAMPOS.CODIGOCLASSE) WHERE RETORNO.CODIGO = " + codigoClasseRetorno + "";
 
             DbDataReader reader = DataBase.Connection.Select(sentenca);
             List<MD_CamposClasseRetorno> campos = new List<MD_CamposClasseRetorno>();

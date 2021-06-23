@@ -240,12 +240,12 @@ namespace Visao
                 if(classeRepository != null)
                 {
                     this.campoRetorno.DAO.Codigoclasse = this.classeRepository.DAO.Codigo.ToString();
-                    this.campoRetorno.DAO.CodigoRotaRetorno = "-1";
+                    this.campoRetorno.DAO.CodigoClasseReferente = this.classeRepository.DAO.Codigo.ToString();
                 }
                 else
                 {
                     this.campoRetorno.DAO.Codigoclasse = "-1";
-                    this.campoRetorno.DAO.CodigoRotaRetorno = this.retornoRotaRepository.DAO.Codigo.ToString();
+                    this.campoRetorno.DAO.CodigoClasseReferente = this.retornoRotaRepository.DAO.Codigo.ToString();
                 }
                 this.campoRetorno.DAO.Comentariocampo = string.Empty;
 
