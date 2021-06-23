@@ -71,6 +71,7 @@
     <Compile Include="Model\MD_Versao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regras\RelatorioApi.cs" />
     <Compile Include="Regras\Backup.cs" />
     <Compile Include="Regras\ClassCreater.cs" />
     <Compile Include="Regras\ClassesGenericas.cs" />

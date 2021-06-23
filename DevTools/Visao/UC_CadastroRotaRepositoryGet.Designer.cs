@@ -33,6 +33,7 @@
             this.gpb_cadastroGeral = new System.Windows.Forms.GroupBox();
             this.pan_informacoesRota = new System.Windows.Forms.Panel();
             this.grb_metodos = new System.Windows.Forms.GroupBox();
+            this.btn_reload_tabela = new System.Windows.Forms.Button();
             this.btn_visualizarMetodo = new System.Windows.Forms.Button();
             this.btn_removerMetodo = new System.Windows.Forms.Button();
             this.btn_editarMetodo = new System.Windows.Forms.Button();
@@ -51,10 +52,10 @@
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_confirmar = new System.Windows.Forms.Button();
             this.pan_botton = new System.Windows.Forms.Panel();
+            this.lbl_quantidadeMetodos = new System.Windows.Forms.Label();
             this.pan_top = new System.Windows.Forms.Panel();
             this.btn_fechar = new System.Windows.Forms.Button();
-            this.btn_reload_tabela = new System.Windows.Forms.Button();
-            this.lbl_quantidadeMetodos = new System.Windows.Forms.Label();
+            this.btn_gerarRelatorio = new System.Windows.Forms.Button();
             this.pan_tot.SuspendLayout();
             this.pan_formularioGeral.SuspendLayout();
             this.gpb_cadastroGeral.SuspendLayout();
@@ -103,9 +104,9 @@
             // 
             this.pan_informacoesRota.Controls.Add(this.grb_metodos);
             this.pan_informacoesRota.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pan_informacoesRota.Location = new System.Drawing.Point(3, 125);
+            this.pan_informacoesRota.Location = new System.Drawing.Point(3, 129);
             this.pan_informacoesRota.Name = "pan_informacoesRota";
-            this.pan_informacoesRota.Size = new System.Drawing.Size(734, 379);
+            this.pan_informacoesRota.Size = new System.Drawing.Size(734, 375);
             this.pan_informacoesRota.TabIndex = 7;
             // 
             // grb_metodos
@@ -119,10 +120,23 @@
             this.grb_metodos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grb_metodos.Location = new System.Drawing.Point(0, 0);
             this.grb_metodos.Name = "grb_metodos";
-            this.grb_metodos.Size = new System.Drawing.Size(734, 379);
+            this.grb_metodos.Size = new System.Drawing.Size(734, 375);
             this.grb_metodos.TabIndex = 0;
             this.grb_metodos.TabStop = false;
             this.grb_metodos.Text = "Métodos";
+            // 
+            // btn_reload_tabela
+            // 
+            this.btn_reload_tabela.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_reload_tabela.BackgroundImage = global::DevTools.Properties.Resources.refresh120x20;
+            this.btn_reload_tabela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_reload_tabela.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_reload_tabela.Location = new System.Drawing.Point(708, 126);
+            this.btn_reload_tabela.Name = "btn_reload_tabela";
+            this.btn_reload_tabela.Size = new System.Drawing.Size(20, 20);
+            this.btn_reload_tabela.TabIndex = 11;
+            this.btn_reload_tabela.UseVisualStyleBackColor = true;
+            this.btn_reload_tabela.Click += new System.EventHandler(this.btn_reload_tabela_Click);
             // 
             // btn_visualizarMetodo
             // 
@@ -186,6 +200,7 @@
             this.dgv_metodos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_metodos.BackgroundColor = System.Drawing.Color.White;
             this.dgv_metodos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_metodos.ColumnHeadersHeight = 29;
             this.dgv_metodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_metodos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_metodos.EnableHeadersVisualStyles = false;
@@ -197,7 +212,7 @@
             this.dgv_metodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_metodos.ShowCellErrors = false;
             this.dgv_metodos.ShowCellToolTips = false;
-            this.dgv_metodos.Size = new System.Drawing.Size(696, 351);
+            this.dgv_metodos.Size = new System.Drawing.Size(696, 347);
             this.dgv_metodos.StandardTab = true;
             this.dgv_metodos.TabIndex = 25;
             // 
@@ -213,7 +228,7 @@
             this.pan_dadosRota.Controls.Add(this.btn_info_rota);
             this.pan_dadosRota.Controls.Add(this.tbx_nomeRota);
             this.pan_dadosRota.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pan_dadosRota.Location = new System.Drawing.Point(3, 19);
+            this.pan_dadosRota.Location = new System.Drawing.Point(3, 23);
             this.pan_dadosRota.Name = "pan_dadosRota";
             this.pan_dadosRota.Size = new System.Drawing.Size(734, 106);
             this.pan_dadosRota.TabIndex = 6;
@@ -223,7 +238,7 @@
             this.lbl_descricao.AutoSize = true;
             this.lbl_descricao.Location = new System.Drawing.Point(15, 68);
             this.lbl_descricao.Name = "lbl_descricao";
-            this.lbl_descricao.Size = new System.Drawing.Size(65, 16);
+            this.lbl_descricao.Size = new System.Drawing.Size(79, 19);
             this.lbl_descricao.TabIndex = 11;
             this.lbl_descricao.Text = "Descricao";
             // 
@@ -243,7 +258,7 @@
             this.tbx_descricao.Location = new System.Drawing.Point(106, 65);
             this.tbx_descricao.MaxLength = 50;
             this.tbx_descricao.Name = "tbx_descricao";
-            this.tbx_descricao.Size = new System.Drawing.Size(448, 23);
+            this.tbx_descricao.Size = new System.Drawing.Size(448, 27);
             this.tbx_descricao.TabIndex = 5;
             // 
             // lbl_rota
@@ -251,7 +266,7 @@
             this.lbl_rota.AutoSize = true;
             this.lbl_rota.Location = new System.Drawing.Point(15, 39);
             this.lbl_rota.Name = "lbl_rota";
-            this.lbl_rota.Size = new System.Drawing.Size(34, 16);
+            this.lbl_rota.Size = new System.Drawing.Size(41, 19);
             this.lbl_rota.TabIndex = 8;
             this.lbl_rota.Text = "Rota";
             // 
@@ -271,7 +286,7 @@
             this.tbx_rota.Location = new System.Drawing.Point(106, 36);
             this.tbx_rota.MaxLength = 50;
             this.tbx_rota.Name = "tbx_rota";
-            this.tbx_rota.Size = new System.Drawing.Size(448, 23);
+            this.tbx_rota.Size = new System.Drawing.Size(448, 27);
             this.tbx_rota.TabIndex = 3;
             // 
             // lbl_nomeRota
@@ -279,7 +294,7 @@
             this.lbl_nomeRota.AutoSize = true;
             this.lbl_nomeRota.Location = new System.Drawing.Point(15, 10);
             this.lbl_nomeRota.Name = "lbl_nomeRota";
-            this.lbl_nomeRota.Size = new System.Drawing.Size(68, 16);
+            this.lbl_nomeRota.Size = new System.Drawing.Size(82, 19);
             this.lbl_nomeRota.TabIndex = 5;
             this.lbl_nomeRota.Text = "Nome rota";
             // 
@@ -299,7 +314,7 @@
             this.tbx_nomeRota.Location = new System.Drawing.Point(106, 7);
             this.tbx_nomeRota.MaxLength = 50;
             this.tbx_nomeRota.Name = "tbx_nomeRota";
-            this.tbx_nomeRota.Size = new System.Drawing.Size(448, 23);
+            this.tbx_nomeRota.Size = new System.Drawing.Size(448, 27);
             this.tbx_nomeRota.TabIndex = 1;
             // 
             // btn_excluir
@@ -328,6 +343,7 @@
             // 
             // pan_botton
             // 
+            this.pan_botton.Controls.Add(this.btn_gerarRelatorio);
             this.pan_botton.Controls.Add(this.lbl_quantidadeMetodos);
             this.pan_botton.Controls.Add(this.btn_excluir);
             this.pan_botton.Controls.Add(this.btn_confirmar);
@@ -336,6 +352,15 @@
             this.pan_botton.Name = "pan_botton";
             this.pan_botton.Size = new System.Drawing.Size(740, 35);
             this.pan_botton.TabIndex = 20;
+            // 
+            // lbl_quantidadeMetodos
+            // 
+            this.lbl_quantidadeMetodos.AutoSize = true;
+            this.lbl_quantidadeMetodos.Location = new System.Drawing.Point(6, 10);
+            this.lbl_quantidadeMetodos.Name = "lbl_quantidadeMetodos";
+            this.lbl_quantidadeMetodos.Size = new System.Drawing.Size(84, 19);
+            this.lbl_quantidadeMetodos.TabIndex = 14;
+            this.lbl_quantidadeMetodos.Text = "X métodos";
             // 
             // pan_top
             // 
@@ -359,31 +384,21 @@
             this.btn_fechar.UseVisualStyleBackColor = false;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
-            // btn_reload_tabela
+            // btn_gerarRelatorio
             // 
-            this.btn_reload_tabela.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_reload_tabela.BackgroundImage = global::DevTools.Properties.Resources.refresh120x20;
-            this.btn_reload_tabela.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_reload_tabela.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_reload_tabela.Location = new System.Drawing.Point(708, 126);
-            this.btn_reload_tabela.Name = "btn_reload_tabela";
-            this.btn_reload_tabela.Size = new System.Drawing.Size(20, 20);
-            this.btn_reload_tabela.TabIndex = 11;
-            this.btn_reload_tabela.UseVisualStyleBackColor = true;
-            this.btn_reload_tabela.Click += new System.EventHandler(this.btn_reload_tabela_Click);
-            // 
-            // lbl_quantidadeMetodos
-            // 
-            this.lbl_quantidadeMetodos.AutoSize = true;
-            this.lbl_quantidadeMetodos.Location = new System.Drawing.Point(6, 10);
-            this.lbl_quantidadeMetodos.Name = "lbl_quantidadeMetodos";
-            this.lbl_quantidadeMetodos.Size = new System.Drawing.Size(70, 16);
-            this.lbl_quantidadeMetodos.TabIndex = 14;
-            this.lbl_quantidadeMetodos.Text = "X métodos";
+            this.btn_gerarRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_gerarRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_gerarRelatorio.Location = new System.Drawing.Point(493, 3);
+            this.btn_gerarRelatorio.Name = "btn_gerarRelatorio";
+            this.btn_gerarRelatorio.Size = new System.Drawing.Size(82, 29);
+            this.btn_gerarRelatorio.TabIndex = 15;
+            this.btn_gerarRelatorio.Text = "Relatório";
+            this.btn_gerarRelatorio.UseVisualStyleBackColor = true;
+            this.btn_gerarRelatorio.Click += new System.EventHandler(this.Btn_gerarRelatorio_Click);
             // 
             // UC_CadastroRotaRepository
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(249)))), ((int)(((byte)(238)))));
             this.Controls.Add(this.pan_tot);
@@ -436,5 +451,6 @@
         private System.Windows.Forms.Button btn_visualizarMetodo;
         private System.Windows.Forms.Button btn_reload_tabela;
         private System.Windows.Forms.Label lbl_quantidadeMetodos;
+        private System.Windows.Forms.Button btn_gerarRelatorio;
     }
 }

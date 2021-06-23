@@ -244,6 +244,16 @@ namespace Visao
             this.CarregaListagemMetodos();
         }
 
+        /// <summary>
+        /// Evento lançado no clique do botão gerar relatório
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_gerarRelatorio_Click(object sender, EventArgs e)
+        {
+            this.GerarRelatorio();
+        }
+
         #endregion Eventos
 
         #region Construtores
@@ -367,7 +377,26 @@ namespace Visao
             this.CarregaListagemMetodos(metodo);
         }
 
+        /// <summary>
+        /// Método que gera o relatório
+        /// </summary>
+        private void GerarRelatorio()
+        {
+            string mensagemErro = string.Empty;
+            if(Regras.RelatorioApi.Criar(this.apiRepository, out mensagemErro))
+            {
+                Visao.Message.MensagemSucesso("Criado com sucesso!");
+                if(Visao.Message.MensagemConfirmaçãoYesNo("Deseja abrir o aruqivo?") == DialogResult.Yes){
+                    System.Diagnostics.Process.Start(Util.Global.app_temp_html_file);
+                }
+            }
+            else
+            {
+                Visao.Message.MensagemErro("Erro ao gerar o relatório." + Environment.NewLine + mensagemErro);
+            }
+        }
+
         #endregion Métodos
-        
+
     }
 }
