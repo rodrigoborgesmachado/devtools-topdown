@@ -386,7 +386,7 @@ namespace Visao
             if(Regras.RelatorioApi.Criar(this.apiRepository, out mensagemErro))
             {
                 Visao.Message.MensagemSucesso("Criado com sucesso!");
-                if(Visao.Message.MensagemConfirmaçãoYesNo("Deseja abrir o aruqivo?") == DialogResult.Yes){
+                if(Visao.Message.MensagemConfirmaçãoYesNo("Deseja abrir o arquivo?") == DialogResult.Yes){
                     System.Diagnostics.Process.Start(Util.Global.app_temp_html_file);
                 }
             }
